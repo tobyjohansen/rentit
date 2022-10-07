@@ -7,7 +7,7 @@ export default function CarList() {
       {cars.map((car) => {
         return (
           <div className="cards">
-            <h5>Biltype: {car.modell}</h5>
+            <h4>Biltype: {car.modell}</h4>
             <h6>Årsmodell: {car.årsmodell}</h6>
             <br />
             <p>Biltype: {"\n" + car.biltype}</p>

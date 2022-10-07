@@ -9,6 +9,7 @@
   padding: 4rem;
   background-color: rgb(182, 206, 207);
   max-width: 400px;
+  border-radius: 4%;
 }
 
 .cards button{
