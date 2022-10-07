@@ -7,6 +7,7 @@ import s40 from "../../assets/s40.jpg";
 // eslint-disable-next-line
 export default [
   {
+    id: 1,
     img: i30,
     modell: "Hyundai i30",
     årsmodell: 2021,
@@ -17,6 +18,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    id: 2,
     img: soul,
     modell: "Kia Soul",
     årsmodell: 2015,
@@ -27,6 +29,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    id: 3,
     img: yaris,
     modell: "Toyota Yaris",
     årsmodell: 2012,
@@ -37,6 +40,7 @@ export default [
     girkasse: "Manuell",
   },
   {
+    id: 4,
     img: s40,
     modell: "Volvo S40",
     årsmodell: 2007,
@@ -47,6 +51,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    id: 5,
     img: i30,
     modell: "Tesla Model S",
     årsmodell: 2015,
@@ -57,6 +62,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    id: 6,
     img: i30,
     modell: "Tesla Model X",
     årsmodell: 2020,
@@ -67,6 +73,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    id: 7,
     img: i30,
     modell: "Toyota RAV4",
     årsmodell: 2017,
@@ -77,6 +84,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    id: 8,
     img: i30,
     modell: "Toyota Corolla",
     årsmodell: 2016,
@@ -87,6 +95,7 @@ export default [
     girkasse: "Manuell",
   },
   {
+    id: 9,
     img: i30,
     modell: "Nissal Leaf",
     årsmodell: 2019,
@@ -97,6 +106,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    id: 10,
     img: i30,
     modell: "Ford Transit",
     årsmodell: 2017,
@@ -107,6 +117,7 @@ export default [
     girkasse: "Manuell",
   },
   {
+    id: 11,
     img: i30,
     modell: "Volkswagen Caddy",
     årsmodell: 2010,
@@ -117,6 +128,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    id: 12,
     img: i30,
     modell: "Mitsubishi Outlander",
     årsmodell: 2016,
@@ -127,6 +139,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    id: 13,
     img: i30,
     modell: "BMW i3",
     årsmodell: 2021,
@@ -137,6 +150,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    id: 14,
     img: i30,
     modell: "Ford Focus",
     årsmodell: 2008,
@@ -147,6 +161,7 @@ export default [
     girkasse: "Manuell",
   },
   {
+    id: 15,
     img: i30,
     modell: "Skoda Superb",
     årsmodell: 2016,
@@ -157,6 +172,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    id: 16,
     img: golf,
     modell: "Volkswagen Golf",
     årsmodell: 2015,
@@ -167,6 +183,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    id: 17,
     img: i30,
     modell: "Volkswagen Polo",
     årsmodell: 2017,
@@ -177,6 +194,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    id: 18,
     img: i30,
     modell: "Ford Mondeo",
     årsmodell: 2019,
@@ -187,6 +205,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    id: 19,
     img: i30,
     modell: "Renault Zoe",
     årsmodell: 2018,
@@ -197,6 +216,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    id: 20,
     img: i30,
     modell: "Toyota HiAce",
     årsmodell: 2003,

@@ -3,10 +3,10 @@ import cars from "./CarData";
 
 export default function CarList() {
   return (
-    <div class="cardlist">
+    <div className="cardlist">
       {cars.map((car) => {
         return (
-          <div className="cards">
+          <div className="cards" key={car.id}>
             <img src={car.img} alt=""></img>
             <h4>Biltype: {car.modell}</h4>
             <h6>Årsmodell: {car.årsmodell}</h6>
