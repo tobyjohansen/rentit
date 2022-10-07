@@ -30,8 +30,10 @@ function App() {
         >
           <AppBar />
         </Box>
-        <Box sx={{ gridArea: "sidebar", border: "1px solid black" }}></Box>
-        <Box sx={{ gridArea: "info", border: "1px solid black" }}>
+        <Box
+          sx={{ gridArea: "sidebar", border: "1px solid black", p: "1rem" }}
+        ></Box>
+        <Box sx={{ gridArea: "info", border: "1px solid black", p: "1rem" }}>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -47,7 +49,9 @@ function App() {
         <Box sx={{ gridArea: "main", border: "1px solid black" }}>
           <CarList />
         </Box>
-        <Box sx={{ gridArea: "footer", border: "1px solid black" }}>Footer</Box>
+        <Box sx={{ gridArea: "footer", border: "1px solid black", p: "1rem" }}>
+          Footer
+        </Box>
       </Box>
     </div>
   );
