@@ -1,17 +1,25 @@
+import golf from "../../assets/golf.jpg";
+import i30 from "../../assets/i30.jpg";
+import soul from "../../assets/soul.jpg";
+import yaris from "../../assets/yaris.jpg";
+import s40 from "../../assets/s40.jpg";
+
 // eslint-disable-next-line
 export default [
   {
-    modell: "Kia Soul",
+    img: i30,
+    modell: "Hyundai i30",
     årsmodell: 2021,
     hentested: "St.Hanshaugen",
     ledige_uker: [1, 2, 3, 4, 9, 12],
     biltype: "Personbil",
-    drivstoff: "Elektrisitet",
+    drivstoff: "Bensin",
     girkasse: "Automat",
   },
   {
-    modell: "Hyundai Kona",
-    årsmodell: 2020,
+    img: soul,
+    modell: "Kia Soul",
+    årsmodell: 2015,
     hentested: "Røa",
     ledige_uker: [1, 2, 9],
     biltype: "Personbil",
@@ -19,6 +27,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    img: yaris,
     modell: "Toyota Yaris",
     årsmodell: 2012,
     hentested: "Ulsrud",
@@ -28,6 +37,7 @@ export default [
     girkasse: "Manuell",
   },
   {
+    img: s40,
     modell: "Volvo S40",
     årsmodell: 2007,
     hentested: "Oppegård",
@@ -136,6 +146,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    img: golf,
     modell: "Volkswagen Golf",
     årsmodell: 2015,
     hentested: "Jessheim",

@@ -7,6 +7,7 @@ export default function CarList() {
       {cars.map((car) => {
         return (
           <div className="cards">
+            <img src={car.img} alt=""></img>
             <h4>Biltype: {car.modell}</h4>
             <h6>Årsmodell: {car.årsmodell}</h6>
             <br />
