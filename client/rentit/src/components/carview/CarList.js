@@ -8,7 +8,7 @@ export default function CarList() {
         return (
           <div className="cards" key={car.id}>
             <img src={car.img} alt=""></img>
-            <h4>Biltype: {car.modell}</h4>
+            <h4>{car.modell}</h4>
             <h6>Årsmodell: {car.årsmodell}</h6>
             <br />
             <p>Biltype: {"\n" + car.biltype}</p>
