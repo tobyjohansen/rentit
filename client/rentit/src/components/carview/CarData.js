@@ -47,6 +47,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    img: i30,
     modell: "Tesla Model S",
     årsmodell: 2015,
     hentested: "Moss",
@@ -56,6 +57,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    img: i30,
     modell: "Tesla Model X",
     årsmodell: 2020,
     hentested: "Vestby",
@@ -65,6 +67,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    img: i30,
     modell: "Toyota RAV4",
     årsmodell: 2017,
     hentested: "Rygge",
@@ -74,6 +77,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    img: i30,
     modell: "Toyota Corolla",
     årsmodell: 2016,
     hentested: "Oppsal",
@@ -83,6 +87,7 @@ export default [
     girkasse: "Manuell",
   },
   {
+    img: i30,
     modell: "Nissal Leaf",
     årsmodell: 2019,
     hentested: "Ås",
@@ -92,6 +97,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    img: i30,
     modell: "Ford Transit",
     årsmodell: 2017,
     hentested: "Grefsen",
@@ -101,6 +107,7 @@ export default [
     girkasse: "Manuell",
   },
   {
+    img: i30,
     modell: "Volkswagen Caddy",
     årsmodell: 2010,
     hentested: "Sarpsborg",
@@ -110,6 +117,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    img: i30,
     modell: "Mitsubishi Outlander",
     årsmodell: 2016,
     hentested: "Fagerstrand",
@@ -119,6 +127,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    img: i30,
     modell: "BMW i3",
     årsmodell: 2021,
     hentested: "Fredrikstad",
@@ -128,6 +137,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    img: i30,
     modell: "Ford Focus",
     årsmodell: 2008,
     hentested: "Holmlia",
@@ -137,6 +147,7 @@ export default [
     girkasse: "Manuell",
   },
   {
+    img: i30,
     modell: "Skoda Superb",
     årsmodell: 2016,
     hentested: "Ski",
@@ -156,6 +167,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    img: i30,
     modell: "Volkswagen Polo",
     årsmodell: 2017,
     hentested: "Nittedal",
@@ -165,6 +177,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    img: i30,
     modell: "Ford Mondeo",
     årsmodell: 2019,
     hentested: "Sandefjord",
@@ -174,6 +187,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    img: i30,
     modell: "Renault Zoe",
     årsmodell: 2018,
     hentested: "Hauketo",
@@ -183,6 +197,7 @@ export default [
     girkasse: "Automat",
   },
   {
+    img: i30,
     modell: "Toyota HiAce",
     årsmodell: 2003,
     hentested: "Drøbak",
