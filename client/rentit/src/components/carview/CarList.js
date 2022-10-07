@@ -1,49 +1,26 @@
-import CarListItem from "./CarListItem";
+import * as React from "react";
+import cars from "./CarData";
 
 export default function CarList() {
-    return (
-        <div>
-        <CarListItem
-            id = {biler[0].id}
-            bilnavn = {biler[0].bilnavn}
-            biltype = {biler[0].biltype}
-            bilmodel = {biler[0].bilmodel}
-        CarListItem/>
-        <CarListItem
-            id = {biler[1].id}
-            bilnavn = {biler[1].bilnavn}
-            biltype = {biler[1].biltype}
-            bilmodel = {biler[1].bilmodel}
-        CarListItem/>
-        </div>
-        
-    )
+  return (
+    <div class="cardlist">
+      {cars.map((car) => {
+        return (
+          <div className="cards">
+            <h5>Biltype: {car.modell}</h5>
+            <h6>Årsmodell: {car.årsmodell}</h6>
+            <br />
+            <p>Biltype: {"\n" + car.biltype}</p>
+            <p>Girkasse: {"\n" + car.girkasse}</p>
+            <p>Drivstoff: {"\n" + car.drivstoff}</p>
+            <br />
+            <p>Hentested: {car.hentested}</p>
+            <p>Ledige uker: {"\n" + car.ledige_uker}</p>
+            <button>Lei denne</button>
+            <button>Les mer</button>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
-
-
-const biler = [
-    {
-        id: "1",
-        bilnavn: "Kulbilnavn1",
-        biltype: "Toyota",
-        bilmodel: "kulbilmodel1",
-    },
-    {
-        id: "2",
-        bilnavn: "kulbilnanv2",
-        biltype: "Toyota",
-        bilmodel: "kulbilmodel2",
-    },
-    {
-        id: "3",
-        bilnavn: "Kulbilnavn3",
-        biltype: "Toyota",
-        bilmodel: "kulbilmodel3",
-    },
-    {
-        id: "4",
-        bilnavn: "Kulbilnavn4",
-        biltype: "Toyota",
-        bilmodel: "kulbilmodel4",
-    },
-]

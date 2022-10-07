@@ -1,0 +1,27 @@
+.box{
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.cards{
+  margin: 1rem;
+  padding: 4rem;
+  background-color: rgb(182, 206, 207);
+  max-width: 400px;
+}
+
+.cards button{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+.cardlist{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
