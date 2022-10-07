@@ -13,13 +13,13 @@ function App() {
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
+          gridTemplateColumns: "repeat(5, 1fr)",
           gap: 1,
           gridTemplateRows: "auto",
-          gridTemplateAreas: `"header header header header"
-          "sidebar info info info"
-  "sidebar main main main"
-  "footer footer footer footer"`,
+          gridTemplateAreas: `"header header header header header"
+          "sidebar info info info info"
+  "sidebar main main main main"
+  "footer footer footer footer footer"`,
         }}
       >
         <Box
