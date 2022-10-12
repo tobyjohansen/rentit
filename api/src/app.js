@@ -23,7 +23,7 @@ app.use("/api/v1/cars", carRouter);
 
 // START SERVER
 
-const port = 3000;
+const port = 3300;
 app.listen(port, () => {
   console.log(`App is running on port ${port}...`);
 });
