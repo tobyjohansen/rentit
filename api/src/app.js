@@ -1,7 +1,9 @@
 const express = require("express");
 const carRouter = require("./routes/carRoutes");
+const cors = require("cors");
 
 const app = express();
+app.use(cors());
 
 //MIDDLEWARES
 
