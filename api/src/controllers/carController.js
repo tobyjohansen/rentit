@@ -2,6 +2,27 @@ const fs = require("fs");
 
 const cars = JSON.parse(fs.readFileSync(`${__dirname}/../../data/cars.json`));
 
+exports.checkID = (req, res, next, val) => {
+  console.log(`Car id is: ${val}`);
+  if (req.params.id * 1 > cars.length) {
+    return res.status(404).json({
+      status: "fail",
+      message: "Invalid ID",
+    });
+  }
+  next();
+};
+
+exports.checkBody = (req, res, next) => {
+  if (!req.body.model || !req.body.price) {
+    return res.status(400).json({
+      status: "fail",
+      message: "Missing name or price",
+    });
+  }
+  next();
+};
+
 exports.getAllCars = (req, res) => {
   console.log(req.requestTime);
   res.status(200).json({
@@ -17,12 +38,6 @@ exports.getAllCars = (req, res) => {
 exports.getCar = (req, res) => {
   console.log(req.params);
   const id = req.params.id * 1;
-  if (id > cars.length) {
-    return res.status(404).json({
-      status: "fail",
-      message: "invalid ID",
-    });
-  }
 
   const car = cars.find((el) => el.id === id);
 
@@ -56,12 +71,6 @@ exports.createCar = (req, res) => {
 };
 
 exports.updateCar = (req, res) => {
-  if (req.params.id * 1 > cars.length) {
-    return res.status(404).json({
-      status: "fail",
-      message: "invalid ID",
-    });
-  }
   res.status(200).json({
     status: "success",
     data: {
@@ -71,12 +80,6 @@ exports.updateCar = (req, res) => {
 };
 
 exports.deleteCar = (req, res) => {
-  if (req.params.id * 1 > cars.length) {
-    return res.status(404).json({
-      status: "fail",
-      message: "invalid ID",
-    });
-  }
   res.status(204).json({
     status: "success",
     data: null,
