@@ -1,8 +1,5 @@
-import golf from "../../assets/golf.jpg";
-import i30 from "../../assets/i30.jpg";
-import soul from "../../assets/soul.jpg";
-import yaris from "../../assets/yaris.jpg";
-import s40 from "../../assets/s40.jpg";
+import React from "react";
+import { useState, useEffect } from "react";
 
 function CarData() {
   const [carData, setCarData] = useState([]);

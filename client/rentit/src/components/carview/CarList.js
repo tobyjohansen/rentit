@@ -1,10 +1,11 @@
 import * as React from "react";
-import cars from "./CarData";
+import CarData from "./CarData";
 
 export default function CarList() {
   return (
     <div className="cardlist">
-      {cars.map((car) => {
+      <CarData />
+      {/*{cars.map((car) => {
         return (
           <div className="cards" key={car.id}>
             <img src={car.img} alt=""></img>
@@ -21,7 +22,7 @@ export default function CarList() {
             <button>Les mer</button>
           </div>
         );
-      })}
+      })}*/}
     </div>
   );
 }
