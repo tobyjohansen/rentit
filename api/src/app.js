@@ -1,7 +1,13 @@
 const express = require("express");
 const carRouter = require("./routes/carRoutes");
+const cors = require("cors");
 
 const app = express();
+app.use(cors());
+
+//STINE PRØVER SEG PÅ ENDEPUNKTER
+app.get("/hello", (req, res) => res.send("Hello World!"));
+app.get("/learning", (req, res) => res.send("Learning how backend works!"));
 
 //MIDDLEWARES
 

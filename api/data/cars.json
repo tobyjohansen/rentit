@@ -1,1 +1,146 @@
-[{"id":1,"price":3000,"model":"i30","brand":"Hyundai","year":2021,"location":"St.Hanshaugen","availability":[1,2,3,4,9,12],"type":"Personbil","fuel":"Bensin","gear":"Automat"},{"id":2,"price":3000,"model":"Soul","brand":"Kia","year":2015,"location":"Røa","availability":[1,2,9],"type":"Personbil","fuel":"Elektrisitet","gear":"Automat"},{"id":3,"price":3000,"model":"Yaris","brand":"Toyota","year":2012,"location":"Ulsrud","availability":[1,9,12],"type":"Personbil","fuel":"Bensin","gear":"Manuell"},{"id":4,"price":3000,"model":"S40","brand":"Volvo","year":2007,"location":"Oppegård","availability":[1,2,4,9],"type":"Personbil","fuel":"Bensin","gear":"Automat"},{"id":5,"price":3000,"model":"S40","brand":"Volvo","year":2007,"location":"Oppegård","availability":[1,2,4,9],"type":"Personbil","fuel":"Bensin","gear":"Automat"},{"id":6,"price":3000,"model":"S40","brand":"Volvo","year":2007,"location":"Oppegård","availability":[1,2,4,9],"type":"Personbil","fuel":"Bensin","gear":"Automat"},{"id":7,"price":3000,"model":"S40","brand":"Volvo","year":2007,"location":"Oppegård","availability":[1,2,4,9],"type":"Personbil","fuel":"Bensin","gear":"Automat"},{"id":8,"price":3000,"model":"S40","brand":"Volvo","year":2007,"location":"Oppegård","availability":[1,2,4,9],"type":"Personbil","fuel":"Bensin","gear":"Automat"},{"id":9,"price":3000,"model":"S40","brand":"Volvo","year":2007,"location":"Oppegård","availability":[1,2,4,9],"type":"Personbil","fuel":"Bensin","gear":"Automat"},{"id":10,"price":3000,"model":"S40","brand":"Volvo","year":2007,"location":"Oppegård","availability":[1,2,4,9],"type":"Personbil","fuel":"Bensin","gear":"Automat"},{"id":11,"price":3000,"model":"i30","brand":"Hyundai","year":2021,"location":"St.Hanshaugen","availability":[1,2,3,4,9,12],"type":"Personbil","fuel":"Bensin","gear":"Automat"},{"id":12,"price":3000,"model":"i30","brand":"Hyundai","year":2021,"location":"St.Hanshaugen","availability":[1,2,3,4,9,12],"type":"Personbil","fuel":"Bensin","gear":"Automat"},{"id":13,"price":3000,"model":"S40","brand":"Volvo","year":2007,"location":"Oppegård","availability":[1,2,4,9],"type":"Personbil","fuel":"Bensin","gear":"Automat"}]
+[
+  {
+    "id": 1,
+    "price": 3000,
+    "model": "i30",
+    "brand": "Hyundai",
+    "year": 2021,
+    "location": "St.Hanshaugen",
+    "availability": [1, 2, 3, 4, 9, 12],
+    "type": "Personbil",
+    "fuel": "Bensin",
+    "gear": "Automat"
+  },
+  {
+    "id": 2,
+    "price": 3000,
+    "model": "Soul",
+    "brand": "Kia",
+    "year": 2015,
+    "location": "Røa",
+    "availability": [1, 2, 9],
+    "type": "Personbil",
+    "fuel": "Elektrisitet",
+    "gear": "Automat"
+  },
+  {
+    "id": 3,
+    "price": 3000,
+    "model": "Yaris",
+    "brand": "Toyota",
+    "year": 2012,
+    "location": "Ulsrud",
+    "availability": [1, 9, 12],
+    "type": "Personbil",
+    "fuel": "Bensin",
+    "gear": "Manuell"
+  },
+  {
+    "id": 4,
+    "price": 3000,
+    "model": "S40",
+    "brand": "Volvo",
+    "year": 2007,
+    "location": "Oppegård",
+    "availability": [1, 2, 4, 9],
+    "type": "Personbil",
+    "fuel": "Bensin",
+    "gear": "Automat"
+  },
+  {
+    "id": 5,
+    "price": 3000,
+    "model": "S40",
+    "brand": "Volvo",
+    "year": 2007,
+    "location": "Oppegård",
+    "availability": [1, 2, 4, 9],
+    "type": "Personbil",
+    "fuel": "Bensin",
+    "gear": "Automat"
+  },
+  {
+    "id": 6,
+    "price": 3000,
+    "model": "S40",
+    "brand": "Volvo",
+    "year": 2007,
+    "location": "Oppegård",
+    "availability": [1, 2, 4, 9],
+    "type": "Personbil",
+    "fuel": "Bensin",
+    "gear": "Automat"
+  },
+  {
+    "id": 7,
+    "price": 3000,
+    "model": "S40",
+    "brand": "Volvo",
+    "year": 2007,
+    "location": "Oppegård",
+    "availability": [1, 2, 4, 9],
+    "type": "Personbil",
+    "fuel": "Bensin",
+    "gear": "Automat"
+  },
+  {
+    "id": 8,
+    "price": 3000,
+    "model": "S40",
+    "brand": "Volvo",
+    "year": 2007,
+    "location": "Oppegård",
+    "availability": [1, 2, 4, 9],
+    "type": "Personbil",
+    "fuel": "Bensin",
+    "gear": "Automat"
+  },
+  {
+    "id": 9,
+    "price": 3000,
+    "model": "S40",
+    "brand": "Volvo",
+    "year": 2007,
+    "location": "Oppegård",
+    "availability": [1, 2, 4, 9],
+    "type": "Personbil",
+    "fuel": "Bensin",
+    "gear": "Automat"
+  },
+  {
+    "id": 10,
+    "price": 3000,
+    "model": "S40",
+    "brand": "Volvo",
+    "year": 2007,
+    "location": "Oppegård",
+    "availability": [1, 2, 4, 9],
+    "type": "Personbil",
+    "fuel": "Bensin",
+    "gear": "Automat"
+  },
+  {
+    "id": 11,
+    "price": 3000,
+    "model": "i30",
+    "brand": "Hyundai",
+    "year": 2021,
+    "location": "St.Hanshaugen",
+    "availability": [1, 2, 3, 4, 9, 12],
+    "type": "Personbil",
+    "fuel": "Bensin",
+    "gear": "Automat"
+  },
+  {
+    "id": 12,
+    "price": 3000,
+    "model": "i30",
+    "brand": "Hyundai",
+    "year": 2021,
+    "location": "St.Hanshaugen",
+    "availability": [1, 2, 3, 4, 9, 12],
+    "type": "Personbil",
+    "fuel": "Bensin",
+    "gear": "Automat"
+  }
+]
