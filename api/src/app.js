@@ -3,6 +3,10 @@ const carRouter = require("./routes/carRoutes");
 
 const app = express();
 
+//STINE PRØVER SEG PÅ ENDEPUNKTER
+app.get("/hello", (req, res) => res.send("Hello World!"));
+app.get("/learning", (req, res) => res.send("Learning how backend works!"));
+
 //MIDDLEWARES
 
 app.use(express.json());
