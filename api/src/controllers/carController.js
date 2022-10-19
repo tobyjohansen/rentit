@@ -29,9 +29,7 @@ exports.getAllCars = (req, res) => {
     status: "success",
     requestedAt: req.requestTime,
     results: cars.length,
-    data: {
-      cars,
-    },
+    cars,
   });
 };
 

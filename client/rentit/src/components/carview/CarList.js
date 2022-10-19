@@ -1,30 +1,21 @@
-import * as React from "react";
-import CarData from "./CarData";
-//import cars from "./CarData";
+import React from 'react';
 
-export default function CarList() {
+import Car from './car';
+//import classes from './MoviesList.module.css';
+
+const CarList = (props) => {
   return (
-    <div className="cardlist">
-      {/*{cars.map((car) => {
-        return (
-          <div className="cards" key={car.id}>
-            <img src={car.img} alt=""></img>*/
-      /*<h4>
-              {car.brand}
-              {car.model}
-            </h4>
-            <h6>Årsmodell: {car.year}</h6>
-            <br />
-            <p>Biltype: {"\n" + car.type}</p>
-            <p>Girkasse: {"\n" + car.gear}</p>
-            <p>Drivstoff: {"\n" + car.fuel}</p>
-            <br />
-            <p>Hentested: {car.location}</p>
-            <p>Ledige uker: {"\n" + car.availability}</p>/*}
-            <button>Lei denne</button>
-            <button>Les mer</button>
-          </div>*/}
-      <CarData />
-    </div>
+    <ul>
+      {props.cars.map((car) => (
+        <Car
+          key={car.id}
+          brand={car.brand}
+          price={car.price}
+          model={car.model}
+        />
+      ))}
+    </ul>
   );
-}
+};
+
+export default CarList;
