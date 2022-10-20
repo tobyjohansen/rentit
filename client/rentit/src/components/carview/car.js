@@ -1,5 +1,5 @@
 import React from "react";
-import car from "../../assets/car.png";
+import Car from "../../assets/Car.png";
 
 const Car = (props) => {
   return (
