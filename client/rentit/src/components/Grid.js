@@ -1,35 +1,31 @@
 import CarList from "./carview/carList";
 import AppBar from "../components/navigation/AppBar";
 import { Box } from "@mui/material";
-import React, { useEffect, useState } from 'react';
-//import { blue } from "@mui/material/colors";
-
-//const primary = blue[500];
-//const accent = blue[100];
+import React, { useEffect, useState } from "react";
 
 function Grid() {
-
   //Fetch all cars from the api
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
-      fetch('http://localhost:3300/api/v1/cars').then(response => {
+    fetch("http://localhost:3300/api/v1/cars")
+      .then((response) => {
         return response.json();
-      }).then((data) => {
-        const transformedMovies = data.cars.map(carData => {
+      })
+      .then((data) => {
+        const transformedMovies = data.cars.map((carData) => {
           return {
             id: carData.id,
             brand: carData.brand,
             price: carData.price,
-            model: carData.model
-          }
-        })
+            model: carData.model,
+          };
+        });
         setCars(transformedMovies);
       });
   }, []);
 
   // Ends here !!!
-
 
   return (
     <div>

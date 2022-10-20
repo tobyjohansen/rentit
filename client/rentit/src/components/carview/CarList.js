@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import Car from './car';
-//import classes from './MoviesList.module.css';
+import Car from "./car";
 
 const CarList = (props) => {
   return (
