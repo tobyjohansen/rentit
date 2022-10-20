@@ -84,8 +84,9 @@ export default function BasicTextFields() {
       autoComplete="off"
     >
       <Typography variant="h4" gutterBottom>
-        Legg til bil
+        Endre bil
       </Typography>
+      <TextField id="outlined-basic" label="Referanse" variant="outlined" />
       <TextField id="outlined-basic" label="Bilmerke" variant="outlined" />
       <TextField id="outlined-basic" label="Bilmodell" variant="outlined" />
       <TextField id="outlined-basic" label="Årsmodell" variant="outlined" />
@@ -138,7 +139,7 @@ export default function BasicTextFields() {
           <MenuItem value={"van"}>Varebil</MenuItem>
         </Select>
       </FormControl>
-      <button className="buttons">Lagre bil</button>
+      <button className="buttons">Oppdater bil</button>
     </Box>
   );
 }

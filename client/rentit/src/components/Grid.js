@@ -3,6 +3,7 @@ import AppBar from "../components/navigation/AppBar";
 import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import AddCarForm from "../components/carview/AddCarForm";
+import EditCarForm from "../components/carview/EditCarForm";
 
 function Grid() {
   //Fetch all cars from the api
@@ -61,7 +62,7 @@ function Grid() {
           <AppBar />
         </Box>
         <Box sx={{ gridArea: "sidebar", border: "1px solid black", p: "1rem" }}>
-          <AddCarForm />
+          <AddCarForm /> <EditCarForm />
         </Box>
         <Box sx={{ gridArea: "info", border: "1px solid black", p: "1rem" }}>
           <p>
