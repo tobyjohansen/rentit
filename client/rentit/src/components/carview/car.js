@@ -1,9 +1,11 @@
 import React from "react";
+import car from "../../assets/car.png";
 
 const Car = (props) => {
   return (
     <div>
       <li className="cardlist">
+        <img src={car} alt=""></img>
         <h2>
           {props.brand} - {props.model}
         </h2>
