@@ -1,16 +1,17 @@
 import React from "react";
-
-import Car from "./car";
+import "../../App.css";
+import Car from "./Car";
 
 const CarList = (props) => {
   return (
-    <ul>
+    <ul className="card">
       {props.cars.map((car) => (
         <Car
           key={car.id}
           brand={car.brand}
           price={car.price}
           model={car.model}
+          availability={car.availability}
         />
       ))}
     </ul>

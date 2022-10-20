@@ -1,4 +1,4 @@
-import CarList from "./carview/carList";
+import CarList from "./carview/CarList";
 import AppBar from "../components/navigation/AppBar";
 import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
@@ -19,6 +19,7 @@ function Grid() {
             brand: carData.brand,
             price: carData.price,
             model: carData.model,
+            availability: carData.availability,
           };
         });
         setCars(transformedMovies);
