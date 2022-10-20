@@ -34,8 +34,11 @@ export default function BasicTextFields() {
   const handleTypeChange = (event) => {
     setType(event.target.value);
   };
+  console.log(type);
 
   const [availability, setAvailability] = React.useState([]);
+
+  console.log(availability);
 
   const handleAvailabilityChange = (event) => {
     const {
