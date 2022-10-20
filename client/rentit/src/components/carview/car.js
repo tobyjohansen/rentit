@@ -19,6 +19,7 @@ const Car = (props) => {
         <div>
           <button className="buttons">Lei bil</button>
           <button className="buttons">Slett bil</button>
+          <button className="buttons">Lever bil</button>
         </div>
       </li>
     </div>
