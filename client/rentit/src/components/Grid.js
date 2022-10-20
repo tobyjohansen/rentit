@@ -29,7 +29,7 @@ function Grid() {
             km_limit: carData.km_limit,
             extras: carData.extras,
             price_per_km_after_limit: carData.price_per_km_after_limit,
-            owner: carData.owner            
+            owner: carData.owner,
           };
         });
         setCars(transformedMovies);
