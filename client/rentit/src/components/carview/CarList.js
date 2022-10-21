@@ -1,6 +1,6 @@
 import React from "react";
 import "../../App.css";
-import Car from "./Car";
+import Car from "./car";
 
 const CarList = (props) => {
   return (
@@ -8,10 +8,19 @@ const CarList = (props) => {
       {props.cars.map((car) => (
         <Car
           key={car.id}
-          brand={car.brand}
           price={car.price}
           model={car.model}
+          brand={car.brand}
+          year={car.year}
+          location={car.location}
           availability={car.availability}
+          type={car.type}
+          fuel={car.fuel}
+          gear={car.gear}
+          km_limit={car.km_limit}
+          extras={car.extras}
+          price_per_km_after_limit={car.price_per_km_after_limit}
+          owner={car.owner}
         />
       ))}
     </ul>
