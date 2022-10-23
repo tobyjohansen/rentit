@@ -84,8 +84,18 @@ exports.updateCar = (req, res) => {
 };
 
 exports.deleteCar = (req, res) => {
-  res.status(204).json({
-    status: "success",
-    data: null,
-  });
+  cars.removeCar(req.params.id);
+
+  fs.writeFile(
+    `${__dirname}/../../data/cars.json`,
+    JSON.stringify(cars.carList),
+    (err) => {
+      res.status(201).json({
+        status: "success",
+        data: {
+          cars: cars.carList,
+        },
+      });
+    }
+  );
 };

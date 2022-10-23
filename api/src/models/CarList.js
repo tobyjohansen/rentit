@@ -23,6 +23,20 @@ class CarList {
     console.log(newCar);
     return newCar;
   }
+
+  removeCar(carID) {
+    delete this.carList[carID];
+
+    const newCarList = this.carList.filter((element) => {
+      if (Object.keys(element).length !== 0) {
+        return true;
+      }
+
+      return false;
+    });
+
+    this.carList = newCarList;
+  }
 }
 
 module.exports = CarList;
