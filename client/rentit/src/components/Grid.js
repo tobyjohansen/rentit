@@ -15,7 +15,7 @@ function Grid() {
         return response.json();
       })
       .then((data) => {
-        const transformedMovies = data.cars.carList.map((carData) => {
+        const transformedMovies = data.cars.map((carData) => {
           return {
             id: carData.id,
             price: carData.price,
