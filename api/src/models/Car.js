@@ -89,20 +89,21 @@ class Car {
 
   checkFormValidation(id, model, price) {
     const errorVal = [];
+    if (id == null || model == null || price == null) {
+      if (id == null) {
+        errorVal.push("id");
+      }
 
-    if (id == null) {
-      errorVal.push("id");
+      if (model == null) {
+        errorVal.push("model");
+      }
+
+      if (price == null) {
+        errorVal.push("price");
+      }
+
+      throw errorVal;
     }
-
-    if (model == null) {
-      errorVal.push("model");
-    }
-
-    if (price == null) {
-      errorVal.push("price");
-    }
-
-    throw errorVal;
   }
 
   jsonStringify() {
