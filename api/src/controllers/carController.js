@@ -1,6 +1,9 @@
 const fs = require("fs");
+const CarList = require("../models/CarList");
 
-const cars = JSON.parse(fs.readFileSync(`${__dirname}/../../data/cars.json`));
+const cars = new CarList(
+  JSON.parse(fs.readFileSync(`${__dirname}/../../data/cars.json`))
+);
 
 exports.checkID = (req, res, next, val) => {
   console.log(`Car id is: ${val}`);
@@ -25,11 +28,12 @@ exports.checkBody = (req, res, next) => {
 
 exports.getAllCars = (req, res) => {
   console.log(req.requestTime);
+  console.log(cars);
   res.status(200).json({
     status: "success",
     requestedAt: req.requestTime,
-    results: cars.length,
-    cars,
+    results: cars.carList.length,
+    cars: cars.carList,
   });
 };
 
