@@ -63,6 +63,8 @@ class Car {
         car.owner = owner;
       }
     }
+
+    this.checkFormValidation(id, model, price);
   }
 
   get carObject() {
@@ -83,6 +85,24 @@ class Car {
       owner: this.owner,
     };
     return car;
+  }
+
+  checkFormValidation(id, model, price) {
+    const errorVal = [];
+
+    if (id == null) {
+      errorVal.push("id");
+    }
+
+    if (model == null) {
+      errorVal.push("model");
+    }
+
+    if (price == null) {
+      errorVal.push("price");
+    }
+
+    throw errorVal;
   }
 
   jsonStringify() {

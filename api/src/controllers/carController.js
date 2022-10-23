@@ -51,39 +51,48 @@ exports.getCar = (req, res) => {
 };
 
 exports.createCar = (req, res) => {
-  const newCar = new Car(
-    cars.createID(),
-    null,
-    req.body.price,
-    req.body.model,
-    req.body.brand,
-    req.body.year,
-    req.body.location,
-    req.body.availability,
-    req.body.type,
-    req.body.fuel,
-    req.body.gear,
-    req.body.km_limit,
-    req.body.extras,
-    req.body.price_per_km_after_limit,
-    req.body.owner
-  );
+  try {
+    const newCar = new Car(
+      cars.createID(),
+      null,
+      req.body.price,
+      req.body.model,
+      req.body.brand,
+      req.body.year,
+      req.body.location,
+      req.body.availability,
+      req.body.type,
+      req.body.fuel,
+      req.body.gear,
+      req.body.km_limit,
+      req.body.extras,
+      req.body.price_per_km_after_limit,
+      req.body.owner
+    );
 
-  //change this logic
-  cars.carList.push(newCar.carObject);
+    //change this logic
+    cars.carList.push(newCar.carObject);
 
-  fs.writeFile(
-    `${__dirname}/../../data/cars.json`,
-    JSON.stringify(cars.carList),
-    (err) => {
-      res.status(201).json({
-        status: "success",
-        data: {
-          cars: newCar.jsonStringify(),
-        },
-      });
-    }
-  );
+    fs.writeFile(
+      `${__dirname}/../../data/cars.json`,
+      JSON.stringify(cars.carList),
+      (err) => {
+        res.status(201).json({
+          status: "success",
+          data: {
+            cars: newCar.jsonStringify(),
+          },
+        });
+      }
+    );
+  } catch (err) {
+    console.log(err);
+    res.status(400).json({
+      status: "fail",
+      msg: "missing field",
+      field: err,
+    });
+  }
 };
 
 exports.updateCar = (req, res) => {
