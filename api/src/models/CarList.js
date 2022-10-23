@@ -1,5 +1,3 @@
-const fs = require("fs");
-
 class CarList {
   constructor(carList) {
     this.carList = carList;
@@ -11,7 +9,7 @@ class CarList {
     if (car != null && car !== undefined) {
       return car;
     } else {
-      return "Could not find car";
+      return null;
     }
   }
 
