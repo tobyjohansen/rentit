@@ -22,7 +22,7 @@ export default function AddCarForm() {
   const [enteredAvailability, setEnteredAvailability] = useState([]);
   const [enteredEquipment, setEnteredEquipment] = useState([]);
   const [enteredGear, setEnteredGear] = useState("");
-  const [enteredType, setEnteredType] = useState("");
+  //const [enteredType, setEnteredType] = useState("");
 
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
@@ -70,12 +70,11 @@ export default function AddCarForm() {
   const gearChangeHandler = (e) => {
     setEnteredGear(e.target.value);
   };
-  const typeChangeHandler = (e) => {
+  /*const typeChangeHandler = (e) => {
     setEnteredType(e.target.value);
-  };
+  };*/
   const submitHandler = (e) => {
     e.preventDefault();
-
     const carData = {
       brand: enteredBrand,
       model: enteredModel,
@@ -85,9 +84,14 @@ export default function AddCarForm() {
       availability: enteredAvailability,
       extras: enteredEquipment,
       gear: enteredGear,
-      type: enteredGear,
+      //type: enteredGear,
     };
 
+    fetch("http://localhost:3300/api/v1/cars", {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify(carData),
+    });
     console.log(carData);
     setEnteredBrand("");
     setEnteredGear("");
@@ -96,7 +100,7 @@ export default function AddCarForm() {
     setEnteredPrice("");
     setEnteredYear("");
     setEnteredAvailability([]);
-    setEnteredType("");
+    //setEnteredType("");
     setEnteredGear("");
     setEnteredEquipment([]);
     setSave("Lagre");
@@ -172,11 +176,11 @@ export default function AddCarForm() {
           label="Girkasse"
           onChange={gearChangeHandler}
         >
-          <MenuItem value={"manual"}>Manuell</MenuItem>
-          <MenuItem value={"automatic"}>Automat</MenuItem>
+          <MenuItem value={"Manuell"}>Manuell</MenuItem>
+          <MenuItem value={"Automat"}>Automat</MenuItem>
         </Select>
       </FormControl>
-      <FormControl fullWidth>
+      {/*<FormControl fullWidth>
         <InputLabel id="type-select">Biltype</InputLabel>
         <Select
           labelId="type-select"
@@ -189,7 +193,7 @@ export default function AddCarForm() {
           <MenuItem value={"large"}>Stasjonsvogn</MenuItem>
           <MenuItem value={"van"}>Varebil</MenuItem>
         </Select>
-      </FormControl>
+      </FormControl>*/}
       <FormControl sx={{ m: 1, width: 300 }}>
         <InputLabel id="demo-multiple-checkbox-label">Ekstrautstyr</InputLabel>
         <Select
