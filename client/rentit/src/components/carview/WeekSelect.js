@@ -21,13 +21,15 @@ export default function WeekSelect() {
     },
   };
 
-  const [availability, setAvailability] = useState([]);
+  const [enteredAvailability, setEnteredAvailability] = useState([]);
 
-  const handleAvailabilityChange = (event) => {
+  const availabilityChangeHandler = (event) => {
     const {
       target: { value },
     } = event;
-    setAvailability(typeof value === "string" ? value.split(",") : value);
+    setEnteredAvailability(
+      typeof value === "string" ? value.split(",") : value
+    );
   };
 
   const weeks = [
@@ -42,15 +44,15 @@ export default function WeekSelect() {
         labelId="demo-multiple-checkbox-label"
         id="demo-multiple-checkbox"
         multiple
-        value={availability}
-        onChange={handleAvailabilityChange}
+        value={enteredAvailability}
+        onChange={availabilityChangeHandler}
         input={<OutlinedInput label="Ledige uker" />}
         renderValue={(selected) => selected.join(", ")}
         MenuProps={MenuProps}
       >
         {weeks.map((week) => (
           <MenuItem key={week} value={week}>
-            <Checkbox checked={availability.indexOf(week) > -1} />
+            <Checkbox checked={enteredAvailability.indexOf(week) > -1} />
             <ListItemText primary={week} />
           </MenuItem>
         ))}

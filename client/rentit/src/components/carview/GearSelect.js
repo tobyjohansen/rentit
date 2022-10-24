@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { InputLabel, MenuItem, FormControl, Select } from "@mui/material";
 
 export default function GearSelect() {
-  const [gear, setGear] = useState("");
+  const [enteredGear, setEnteredGear] = useState("");
 
-  const handleGearChange = (event) => {
-    setGear(event.target.value);
+  const gearChangeHandler = (e) => {
+    setEnteredGear(e.target.value);
   };
 
   return (
@@ -14,9 +14,9 @@ export default function GearSelect() {
       <Select
         labelId="demo-simple-select-label"
         id="demo-simple-select"
-        value={gear}
+        value={enteredGear}
         label="Girkasse"
-        onChange={handleGearChange}
+        onChange={gearChangeHandler}
       >
         <MenuItem value={"manual"}>Manuell</MenuItem>
         <MenuItem value={"automatic"}>Automat</MenuItem>

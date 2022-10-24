@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { InputLabel, MenuItem, FormControl, Select } from "@mui/material";
 
 export default function TypeSelect() {
-  const [type, setType] = useState("");
+  const [enteredType, setEnteredType] = useState("");
 
-  const handleTypeChange = (event) => {
-    setType(event.target.value);
+  const typeChangeHandler = (e) => {
+    setEnteredType(e.target.value);
   };
 
   return (
@@ -14,9 +14,9 @@ export default function TypeSelect() {
       <Select
         labelId="demo-simple-select-label"
         id="demo-simple-select"
-        value={type}
+        value={enteredType}
         label="Biltype"
-        onChange={handleTypeChange}
+        onChange={typeChangeHandler}
       >
         <MenuItem value={"regular"}>Personbil</MenuItem>
         <MenuItem value={"large"}>Stasjonsvogn</MenuItem>
