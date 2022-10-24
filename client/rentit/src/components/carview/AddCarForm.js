@@ -96,13 +96,7 @@ export default function AddCarForm() {
     22, 23, 24,
   ];
 
-  const extras = [
-    "Barnesete",
-    "Hengerfeste",
-    "Piggdekk",
-    "Jekkestropper",
-    "Hengerfeste",
-  ];
+  const extras = ["Barnesete", "Hengerfeste", "Piggdekk", "Jekkestropper"];
 
   return (
     <Box
