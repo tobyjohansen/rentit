@@ -16,7 +16,7 @@
   background-color: rgb(182, 206, 207);
   width: 340px;
   border-radius: 4%;
-  list-style: none;
+  height: 600px;
 }
 
 .cards button{
@@ -27,13 +27,21 @@
   margin-right: 1rem;
 }
 
-.weeklist{
+.mapweek{
   display: flex;
+  flex-direction: row;
   gap: 1rem;
   margin-bottom: 1rem;
 }
 
-.week{
+.mapextras{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.liststyles{
   list-style: none;
 }
 
