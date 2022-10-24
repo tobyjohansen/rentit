@@ -1,6 +1,6 @@
 import React from "react";
 import "../../App.css";
-import Car from "./car";
+import Car from "./Car";
 
 const CarList = (props) => {
   return (
