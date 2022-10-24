@@ -23,7 +23,7 @@ export default function BasicTextFields() {
       },
     },
   };
-  const [gear, setGear] = React.useState("");
+  const [gear, setGear] = useState("");
 
   const handleGearChange = (event) => {
     setGear(event.target.value);
@@ -31,7 +31,7 @@ export default function BasicTextFields() {
 
   console.log(gear);
 
-  const [type, setType] = React.useState("");
+  const [type, setType] = useState("");
 
   const handleTypeChange = (event) => {
     setType(event.target.value);
@@ -39,7 +39,7 @@ export default function BasicTextFields() {
 
   console.log(type);
 
-  const [availability, setAvailability] = React.useState([]);
+  const [availability, setAvailability] = useState([]);
 
   console.log(availability);
 
@@ -47,15 +47,29 @@ export default function BasicTextFields() {
     const {
       target: { value },
     } = event;
-    setAvailability(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+    setAvailability(typeof value === "string" ? value.split(",") : value);
+  };
+
+  const [equipment, setEquipment] = useState([]);
+
+  const handleEquipmentChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setEquipment(typeof value === "string" ? value.split(",") : value);
   };
 
   const weeks = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
     22, 23, 24,
+  ];
+
+  const extras = [
+    "Barnesete",
+    "Hengerfeste",
+    "Piggdekk",
+    "Jekkestropper",
+    "Hengerfeste",
   ];
 
   const [save, setSave] = useState("Lagre ny bil");
@@ -110,6 +124,26 @@ export default function BasicTextFields() {
             <MenuItem key={week} value={week}>
               <Checkbox checked={availability.indexOf(week) > -1} />
               <ListItemText primary={week} />
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      <FormControl sx={{ m: 1, width: 300 }}>
+        <InputLabel id="demo-multiple-checkbox-label">Ekstrautstyr</InputLabel>
+        <Select
+          labelId="demo-multiple-checkbox-label"
+          id="demo-multiple-checkbox"
+          multiple
+          value={equipment}
+          onChange={handleEquipmentChange}
+          input={<OutlinedInput label="Ekstrautstyr" />}
+          renderValue={(selected) => selected.join(", ")}
+          MenuProps={MenuProps}
+        >
+          {extras.map((extra) => (
+            <MenuItem key={extra} value={extra}>
+              <Checkbox checked={equipment.indexOf(extra) > -1} />
+              <ListItemText primary={extra} />
             </MenuItem>
           ))}
         </Select>
