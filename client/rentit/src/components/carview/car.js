@@ -25,11 +25,20 @@ const Car = (props) => {
           {props.brand} - {props.model}
         </h2>
         <h3>Pris: {props.price} NOK/uke</h3>
+        <h3>Hentested: {props.location}</h3>
         <h4>Ledige uker:</h4>
-        <ul className="weeklist">
+        <ul className="mapweek">
           {props.availability.map((week) => (
-            <li className="week" key={week.toString()}>
+            <li className="liststyles" key={week.toString()}>
               {week}
+            </li>
+          ))}
+        </ul>
+        <h4>Eventuelt ekstrautstyr inkl:</h4>
+        <ul className="mapextras">
+          {props.extras.map((extra) => (
+            <li className="liststyles" key={extra.toString()}>
+              {extra}
             </li>
           ))}
         </ul>

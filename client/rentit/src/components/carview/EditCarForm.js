@@ -53,9 +53,26 @@ export default function BasicTextFields() {
     );
   };
 
+  const [equipment, setEquipment] = useState([]);
+
+  const handleEquipmentChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setEquipment(typeof value === "string" ? value.split(",") : value);
+  };
+
   const weeks = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
     22, 23, 24,
+  ];
+
+  const extras = [
+    "Barnesete",
+    "Hengerfeste",
+    "Piggdekk",
+    "Jekkestropper",
+    "Hengerfeste",
   ];
 
   return (
@@ -70,7 +87,11 @@ export default function BasicTextFields() {
       <Typography variant="h4" gutterBottom>
         Endre bil
       </Typography>
-      <TextField id="outlined-basic" label="Referanse" variant="outlined" />
+      <TextField
+        id="outlined-basic"
+        label="Bookingreferanse"
+        variant="outlined"
+      />
       <TextField id="outlined-basic" label="Bilmerke" variant="outlined" />
       <TextField id="outlined-basic" label="Bilmodell" variant="outlined" />
       <TextField id="outlined-basic" label="Årsmodell" variant="outlined" />
@@ -105,6 +126,26 @@ export default function BasicTextFields() {
             <MenuItem key={week} value={week}>
               <Checkbox checked={availability.indexOf(week) > -1} />
               <ListItemText primary={week} />
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      <FormControl sx={{ m: 1, width: 300 }}>
+        <InputLabel id="demo-multiple-checkbox-label">Ekstrautstyr</InputLabel>
+        <Select
+          labelId="demo-multiple-checkbox-label"
+          id="demo-multiple-checkbox"
+          multiple
+          value={equipment}
+          onChange={handleEquipmentChange}
+          input={<OutlinedInput label="Ekstrautstyr" />}
+          renderValue={(selected) => selected.join(", ")}
+          MenuProps={MenuProps}
+        >
+          {extras.map((extra) => (
+            <MenuItem key={extra} value={extra}>
+              <Checkbox checked={equipment.indexOf(extra) > -1} />
+              <ListItemText primary={extra} />
             </MenuItem>
           ))}
         </Select>
