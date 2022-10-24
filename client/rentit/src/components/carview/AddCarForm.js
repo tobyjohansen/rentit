@@ -96,9 +96,10 @@ export default function AddCarForm() {
     setEnteredPrice("");
     setEnteredYear("");
     setEnteredAvailability([]);
-    setEnteredType([]);
-    setEnteredGear([]);
+    setEnteredType("");
+    setEnteredGear("");
     setEnteredEquipment([]);
+    setSave("Lagre");
   };
 
   const weeks = [
@@ -163,10 +164,10 @@ export default function AddCarForm() {
       <EquipmentSelect />
       <TypeSelect />*/}
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Girkasse</InputLabel>
+        <InputLabel id="gear-select">Girkasse</InputLabel>
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
+          labelId="gear-select"
+          id="gear-select"
           value={enteredGear}
           label="Girkasse"
           onChange={gearChangeHandler}
@@ -176,10 +177,10 @@ export default function AddCarForm() {
         </Select>
       </FormControl>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Biltype</InputLabel>
+        <InputLabel id="type-select">Biltype</InputLabel>
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
+          labelId="type-select"
+          id="type-select"
           value={enteredType}
           label="Biltype"
           onChange={typeChangeHandler}
