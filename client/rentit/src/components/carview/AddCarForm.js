@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import {
   Box,
   TextField,
@@ -29,13 +29,19 @@ export default function BasicTextFields() {
     setGear(event.target.value);
   };
 
+  console.log(gear);
+
   const [type, setType] = React.useState("");
 
   const handleTypeChange = (event) => {
     setType(event.target.value);
   };
 
+  console.log(type);
+
   const [availability, setAvailability] = React.useState([]);
+
+  console.log(availability);
 
   const handleAvailabilityChange = (event) => {
     const {
@@ -48,31 +54,15 @@ export default function BasicTextFields() {
   };
 
   const weeks = [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+    22, 23, 24,
   ];
+
+  const [save, setSave] = useState("Lagre ny bil");
+
+  const saveHandler = () => {
+    setSave("Ny bil lagret");
+  };
 
   return (
     <Box
@@ -138,7 +128,9 @@ export default function BasicTextFields() {
           <MenuItem value={"van"}>Varebil</MenuItem>
         </Select>
       </FormControl>
-      <button className="buttons">Lagre bil</button>
+      <button className="buttons" onClick={saveHandler}>
+        {save}
+      </button>
     </Box>
   );
 }
