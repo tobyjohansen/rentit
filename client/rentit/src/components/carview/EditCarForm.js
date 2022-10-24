@@ -5,7 +5,7 @@ import WeekSelect from "./WeekSelect";
 import EquipmentSelect from "./EquipmentSelect";
 import TypeSelect from "./TypeSelect";
 
-export default function BasicTextFields() {
+export default function EditCarForm() {
   const [buttonTitle, setButtonTitle] = useState("Oppdater bildata");
 
   const clickHandler = () => {
@@ -38,11 +38,9 @@ export default function BasicTextFields() {
       <WeekSelect />
       <EquipmentSelect />
       <TypeSelect />
-      <Box>
-        <button className="buttons" onClick={clickHandler}>
-          {buttonTitle}
-        </button>
-      </Box>
+      <button type="submit" className="buttons" onClick={clickHandler}>
+        {buttonTitle}
+      </button>
     </Box>
   );
 }

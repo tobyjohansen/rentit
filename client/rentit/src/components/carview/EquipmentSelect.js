@@ -21,13 +21,13 @@ export default function EquipmentSelect() {
     },
   };
 
-  const [equipment, setEquipment] = useState([]);
+  const [enteredEquipment, setEnteredEquipment] = useState([]);
 
-  const handleEquipmentChange = (event) => {
+  const equipmentChangeHandler = (event) => {
     const {
       target: { value },
     } = event;
-    setEquipment(typeof value === "string" ? value.split(",") : value);
+    setEnteredEquipment(typeof value === "string" ? value.split(",") : value);
   };
 
   const extras = [
@@ -45,15 +45,15 @@ export default function EquipmentSelect() {
         labelId="demo-multiple-checkbox-label"
         id="demo-multiple-checkbox"
         multiple
-        value={equipment}
-        onChange={handleEquipmentChange}
+        value={enteredEquipment}
+        onChange={equipmentChangeHandler}
         input={<OutlinedInput label="Ekstrautstyr" />}
         renderValue={(selected) => selected.join(", ")}
         MenuProps={MenuProps}
       >
         {extras.map((extra) => (
           <MenuItem key={extra} value={extra}>
-            <Checkbox checked={equipment.indexOf(extra) > -1} />
+            <Checkbox checked={enteredEquipment.indexOf(extra) > -1} />
             <ListItemText primary={extra} />
           </MenuItem>
         ))}
