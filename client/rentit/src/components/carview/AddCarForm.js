@@ -89,6 +89,16 @@ export default function AddCarForm() {
     };
 
     console.log(carData);
+    setEnteredBrand("");
+    setEnteredGear("");
+    setEnteredLocation("");
+    setEnteredModel("");
+    setEnteredPrice("");
+    setEnteredYear("");
+    setEnteredAvailability([]);
+    setEnteredType([]);
+    setEnteredGear([]);
+    setEnteredEquipment([]);
   };
 
   const weeks = [
@@ -116,30 +126,35 @@ export default function AddCarForm() {
         id="outlined-basic"
         label="Bilmerke"
         variant="outlined"
+        value={enteredBrand}
       />
       <TextField
         onChange={carModelChangeHandler}
         id="outlined-basic"
         label="Bilmodell"
         variant="outlined"
+        value={enteredModel}
       />
       <TextField
         onChange={yearChangeHandler}
         id="outlined-basic"
         label="Årsmodell"
         variant="outlined"
+        value={enteredYear}
       />
       <TextField
         onChange={locationChangeHandler}
         id="outlined-basic"
         label="Hentested"
         variant="outlined"
+        value={enteredLocation}
       />
       <TextField
         onChange={priceChangeHandler}
         id="outlined-basic"
         label="Pris/uke"
         variant="outlined"
+        value={enteredPrice}
       />
       {/* 
       <GearSelect />
