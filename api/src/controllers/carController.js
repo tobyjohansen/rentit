@@ -50,7 +50,8 @@ exports.createCar = (req, res) => {
     );
 
     //change this logic
-    cars.carList.push(newCar.carObject);
+    //cars.carList.push(newCar.carObject);
+    cars.createCar(newCar.carObject);
 
     fs.writeFile(
       `${__dirname}/../../data/cars.json`,

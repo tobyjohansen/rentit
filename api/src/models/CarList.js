@@ -32,6 +32,10 @@ class CarList {
     this.carList = newCarList;
   }
 
+  createCar(carObj) {
+    this.carList.push(carObj);
+  }
+
   updateCar(carID, newCarObj) {
     let values = Object.keys(newCarObj);
 
