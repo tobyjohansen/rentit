@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import {
   Box,
   TextField,
@@ -13,6 +13,12 @@ import {
 } from "@mui/material";
 
 export default function BasicTextFields() {
+  const [buttonTitle, setButtonTitle] = useState("Oppdater bildata");
+
+  const clickHandler = () => {
+    setButtonTitle("Bildata oppdatert!");
+  };
+
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
   const MenuProps = {
@@ -23,19 +29,19 @@ export default function BasicTextFields() {
       },
     },
   };
-  const [gear, setGear] = React.useState("");
+  const [gear, setGear] = useState("");
 
   const handleGearChange = (event) => {
     setGear(event.target.value);
   };
 
-  const [type, setType] = React.useState("");
+  const [type, setType] = useState("");
 
   const handleTypeChange = (event) => {
     setType(event.target.value);
   };
 
-  const [availability, setAvailability] = React.useState([]);
+  const [availability, setAvailability] = useState([]);
 
   const handleAvailabilityChange = (event) => {
     const {
@@ -48,30 +54,8 @@ export default function BasicTextFields() {
   };
 
   const weeks = [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+    22, 23, 24,
   ];
 
   return (
@@ -139,7 +123,11 @@ export default function BasicTextFields() {
           <MenuItem value={"van"}>Varebil</MenuItem>
         </Select>
       </FormControl>
-      <button className="buttons">Oppdater bil</button>
+      <Box>
+        <button className="buttons" onClick={clickHandler}>
+          {buttonTitle}
+        </button>
+      </Box>
     </Box>
   );
 }

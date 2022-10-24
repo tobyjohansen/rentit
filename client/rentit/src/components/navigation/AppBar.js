@@ -141,7 +141,7 @@ export default function PrimarySearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar sx={{ display: "flex", gap: "3 rem" }}>
+        <Toolbar sx={{ display: "flex", gap: "3 rem", height: "150px" }}>
           <IconButton
             size="large"
             edge="start"
@@ -170,7 +170,7 @@ export default function PrimarySearchAppBar() {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Søk…"
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
