@@ -75,12 +75,38 @@ exports.createCar = (req, res) => {
 };
 
 exports.updateCar = (req, res) => {
-  res.status(200).json({
-    status: "success",
-    data: {
-      car: "Updated car",
-    },
-  });
+  const newCar = new Car(
+    req.params.id,
+    null,
+    req.body.price,
+    req.body.model,
+    req.body.brand,
+    req.body.year,
+    req.body.location,
+    req.body.availability,
+    req.body.type,
+    req.body.fuel,
+    req.body.gear,
+    req.body.km_limit,
+    req.body.extras,
+    req.body.price_per_km_after_limit,
+    req.body.owner
+  );
+
+  cars.updateCar(req.params.id, newCar);
+
+  fs.writeFile(
+    `${__dirname}/../../data/cars.json`,
+    JSON.stringify(cars.carList),
+    (err) => {
+      res.status(201).json({
+        status: "success",
+        data: {
+          cars: newCar.jsonStringify(),
+        },
+      });
+    }
+  );
 };
 
 exports.deleteCar = (req, res) => {

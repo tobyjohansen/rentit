@@ -18,14 +18,8 @@ class CarList {
     return newId;
   }
 
-  assigneID(obj) {
-    const newCar = Object.assign({ id: this.createID() }, obj);
-    console.log(newCar);
-    return newCar;
-  }
-
   removeCar(carID) {
-    delete this.carList[carID];
+    delete this.carList[carID - 1];
 
     const newCarList = this.carList.filter((element) => {
       if (Object.keys(element).length !== 0) {
@@ -36,6 +30,18 @@ class CarList {
     });
 
     this.carList = newCarList;
+  }
+
+  updateCar(carID, newCarObj) {
+    let values = Object.keys(newCarObj);
+
+    values.forEach((value) => {
+      if (newCarObj[value] != null) {
+        this.carList[carID - 1][value] = newCarObj[value];
+      }
+    });
+
+    //this.carList[carID - 1] = newCarObj;
   }
 }
 
