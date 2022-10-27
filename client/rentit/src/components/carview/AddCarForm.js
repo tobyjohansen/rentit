@@ -243,7 +243,7 @@ export default function AddCarForm() {
       <TextField
         onChange={pricePerKmChangeHandler}
         id="outlined-basic"
-        label="Pris per km over max"
+        label="Pris/km over grense"
         variant="outlined"
         value={enteredPricePerKmOver}
       />
