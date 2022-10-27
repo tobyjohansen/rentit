@@ -40,7 +40,7 @@ class CarList {
     let values = Object.keys(newCarObj);
 
     values.forEach((value) => {
-      if (newCarObj[value] != null) {
+      if (newCarObj[value] != null && newCarObj[value].length != 0) {
         this.carList[carID - 1][value] = newCarObj[value];
       }
     });
