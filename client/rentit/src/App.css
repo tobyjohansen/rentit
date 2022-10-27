@@ -17,6 +17,7 @@
   width: 340px;
   border-radius: 4%;
   height: 600px;
+  list-style: none;
 }
 
 .cards button{

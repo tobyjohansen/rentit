@@ -75,7 +75,6 @@ export default function AddCarForm() {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-
     const carData = {
       brand: enteredBrand,
       model: enteredModel,
@@ -85,9 +84,14 @@ export default function AddCarForm() {
       availability: enteredAvailability,
       extras: enteredEquipment,
       gear: enteredGear,
-      type: enteredGear,
+      type: enteredType,
     };
 
+    fetch("http://localhost:3300/api/v1/cars", {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify(carData),
+    });
     console.log(carData);
     setEnteredBrand("");
     setEnteredGear("");
@@ -172,8 +176,8 @@ export default function AddCarForm() {
           label="Girkasse"
           onChange={gearChangeHandler}
         >
-          <MenuItem value={"manual"}>Manuell</MenuItem>
-          <MenuItem value={"automatic"}>Automat</MenuItem>
+          <MenuItem value={"Manuell"}>Manuell</MenuItem>
+          <MenuItem value={"Automat"}>Automat</MenuItem>
         </Select>
       </FormControl>
       <FormControl fullWidth>
