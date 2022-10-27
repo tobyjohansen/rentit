@@ -14,22 +14,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 3rem;
+  margin-top: 3rem;
   padding: 4rem;
-  background-color: #bdcdcea1;
-  width: 220px;
+  background-color: #e0e0e0;
+  gap: 1rem;
+  width: 250px;
   height: 320px;
   list-style: none;
   border-radius: 8%;
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)
-}
-
-.each_card button{
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  margin-right: 1rem;
 }
 
 .mapweek{
@@ -48,12 +41,6 @@
 
 .liststyles{
   list-style: none;
-}
-
-.buttons{
-  padding: 0.5rem;
-  margin: 0.5rem;
-
 }
 
 img{

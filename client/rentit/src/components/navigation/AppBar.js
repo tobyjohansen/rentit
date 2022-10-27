@@ -1,65 +1,15 @@
 import React, { useState } from "react";
-//import { styled, alpha } from "@mui/material/styles";
 import {
   AppBar,
   Box,
   Toolbar,
   IconButton,
   Typography,
-  //InputBase,
   MenuItem,
   Menu,
 } from "@mui/material";
-//import MenuIcon from "@mui/icons-material/Menu";
-//import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
-
-/*
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
-}));
-*/
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -141,7 +91,7 @@ export default function PrimarySearchAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ bgcolor: "#e0e0e0" }}>
         <Toolbar
           sx={{
             display: "flex",
@@ -149,15 +99,6 @@ export default function PrimarySearchAppBar() {
             height: "150px",
           }}
         >
-          {/*}<IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 5 }}
-          >
-            <MenuIcon />
-          </IconButton>*/}
           <Typography
             variant="h3"
             noWrap
@@ -167,33 +108,21 @@ export default function PrimarySearchAppBar() {
               padding: "2rem",
               letterSpacing: "0.7rem",
               textTransform: "uppercase",
-              mr: "5rem",
+              mr: "7rem",
               fontSize: "2em",
             }}
           >
             RentIt
           </Typography>
-          {/*}
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Søk…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>*/}
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="div"
             sx={{
               display: { xs: "none", sm: "block" },
               padding: "2rem",
               letterSpacing: "0.7rem",
-              textTransform: "uppercase",
               mr: "4rem",
-              fontSize: "1.1em",
             }}
           >
             Velkommen, Stine!
@@ -205,10 +134,9 @@ export default function PrimarySearchAppBar() {
             sx={{
               display: { xs: "none", sm: "block" },
               padding: "2rem",
-              letterSpacing: "0.2rem",
+              letterSpacing: "0.5rem",
               textTransform: "uppercase",
               mr: "1rem",
-              fontSize: "1.1em",
             }}
           >
             Utleier | Leietaker

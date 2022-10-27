@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import car from "../../assets/car.png";
 import "../../App.css";
+import { Box, Button, Typography } from "@mui/material";
 
 const Car = (props) => {
   const [readMore, setReadMore] = useState("Les mer");
@@ -9,19 +10,24 @@ const Car = (props) => {
   };
 
   return (
-    <div>
-      <ul className="each_card_list">
-        <li>
+    <Box>
+      <ul className="each_card">
+        <li className="each_card_list">
           <img src={car} alt="Cartoon scetch of a car"></img>
-          <h3 className="brand_model_text">
+          <Typography className="brand_model_text" variant="h5">
             {props.brand} {props.model}
-          </h3>
-          <h4>Pris: {props.price} NOK/uke</h4>
-          <h5>Hentested: {props.location}</h5>
-          <button onClick={readMoreHandler}>{readMore}</button>
+          </Typography>
+          <Typography variant="h6">Pris: {props.price} NOK/uke</Typography>
+          <Typography variant="h6">Hentested: {props.location}</Typography>
+          <Button
+            onClick={readMoreHandler}
+            sx={{ bgcolor: "#ffab91", color: "black" }}
+          >
+            {readMore}
+          </Button>
         </li>
       </ul>
-    </div>
+    </Box>
   );
 };
 

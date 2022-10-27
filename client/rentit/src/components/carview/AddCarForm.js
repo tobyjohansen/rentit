@@ -287,9 +287,9 @@ export default function AddCarForm() {
           ))}
         </Select>
       </FormControl>
-      <button type="submit" className="buttons" onClick={saveHandler}>
+      <Button type="submit" className="buttons" onClick={saveHandler}>
         {save}
-      </button>
+      </Button>
     </Box>
   );
 }
