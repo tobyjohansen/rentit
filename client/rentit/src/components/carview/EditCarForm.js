@@ -94,6 +94,19 @@ export default function EditCarForm() {
       id: enteredReference,
     };
 
+    //Added Update fetch method for updateing to api
+    const url = "http://localhost:3300/api/v1/cars/" + enteredReference;
+    fetch(url, {
+      method: "PATCH",
+      mode: "cors",
+      body: JSON.stringify(carData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    //End of fetch
+
     console.log(carData);
     setEnteredBrand("");
     setEnteredGear("");

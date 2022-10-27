@@ -76,6 +76,7 @@ exports.createCar = (req, res) => {
 };
 
 exports.updateCar = (req, res) => {
+  console.log(req.body);
   const newCar = new Car(
     req.params.id,
     null,
