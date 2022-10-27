@@ -1,12 +1,12 @@
 import React from "react";
 import "../../App.css";
-import CarPart from "./CarPart";
+import Car from "./Car";
 
 const CarList = (props) => {
   return (
     <ul className="card">
       {props.cars.map((car) => (
-        <CarPart
+        <Car
           key={car.id}
           price={car.price}
           model={car.model}
