@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../App.css";
 import {
   Box,
   TextField,
@@ -23,6 +24,9 @@ export default function AddCarForm() {
   const [enteredEquipment, setEnteredEquipment] = useState([]);
   const [enteredGear, setEnteredGear] = useState("");
   const [enteredType, setEnteredType] = useState("");
+  const [enteredKmLimit, setEnteredKmLimit] = useState("");
+  const [enteredFuel, setEnteredFuel] = useState("");
+  const [enteredPricePerKmOver, setEnteredPricePerKmOver] = useState("");
 
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
@@ -73,6 +77,15 @@ export default function AddCarForm() {
   const typeChangeHandler = (e) => {
     setEnteredType(e.target.value);
   };
+  const kmChangeHandler = (e) => {
+    setEnteredKmLimit(e.target.value);
+  };
+  const fuelChangeHandler = (e) => {
+    setEnteredFuel(e.target.value);
+  };
+  const pricePerKmChangeHandler = (e) => {
+    setEnteredPricePerKmOver(e.target.value);
+  };
   const submitHandler = (e) => {
     e.preventDefault();
     const carData = {
@@ -85,6 +98,9 @@ export default function AddCarForm() {
       extras: enteredEquipment,
       gear: enteredGear,
       type: enteredType,
+      km_limit: enteredKmLimit,
+      fuel: enteredFuel,
+      price_per_km_after_limit: enteredPricePerKmOver,
     };
 
     //Fetch Post method for creating a new car
@@ -110,6 +126,9 @@ export default function AddCarForm() {
     setEnteredGear("");
     setEnteredEquipment([]);
     setSave("Lagre");
+    setEnteredKmLimit("");
+    setEnteredFuel("");
+    setEnteredPricePerKmOver("");
   };
 
   const weeks = [
@@ -129,7 +148,7 @@ export default function AddCarForm() {
       autoComplete="off"
       onSubmit={submitHandler}
     >
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h5" gutterBottom>
         Legg til bil
       </Typography>
       <TextField
@@ -167,12 +186,33 @@ export default function AddCarForm() {
         variant="outlined"
         value={enteredPrice}
       />
+      <TextField
+        onChange={kmChangeHandler}
+        id="outlined-basic"
+        label="Km-grense"
+        variant="outlined"
+        value={enteredKmLimit}
+      />
       {/* 
       <GearSelect />
       <WeekSelect />
       
       <EquipmentSelect />
       <TypeSelect />*/}
+      <FormControl fullWidth>
+        <InputLabel id="fuel-select">Drivstoff</InputLabel>
+        <Select
+          labelId="fuel-select"
+          id="fuel-select"
+          value={enteredFuel}
+          label="Drivstoff"
+          onChange={fuelChangeHandler}
+        >
+          <MenuItem value={"Gas"}>Bensin</MenuItem>
+          <MenuItem value={"Diesel"}>Diesel</MenuItem>
+          <MenuItem value={"Electricity"}>Elektrisitet</MenuItem>
+        </Select>
+      </FormControl>
       <FormControl fullWidth>
         <InputLabel id="gear-select">Girkasse</InputLabel>
         <Select
@@ -195,11 +235,18 @@ export default function AddCarForm() {
           label="Biltype"
           onChange={typeChangeHandler}
         >
-          <MenuItem value={"regular"}>Personbil</MenuItem>
-          <MenuItem value={"large"}>Stasjonsvogn</MenuItem>
-          <MenuItem value={"van"}>Varebil</MenuItem>
+          <MenuItem value={"Regular"}>Personbil</MenuItem>
+          <MenuItem value={"Large"}>Stasjonsvogn</MenuItem>
+          <MenuItem value={"Van"}>Varebil</MenuItem>
         </Select>
       </FormControl>
+      <TextField
+        onChange={pricePerKmChangeHandler}
+        id="outlined-basic"
+        label="Pris per km over max"
+        variant="outlined"
+        value={enteredPricePerKmOver}
+      />
       <FormControl sx={{ m: 1, width: 300 }}>
         <InputLabel id="demo-multiple-checkbox-label">Ekstrautstyr</InputLabel>
         <Select

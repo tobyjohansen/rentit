@@ -1,17 +1,17 @@
-import * as React from "react";
-import { styled, alpha } from "@mui/material/styles";
+import React, { useState } from "react";
+//import { styled, alpha } from "@mui/material/styles";
 import {
   AppBar,
   Box,
   Toolbar,
   IconButton,
   Typography,
-  InputBase,
+  //InputBase,
   MenuItem,
   Menu,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
+//import MenuIcon from "@mui/icons-material/Menu";
+//import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import "@fontsource/roboto/300.css";
@@ -19,6 +19,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
+/*
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -58,16 +59,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
+*/
 
 export default function PrimarySearchAppBar() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleProfileMenuOpen = (e) => {
+    setAnchorEl(e.currentTarget);
   };
 
   const handleMobileMenuClose = () => {
@@ -79,8 +81,8 @@ export default function PrimarySearchAppBar() {
     handleMobileMenuClose();
   };
 
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
+  const handleMobileMenuOpen = (e) => {
+    setMobileMoreAnchorEl(e.currentTarget);
   };
 
   const menuId = "primary-search-account-menu";
@@ -102,7 +104,6 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem onClick={handleMenuClose}>Min profil</MenuItem>
       <MenuItem onClick={handleMenuClose}>Mine biler</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Ny bil</MenuItem>
     </Menu>
   );
 
@@ -141,8 +142,14 @@ export default function PrimarySearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar sx={{ display: "flex", gap: "3 rem", height: "150px" }}>
-          <IconButton
+        <Toolbar
+          sx={{
+            display: "flex",
+            gap: "3 rem",
+            height: "200px",
+          }}
+        >
+          {/*}<IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -150,9 +157,9 @@ export default function PrimarySearchAppBar() {
             sx={{ mr: 5 }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton>*/}
           <Typography
-            variant="h4"
+            variant="h3"
             noWrap
             component="div"
             sx={{
@@ -160,11 +167,13 @@ export default function PrimarySearchAppBar() {
               padding: "2rem",
               letterSpacing: "0.7rem",
               textTransform: "uppercase",
-              mr: "50rem",
+              mr: "30rem",
+              fontSize: "3em",
             }}
           >
             RentIt
           </Typography>
+          {/*}
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -173,7 +182,35 @@ export default function PrimarySearchAppBar() {
               placeholder="Søk…"
               inputProps={{ "aria-label": "search" }}
             />
-          </Search>
+          </Search>*/}
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{
+              display: { xs: "none", sm: "block" },
+              padding: "2rem",
+              letterSpacing: "0.7rem",
+              textTransform: "uppercase",
+              mr: "10rem",
+            }}
+          >
+            Velkommen, Stine!
+          </Typography>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{
+              display: { xs: "none", sm: "block" },
+              padding: "2rem",
+              letterSpacing: "0.2rem",
+              textTransform: "uppercase",
+              mr: "1rem",
+            }}
+          >
+            Utleier | Leietaker
+          </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton

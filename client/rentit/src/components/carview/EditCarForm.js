@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../App.css";
 import {
   Box,
   TextField,
@@ -24,6 +25,9 @@ export default function EditCarForm() {
   const [enteredGear, setEnteredGear] = useState("");
   const [enteredType, setEnteredType] = useState("");
   const [enteredReference, setEnteredReference] = useState("");
+  const [enteredKmLimit, setEnteredKmLimit] = useState("");
+  const [enteredFuel, setEnteredFuel] = useState("");
+  const [enteredPricePerKmOver, setEnteredPricePerKmOver] = useState("");
 
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
@@ -78,6 +82,15 @@ export default function EditCarForm() {
   const referenceHandler = (e) => {
     setEnteredReference(e.target.value);
   };
+  const kmChangeHandler = (e) => {
+    setEnteredKmLimit(e.target.value);
+  };
+  const fuelChangeHandler = (e) => {
+    setEnteredFuel(e.target.value);
+  };
+  const pricePerKmChangeHandler = (e) => {
+    setEnteredPricePerKmOver(e.target.value);
+  };
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -92,6 +105,9 @@ export default function EditCarForm() {
       gear: enteredGear,
       type: enteredGear,
       id: enteredReference,
+      km_limit: enteredKmLimit,
+      fuel: enteredFuel,
+      price_per_km_after_limit: enteredPricePerKmOver,
     };
 
     //Added Update fetch method for updateing to api
@@ -120,6 +136,9 @@ export default function EditCarForm() {
     setEnteredEquipment([]);
     setSave("Lagre");
     setEnteredReference("");
+    setEnteredKmLimit("");
+    setEnteredFuel("");
+    setEnteredPricePerKmOver("");
   };
 
   const weeks = [
@@ -133,13 +152,16 @@ export default function EditCarForm() {
     <Box
       component="form"
       sx={{
-        "& > :not(style)": { m: 2, width: "25ch" },
+        "& > :not(style)": {
+          m: 2,
+          width: "25ch",
+        },
       }}
       noValidate
       autoComplete="off"
       onSubmit={submitHandler}
     >
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h5" gutterBottom>
         Endre bil
       </Typography>
       <TextField
@@ -184,6 +206,28 @@ export default function EditCarForm() {
         variant="outlined"
         value={enteredPrice}
       />
+      <TextField
+        onChange={kmChangeHandler}
+        id="outlined-basic"
+        label="Km-grense"
+        variant="outlined"
+        value={enteredKmLimit}
+      />
+      <FormControl fullWidth>
+        <InputLabel id="fuel-select">Drivstoff</InputLabel>
+        <Select
+          labelId="fuel-select"
+          id="fuel-select"
+          value={enteredFuel}
+          label="Drivstoff"
+          onChange={fuelChangeHandler}
+        >
+          <MenuItem value={"Gas"}>Bensin</MenuItem>
+          <MenuItem value={"Diesel"}>Diesel</MenuItem>
+          <MenuItem value={"Electricity"}>Elektrisitet</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl fullWidth></FormControl>
       <FormControl fullWidth>
         <InputLabel id="gear-select">Girkasse</InputLabel>
         <Select
@@ -193,8 +237,8 @@ export default function EditCarForm() {
           label="Girkasse"
           onChange={gearChangeHandler}
         >
-          <MenuItem value={"manual"}>Manuell</MenuItem>
-          <MenuItem value={"automatic"}>Automat</MenuItem>
+          <MenuItem value={"Manual"}>Manuell</MenuItem>
+          <MenuItem value={"Automatic"}>Automat</MenuItem>
         </Select>
       </FormControl>
       <FormControl fullWidth>
@@ -206,11 +250,18 @@ export default function EditCarForm() {
           label="Biltype"
           onChange={typeChangeHandler}
         >
-          <MenuItem value={"regular"}>Personbil</MenuItem>
-          <MenuItem value={"large"}>Stasjonsvogn</MenuItem>
-          <MenuItem value={"van"}>Varebil</MenuItem>
+          <MenuItem value={"Regular"}>Personbil</MenuItem>
+          <MenuItem value={"Large"}>Stasjonsvogn</MenuItem>
+          <MenuItem value={"Van"}>Varebil</MenuItem>
         </Select>
       </FormControl>
+      <TextField
+        onChange={pricePerKmChangeHandler}
+        id="outlined-basic"
+        label="Pris per km over max"
+        variant="outlined"
+        value={enteredPricePerKmOver}
+      />
       <FormControl sx={{ m: 1, width: 300 }}>
         <InputLabel id="demo-multiple-checkbox-label">Ekstrautstyr</InputLabel>
         <Select
