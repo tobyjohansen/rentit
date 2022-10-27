@@ -142,7 +142,13 @@ export default function PrimarySearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar sx={{ display: "flex", gap: "3 rem", height: "150px" }}>
+        <Toolbar
+          sx={{
+            display: "flex",
+            gap: "3 rem",
+            height: "200px",
+          }}
+        >
           {/*}<IconButton
             size="large"
             edge="start"
@@ -153,7 +159,7 @@ export default function PrimarySearchAppBar() {
             <MenuIcon />
           </IconButton>*/}
           <Typography
-            variant="h4"
+            variant="h3"
             noWrap
             component="div"
             sx={{
@@ -161,7 +167,8 @@ export default function PrimarySearchAppBar() {
               padding: "2rem",
               letterSpacing: "0.7rem",
               textTransform: "uppercase",
-              mr: "50rem",
+              mr: "30rem",
+              fontSize: "3em",
             }}
           >
             RentIt
@@ -176,6 +183,34 @@ export default function PrimarySearchAppBar() {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>*/}
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{
+              display: { xs: "none", sm: "block" },
+              padding: "2rem",
+              letterSpacing: "0.7rem",
+              textTransform: "uppercase",
+              mr: "10rem",
+            }}
+          >
+            Velkommen, Stine!
+          </Typography>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{
+              display: { xs: "none", sm: "block" },
+              padding: "2rem",
+              letterSpacing: "0.2rem",
+              textTransform: "uppercase",
+              mr: "1rem",
+            }}
+          >
+            Utleier | Leietaker
+          </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton

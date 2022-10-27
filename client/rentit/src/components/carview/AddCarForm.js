@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../App.css";
 import {
   Box,
   TextField,
@@ -147,7 +148,7 @@ export default function AddCarForm() {
       autoComplete="off"
       onSubmit={submitHandler}
     >
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h5" gutterBottom>
         Legg til bil
       </Typography>
       <TextField

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../App.css";
 import {
   Box,
   TextField,
@@ -151,13 +152,16 @@ export default function EditCarForm() {
     <Box
       component="form"
       sx={{
-        "& > :not(style)": { m: 2, width: "25ch" },
+        "& > :not(style)": {
+          m: 2,
+          width: "25ch",
+        },
       }}
       noValidate
       autoComplete="off"
       onSubmit={submitHandler}
     >
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h5" gutterBottom>
         Endre bil
       </Typography>
       <TextField

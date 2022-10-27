@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import AddCarForm from "../components/carview/AddCarForm";
 import EditCarForm from "../components/carview/EditCarForm";
+import "../App.css";
 
 function Grid() {
   //Fetch all cars from the api
@@ -44,7 +45,7 @@ function Grid() {
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: "repeat(5, 1fr)",
+          gridTemplateColumns: "repeat(2fr, 1fr, 1fr, 1fr, 1fr)",
           gap: 1,
           gridTemplateRows: "auto",
           gridTemplateAreas: `"header header header header header"
@@ -56,33 +57,35 @@ function Grid() {
         <Box
           sx={{
             gridArea: "header",
-            border: "1px solid black",
           }}
         >
           <AppBar />
         </Box>
-        <Box sx={{ gridArea: "sidebar", border: "1px solid black", p: "1rem" }}>
+        <Box
+          sx={{
+            gridArea: "sidebar",
+            p: "1rem",
+            borderRight: "1px solid lightgrey",
+            marginTop: "2rem",
+            marginBotton: "2rem",
+          }}
+        >
           <AddCarForm /> <EditCarForm />
         </Box>
-        <Box sx={{ gridArea: "info", border: "1px solid black", p: "1rem" }}>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </p>
-          <p>
-            {" "}
-            orem Ipsum passages, and more recently with desktop publishing
-            software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+        <Box
+          sx={{
+            gridArea: "info",
+            fontSize: "1.2em",
+            textAlign: "center",
+          }}
+        >
+          <p>Velkommen til RENTIT!</p>
+          <p>Finn en bil i lista under, da vel!</p>
         </Box>
-        <Box sx={{ gridArea: "main", border: "1px solid black" }}>
+        <Box sx={{ gridArea: "main" }}>
           <CarList cars={cars} />
         </Box>
-        <Box sx={{ gridArea: "footer", border: "1px solid black", p: "1rem" }}>
-          Footer
-        </Box>
+        <Box sx={{ gridArea: "footer", p: "1rem" }}>Footer</Box>
       </Box>
     </div>
   );
