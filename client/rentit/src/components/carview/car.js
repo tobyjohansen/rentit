@@ -11,14 +11,24 @@ const style = {
   width: 400,
   bgcolor: "background.paper",
   border: "2px solid #000",
+  borderRadius: "8%",
   boxShadow: 24,
   p: 4,
 };
 
 const CarPart = (props) => {
   const [open, setOpen] = useState(false);
+  const [rent, setRent] = useState("Lei denne");
+  const [carReturn, setCarReturn] = useState("Lever bil");
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const rentHandler = () => {
+    setRent("Du har leid denne");
+  };
+  const carReturnHandler = () => {
+    setCarReturn("Bilen er levert");
+  };
 
   return (
     <Box>
@@ -69,6 +79,8 @@ const CarPart = (props) => {
                   </li>
                 ))}
               </ul>
+              <Button onClick={rentHandler}>{rent}</Button>
+              <Button onClick={carReturnHandler}>{carReturn}</Button>
             </Box>
           </Modal>
         </li>
