@@ -91,7 +91,12 @@ export default function PrimarySearchAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ bgcolor: "#e0e0e0" }}>
+      <AppBar
+        position="static"
+        sx={{
+          bgcolor: "#e0e0e0",
+        }}
+      >
         <Toolbar
           sx={{
             display: "flex",
@@ -108,24 +113,11 @@ export default function PrimarySearchAppBar() {
               padding: "2rem",
               letterSpacing: "0.7rem",
               textTransform: "uppercase",
-              mr: "7rem",
+              mr: "12rem",
               fontSize: "2em",
             }}
           >
             RentIt
-          </Typography>
-          <Typography
-            variant="h5"
-            noWrap
-            component="div"
-            sx={{
-              display: { xs: "none", sm: "block" },
-              padding: "2rem",
-              letterSpacing: "0.7rem",
-              mr: "4rem",
-            }}
-          >
-            Velkommen, Stine!
           </Typography>
           <Typography
             variant="h6"
@@ -135,14 +127,13 @@ export default function PrimarySearchAppBar() {
               display: { xs: "none", sm: "block" },
               padding: "2rem",
               letterSpacing: "0.5rem",
-              textTransform: "uppercase",
-              mr: "1rem",
+              mr: "4rem",
             }}
           >
-            Utleier | Leietaker
+            Velkommen, Ola Nordmann!
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ mr: "3rem", display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
               edge="end"
@@ -152,7 +143,7 @@ export default function PrimarySearchAppBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              <AccountCircle sx={{ fontSize: "1.3em" }} />
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>

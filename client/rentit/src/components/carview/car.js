@@ -24,7 +24,7 @@ const CarPart = (props) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const rentHandler = () => {
-    setRent("Du har leid denne");
+    setRent("UTLEID");
   };
   const carReturnHandler = () => {
     setCarReturn("Bilen er levert");
@@ -48,22 +48,36 @@ const CarPart = (props) => {
             aria-describedby="modal-modal-description"
           >
             <Box sx={style}>
-              <Typography className="brand_model_text" variant="h5">
+              <Typography variant="h5" sx={{ m: "1rem" }}>
                 {props.brand} {props.model}
               </Typography>
-              <Typography variant="h6">Pris: {props.price} NOK/uke</Typography>
-              <Typography variant="h6">Hentested: {props.location}</Typography>
-              <Typography variant="h6">Årsmodell: {props.year}</Typography>
-              <Typography variant="h6">Type bil: {props.type}</Typography>
-              <Typography variant="h6">Drivstoff: {props.fuel}</Typography>
-              <Typography variant="h6">Gir: {props.gear}</Typography>
-              <Typography variant="h6">
+              <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
+                Pris: {props.price} NOK/uke
+              </Typography>
+              <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
+                Hentested: {props.location}
+              </Typography>
+              <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
+                Årsmodell: {props.year}
+              </Typography>
+              <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
+                Type bil: {props.type}
+              </Typography>
+              <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
+                Drivstoff: {props.fuel}
+              </Typography>
+              <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
+                Gir: {props.gear}
+              </Typography>
+              <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
                 Max antall km: {props.km_limit}
               </Typography>
-              <Typography variant="h6">
+              <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
                 Pris per km over: {props.price_per_km_after_limit}
               </Typography>
-              <Typography variant="h6">Ledige uker:</Typography>
+              <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
+                Ledige uker:
+              </Typography>
               <ul className="mapweek">
                 {props.availability.map((week) => (
                   <li className="liststyles" key={week.toString()}>
@@ -71,7 +85,9 @@ const CarPart = (props) => {
                   </li>
                 ))}
               </ul>
-              <Typography variant="h6">Eventuelt ekstrautstyr inkl:</Typography>
+              <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
+                Eventuelt ekstrautstyr inkl:
+              </Typography>
               <ul className="mapextras">
                 {props.extras.map((extra) => (
                   <li className="liststyles" key={extra.toString()}>
