@@ -190,6 +190,5 @@
     "extras": ["Barnesete"],
     "price_per_km_after_limit": 4,
     "owner": 12
-  },
-  { "id": 13 }
+  }
 ]
