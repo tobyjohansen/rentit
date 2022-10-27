@@ -10,17 +10,21 @@
 
 }
 
-.cardlist {
-  margin: 1rem;
-  padding: 5rem;
-  background-color: rgb(182, 206, 207);
+.each_card_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem;
+  padding: 4rem;
+  background-color: #bdcdcea1;
   width: 220px;
-  border-radius: 4%;
-  height: 500px;
+  height: 320px;
   list-style: none;
+  border-radius: 8%;
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)
 }
 
-.cards button{
+.each_card button{
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -53,6 +57,8 @@
 }
 
 img{
-  max-width: 200px;
+  width: 100%;
+  border-radius: 8%;
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)
 }
 

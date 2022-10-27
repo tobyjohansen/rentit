@@ -1,12 +1,11 @@
 import "./App.css";
-import Grid from "./components/Grid";
-import React from 'react';
+import MainGrid from "./components/MainGrid";
+import React from "react";
 
 function App() {
-
   return (
     <div>
-      <Grid />
+      <MainGrid />
     </div>
   );
 }

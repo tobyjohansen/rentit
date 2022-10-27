@@ -19,7 +19,7 @@ const Car = (props) => {
 
   return (
     <div>
-      <li className="cardlist">
+      <li className="each_card">
         <img src={car} alt=""></img>
         <h2>
           {props.brand} - {props.model}

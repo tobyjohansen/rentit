@@ -145,8 +145,8 @@ export default function PrimarySearchAppBar() {
         <Toolbar
           sx={{
             display: "flex",
-            gap: "3 rem",
-            height: "200px",
+            gap: "3rem",
+            height: "150px",
           }}
         >
           {/*}<IconButton
@@ -167,8 +167,8 @@ export default function PrimarySearchAppBar() {
               padding: "2rem",
               letterSpacing: "0.7rem",
               textTransform: "uppercase",
-              mr: "30rem",
-              fontSize: "3em",
+              mr: "5rem",
+              fontSize: "2em",
             }}
           >
             RentIt
@@ -192,7 +192,8 @@ export default function PrimarySearchAppBar() {
               padding: "2rem",
               letterSpacing: "0.7rem",
               textTransform: "uppercase",
-              mr: "10rem",
+              mr: "4rem",
+              fontSize: "1.1em",
             }}
           >
             Velkommen, Stine!
@@ -207,6 +208,7 @@ export default function PrimarySearchAppBar() {
               letterSpacing: "0.2rem",
               textTransform: "uppercase",
               mr: "1rem",
+              fontSize: "1.1em",
             }}
           >
             Utleier | Leietaker
