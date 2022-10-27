@@ -87,11 +87,17 @@ export default function AddCarForm() {
       type: enteredType,
     };
 
-    fetch("http://localhost:3300/api/v1/cars", {
+    //Fetch Post method for creating a new car
+    fetch("http://localhost:3300/api/v1/cars/", {
       method: "POST",
       mode: "cors",
       body: JSON.stringify(carData),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
+    //End of fetch
+
     console.log(carData);
     setEnteredBrand("");
     setEnteredGear("");
