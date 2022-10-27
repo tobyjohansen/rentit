@@ -64,7 +64,7 @@ class Car {
       }
     }
 
-    this.checkFormValidation(id, model, price);
+    //this.checkFormValidation(id, model, price);
   }
 
   get carObject() {
