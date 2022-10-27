@@ -14,9 +14,9 @@
   margin: 1rem;
   padding: 5rem;
   background-color: rgb(182, 206, 207);
-  width: 340px;
+  width: 220px;
   border-radius: 4%;
-  height: 600px;
+  height: 500px;
   list-style: none;
 }
 
@@ -53,7 +53,6 @@
 }
 
 img{
-  max-width: 300px;
+  max-width: 200px;
 }
-
 

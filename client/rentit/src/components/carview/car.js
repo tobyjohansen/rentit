@@ -7,12 +7,12 @@ const Car = (props) => {
     setRent("Du har leid denne bilen");
   };
 
-  const [remove, setRemove] = useState("Slett bil");
-  const removeHandler = () => {
-    setRemove("Bilen er slettet");
-  };
+  //  const [remove, setRemove] = useState("Slett bil");
+  //  const removeHandler = () => {
+  //    setRemove("Bilen er slettet");
+  //  };
 
-  const [returnCar, setReturnCar] = useState("Lever bil og fullfør billeie");
+  const [returnCar, setReturnCar] = useState("Lever bil");
   const returnCarHandler = () => {
     setReturnCar("Billeia er fullført");
   };
@@ -46,9 +46,9 @@ const Car = (props) => {
           <button className="buttons" onClick={rentHandler}>
             {rent}
           </button>
-          <button className="buttons" onClick={removeHandler}>
+          {/*}<button className="buttons" onClick={removeHandler}>
             {remove}
-          </button>
+          </button>*/}
           <button className="buttons" onClick={returnCarHandler}>
             {returnCar}
           </button>
