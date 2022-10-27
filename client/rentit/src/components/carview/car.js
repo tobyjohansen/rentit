@@ -16,7 +16,7 @@ const style = {
   p: 4,
 };
 
-const CarPart = (props) => {
+const Car = (props) => {
   const [open, setOpen] = useState(false);
   const [rent, setRent] = useState("Lei denne");
   const [carReturn, setCarReturn] = useState("Lever bil");
@@ -105,4 +105,4 @@ const CarPart = (props) => {
   );
 };
 
-export default CarPart;
+export default Car;
