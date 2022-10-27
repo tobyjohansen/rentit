@@ -91,6 +91,9 @@ export default function AddCarForm() {
       method: "POST",
       mode: "cors",
       body: JSON.stringify(carData),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
     console.log(carData);
     setEnteredBrand("");
