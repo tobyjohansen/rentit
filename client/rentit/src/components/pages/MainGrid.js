@@ -14,7 +14,7 @@ function Grid() {
         return response.json();
       })
       .then((data) => {
-        const transformedMovies = data.cars.map((carData) => {
+        const transformedCars = data.cars.map((carData) => {
           return {
             id: carData.id,
             price: carData.price,
@@ -32,7 +32,7 @@ function Grid() {
             owner: carData.owner,
           };
         });
-        setCars(transformedMovies);
+        setCars(transformedCars);
       });
   }, []);
 

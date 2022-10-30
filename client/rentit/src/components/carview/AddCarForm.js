@@ -41,7 +41,7 @@ export default function AddCarForm() {
   };
 
   const saveHandler = () => {
-    setSave("Ny bil lagret");
+    setSave("Lagret");
   };
   const carBrandChangeHandler = (e) => {
     setEnteredBrand(e.target.value);
@@ -291,7 +291,12 @@ export default function AddCarForm() {
           ))}
         </Select>
       </FormControl>
-      <Button type="submit" className="buttons" onClick={saveHandler}>
+      <Button
+        type="submit"
+        variant="outlined"
+        className="buttons"
+        onClick={saveHandler}
+      >
         {save}
       </Button>
     </Box>

@@ -73,7 +73,7 @@ const Car = (props) => {
                 Max antall km: {props.km_limit}
               </Typography>
               <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
-                Pris per km over: {props.price_per_km_after_limit}
+                Pris over km-grense: {props.price_per_km_after_limit} NOK/km
               </Typography>
               <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
                 Ledige uker:

@@ -11,6 +11,7 @@ import {
   OutlinedInput,
   ListItemText,
   Checkbox,
+  Button,
 } from "@mui/material";
 
 export default function EditCarForm() {
@@ -154,7 +155,7 @@ export default function EditCarForm() {
       sx={{
         "& > :not(style)": {
           m: 2,
-          width: "25ch",
+          width: "50ch",
         },
       }}
       noValidate
@@ -302,9 +303,14 @@ export default function EditCarForm() {
           ))}
         </Select>
       </FormControl>
-      <button type="submit" className="buttons" onClick={saveHandler}>
+      <Button
+        type="submit"
+        className="buttons"
+        variant="outlined"
+        onClick={saveHandler}
+      >
         {save}
-      </button>
+      </Button>
     </Box>
   );
 }
