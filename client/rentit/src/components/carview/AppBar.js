@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import { Link } from "react-router-dom";
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -52,8 +53,12 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Min profil</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Mine biler</MenuItem>
+      <MenuItem>
+        <Link to="/user">Min profil</Link>
+      </MenuItem>
+      <MenuItem>
+        <Link to="/rent-out">Mine biler</Link>
+      </MenuItem>
     </Menu>
   );
 
@@ -117,7 +122,7 @@ export default function PrimarySearchAppBar() {
               fontSize: "2em",
             }}
           >
-            RentIt
+            <Link to="/main">RentIt</Link>
           </Typography>
           <Typography
             variant="h6"
@@ -130,7 +135,7 @@ export default function PrimarySearchAppBar() {
               mr: "4rem",
             }}
           >
-            Velkommen, Ola Nordmann!
+            Hei, Ola Nordmann!
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ mr: "3rem", display: { xs: "none", md: "flex" } }}>

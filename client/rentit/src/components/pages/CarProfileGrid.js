@@ -1,10 +1,10 @@
-import AppBar from "./AppBar";
+import AppBar from "../carview/AppBar";
 import { Box } from "@mui/material";
 import AddCarForm from "../carview/AddCarForm";
 import EditCarForm from "../carview/EditCarForm";
 import "../../App.css";
 
-function UserGrid() {
+function CarProfileGrid() {
   return (
     <div>
       <Box
@@ -14,8 +14,8 @@ function UserGrid() {
           gap: 1,
           gridTemplateRows: "auto",
           gridTemplateAreas: `"header header header header header"
-          "sidebar main main main main"
-  "sidebar main main main main"
+          "sidebar sidebar main main main"
+  "sidebar sidebar main main main"
   "footer footer footer footer footer"`,
         }}
       >
@@ -36,19 +36,14 @@ function UserGrid() {
           }}
         >
           Mine biler:
-          <ul>
-            <li>Bil 1</li>
-            <li>Bil 2</li>
-            <li>Bil 3</li>
-          </ul>
         </Box>
         <Box sx={{ gridArea: "main" }}>
           <AddCarForm /> <EditCarForm />
         </Box>
-        <Box sx={{ gridArea: "footer", p: "1rem" }}>Footer</Box>
+        <Box sx={{ gridArea: "footer", p: "1rem" }}></Box>
       </Box>
     </div>
   );
 }
 
-export default UserGrid;
+export default CarProfileGrid;

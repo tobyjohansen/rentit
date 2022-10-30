@@ -1,9 +1,10 @@
 import "./App.css";
-import MainGrid from "./components/layouts/MainGrid";
-import UserGrid from "./components/layouts/UserGrid";
+import MainGrid from "./components/pages/MainGrid";
 import React from "react";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { Route } from "react-router-dom";
+import CarProfileGrid from "./components/pages/CarProfileGrid";
+import UserGrid from "./components/pages/UserGrid";
 
 const theme = createTheme({
   palette: {
@@ -40,6 +41,9 @@ function App() {
           <MainGrid />
         </Route>
         <Route path="/rent-out">
+          <CarProfileGrid />
+        </Route>
+        <Route path="/user">
           <UserGrid />
         </Route>
       </div>
