@@ -1,10 +1,12 @@
-import './App.css';
-import CarList from './components/carview/CarList';
+import "./App.css";
+import Grid from "./components/Grid";
+import React from 'react';
 
 function App() {
+
   return (
     <div>
-      <CarList/>
+      <Grid />
     </div>
   );
 }
