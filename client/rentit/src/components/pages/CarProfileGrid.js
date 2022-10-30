@@ -1,5 +1,5 @@
 import AppBar from "../carview/AppBar";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import AddCarForm from "../carview/AddCarForm";
 import EditCarForm from "../carview/EditCarForm";
 import "../../App.css";
@@ -66,16 +66,16 @@ function CarProfileGrid() {
         <Box
           sx={{
             gridArea: "sidebar",
-            p: "1rem",
-            borderRight: "1px solid lightgrey",
-            marginTop: "2rem",
-            marginBotton: "2rem",
+            mt: "5rem",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          Mine biler:
+          <Typography variant="h5">Mine biler</Typography>
           <CarList cars={cars} />
         </Box>
-        <Box sx={{ gridArea: "main" }}>
+        <Box sx={{ gridArea: "main", p: "4rem" }}>
           <Box>
             <AddCarForm />
           </Box>
