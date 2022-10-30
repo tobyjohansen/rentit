@@ -1,10 +1,8 @@
-import CarList from "./carview/CarList";
-import AppBar from "../components/navigation/AppBar";
+import CarList from "../carview/CarList";
+import AppBar from "./../layouts/AppBar";
 import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import AddCarForm from "../components/carview/AddCarForm";
-import EditCarForm from "../components/carview/EditCarForm";
-import "../App.css";
+import "../../App.css";
 
 function Grid() {
   //Fetch all cars from the api
@@ -45,12 +43,11 @@ function Grid() {
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: "repeat(2fr, 1fr, 1fr, 1fr, 1fr)",
+          gridTemplateColumns: "repeat(5, 1fr)",
           gap: 1,
           gridTemplateRows: "auto",
           gridTemplateAreas: `"header header header header header"
-          "sidebar info info info info"
-  "sidebar main main main main"
+  "main main main main main"
   "footer footer footer footer footer"`,
         }}
       >
@@ -61,31 +58,10 @@ function Grid() {
         >
           <AppBar />
         </Box>
-        <Box
-          sx={{
-            gridArea: "sidebar",
-            p: "1rem",
-            borderRight: "1px solid lightgrey",
-            marginTop: "2rem",
-            marginBotton: "2rem",
-          }}
-        >
-          <AddCarForm /> <EditCarForm />
-        </Box>
-        <Box
-          sx={{
-            gridArea: "info",
-            fontSize: "1.2em",
-            textAlign: "center",
-          }}
-        >
-          <p>Velkommen til RENTIT!</p>
-          <p>Finn en bil i lista under, da vel!</p>
-        </Box>
         <Box sx={{ gridArea: "main" }}>
           <CarList cars={cars} />
         </Box>
-        <Box sx={{ gridArea: "footer", p: "1rem" }}>Footer</Box>
+        <Box sx={{ gridArea: "footer" }}></Box>
       </Box>
     </div>
   );
