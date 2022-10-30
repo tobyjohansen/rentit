@@ -145,7 +145,7 @@ export default function AddCarForm() {
       sx={{
         "& > :not(style)": {
           m: 2,
-          width: "50ch",
+          width: "30ch",
         },
       }}
       noValidate
