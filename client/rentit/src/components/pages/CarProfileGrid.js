@@ -38,7 +38,12 @@ function CarProfileGrid() {
           Mine biler:
         </Box>
         <Box sx={{ gridArea: "main" }}>
-          <AddCarForm /> <EditCarForm />
+          <Box>
+            <AddCarForm />
+          </Box>
+          <Box>
+            <EditCarForm />
+          </Box>
         </Box>
         <Box sx={{ gridArea: "footer", p: "1rem" }}></Box>
       </Box>

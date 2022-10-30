@@ -143,14 +143,17 @@ export default function AddCarForm() {
     <Box
       component="form"
       sx={{
-        "& > :not(style)": { m: 2, width: "25ch" },
+        "& > :not(style)": {
+          m: 2,
+          width: "50ch",
+        },
       }}
       noValidate
       autoComplete="off"
       onSubmit={submitHandler}
     >
       <Typography variant="h5" gutterBottom>
-        Legg til bil
+        Registrer ny bil:
       </Typography>
       <TextField
         onChange={carBrandChangeHandler}
