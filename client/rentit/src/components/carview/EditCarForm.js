@@ -11,6 +11,8 @@ import {
   OutlinedInput,
   ListItemText,
   Checkbox,
+  Button,
+  //cardActionAreaClasses,
 } from "@mui/material";
 
 export default function EditCarForm() {
@@ -35,7 +37,7 @@ export default function EditCarForm() {
     PaperProps: {
       style: {
         maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-        width: 250,
+        width: 200,
       },
     },
   };
@@ -154,7 +156,7 @@ export default function EditCarForm() {
       sx={{
         "& > :not(style)": {
           m: 2,
-          width: "25ch",
+          width: "20ch",
         },
       }}
       noValidate
@@ -213,6 +215,13 @@ export default function EditCarForm() {
         variant="outlined"
         value={enteredKmLimit}
       />
+      <TextField
+        onChange={pricePerKmChangeHandler}
+        id="outlined-basic"
+        label="Pris/km over grense"
+        variant="outlined"
+        value={enteredPricePerKmOver}
+      />
       <FormControl fullWidth>
         <InputLabel id="fuel-select">Drivstoff</InputLabel>
         <Select
@@ -252,17 +261,11 @@ export default function EditCarForm() {
         >
           <MenuItem value={"Regular"}>Personbil</MenuItem>
           <MenuItem value={"Large"}>Stasjonsvogn</MenuItem>
+          <MenuItem value={"Xlarge"}>SUV</MenuItem>
           <MenuItem value={"Van"}>Varebil</MenuItem>
         </Select>
       </FormControl>
-      <TextField
-        onChange={pricePerKmChangeHandler}
-        id="outlined-basic"
-        label="Pris per km over max"
-        variant="outlined"
-        value={enteredPricePerKmOver}
-      />
-      <FormControl sx={{ m: 1, width: 300 }}>
+      <FormControl sx={{ m: 1, width: "20ch" }}>
         <InputLabel id="demo-multiple-checkbox-label">Ekstrautstyr</InputLabel>
         <Select
           labelId="demo-multiple-checkbox-label"
@@ -282,7 +285,7 @@ export default function EditCarForm() {
           ))}
         </Select>
       </FormControl>
-      <FormControl sx={{ m: 1, width: 300 }}>
+      <FormControl sx={{ m: 1, width: "20ch" }}>
         <InputLabel id="demo-multiple-checkbox-label">Ledige uker</InputLabel>
         <Select
           labelId="demo-multiple-checkbox-label"
@@ -302,9 +305,16 @@ export default function EditCarForm() {
           ))}
         </Select>
       </FormControl>
-      <button type="submit" className="buttons" onClick={saveHandler}>
-        {save}
-      </button>
+      <Box>
+        <Button
+          type="submit"
+          className="buttons"
+          variant="outlined"
+          onClick={saveHandler}
+        >
+          {save}
+        </Button>
+      </Box>
     </Box>
   );
 }
