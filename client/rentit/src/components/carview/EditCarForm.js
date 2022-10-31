@@ -236,7 +236,6 @@ export default function EditCarForm() {
           <MenuItem value={"Electricity"}>Elektrisitet</MenuItem>
         </Select>
       </FormControl>
-      <FormControl fullWidth></FormControl>
       <FormControl fullWidth>
         <InputLabel id="gear-select">Girkasse</InputLabel>
         <Select

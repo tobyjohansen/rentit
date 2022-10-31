@@ -26,30 +26,8 @@ const Car = (props) => {
   const rentHandler = () => {
     setRent("UTLEID");
   };
-    const carReturnHandler = () => {
+  const carReturnHandler = () => {
     setCarReturn("Bilen er levert");
-
-  const [remove, setRemove] = useState("Slett bil");
-  const removeHandler = (props) => {
-    //Fetch DELETE method for deleting a new car
-    //This code does not work.
-    //all it needs is for props.id to work and give id.
-    const url = "http://localhost:3300/api/v1/cars/" + props.id;
-    fetch(url, {
-      method: "DELETE",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    //End of fetch
-
-    setRemove("Bilen er slettet");
-  };
-
-  const [returnCar, setReturnCar] = useState("Lever bil");
-  const returnCarHandler = () => {
-    setReturnCar("Billeia er fullført");
   };
 
   return (
@@ -126,5 +104,4 @@ const Car = (props) => {
     </Box>
   );
 };
-
 export default Car;
