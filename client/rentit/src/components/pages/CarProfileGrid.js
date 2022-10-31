@@ -1,10 +1,9 @@
 import AppBar from "../carview/AppBar";
 import { Box, Typography } from "@mui/material";
 import AddCarForm from "../carview/AddCarForm";
-import EditCarForm from "../carview/EditCarForm";
 import "../../App.css";
 import { useState, useEffect } from "react";
-import CarList from "../carview/CarList";
+import MyCarList from "../carview/MyCarList";
 
 function CarProfileGrid() {
   //Fetch all cars from the api
@@ -73,14 +72,11 @@ function CarProfileGrid() {
           }}
         >
           <Typography variant="h5">Mine biler</Typography>
-          <CarList cars={cars} />
+          <MyCarList cars={cars} />
         </Box>
         <Box sx={{ gridArea: "main", p: "4rem" }}>
           <Box>
             <AddCarForm />
-          </Box>
-          <Box>
-            <EditCarForm />
           </Box>
         </Box>
         <Box sx={{ gridArea: "footer", p: "1rem" }}></Box>

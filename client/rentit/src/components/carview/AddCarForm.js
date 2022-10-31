@@ -241,6 +241,7 @@ export default function AddCarForm() {
         >
           <MenuItem value={"Regular"}>Personbil</MenuItem>
           <MenuItem value={"Large"}>Stasjonsvogn</MenuItem>
+          <MenuItem value={"Xlarge"}>SUV</MenuItem>
           <MenuItem value={"Van"}>Varebil</MenuItem>
         </Select>
       </FormControl>
