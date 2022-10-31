@@ -32,8 +32,8 @@ const Car = (props) => {
 
   return (
     <Box>
-      <ul className="each_card">
-        <li className="each_card_list">
+      <ul>
+        <li className="each_card">
           <img src={car} alt="Cartoon scetch of a car"></img>
           <Typography className="brand_model_text" variant="h5">
             {props.brand} {props.model}
@@ -78,9 +78,9 @@ const Car = (props) => {
               <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
                 Ledige uker:
               </Typography>
-              <ul className="mapweek">
+              <ul className="availability_list">
                 {props.availability.map((week) => (
-                  <li className="liststyles" key={week.toString()}>
+                  <li className="list_element_styling" key={week.toString()}>
                     {week}
                   </li>
                 ))}
@@ -88,9 +88,9 @@ const Car = (props) => {
               <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
                 Eventuelt ekstrautstyr inkl:
               </Typography>
-              <ul className="mapextras">
+              <ul className="equiptment_list">
                 {props.extras.map((extra) => (
-                  <li className="liststyles" key={extra.toString()}>
+                  <li className="list_element_styling" key={extra.toString()}>
                     {extra}
                   </li>
                 ))}

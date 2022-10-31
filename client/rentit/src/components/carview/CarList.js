@@ -4,7 +4,7 @@ import Car from "./Car";
 
 const CarList = (props) => {
   return (
-    <ul className="card">
+    <ul className="cardlist">
       {props.cars.map((car) => (
         <Car
           key={car.id}
