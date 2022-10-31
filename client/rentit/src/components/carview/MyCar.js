@@ -23,6 +23,23 @@ const MyCar = (props) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  /*
+  const [remove, setRemove] = useState("Slett bil");
+  const removeHandler = (props) => {
+    const url = "http://localhost:3300/api/v1/cars/" + props.id;
+    fetch(url, {
+      method: "DELETE",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    //End of fetch
+
+    setRemove("Bilen er slettet");
+  };
+  */
+
   return (
     <Box>
       <ul>
