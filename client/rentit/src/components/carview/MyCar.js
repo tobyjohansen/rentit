@@ -28,7 +28,7 @@ const MyCar = (props) => {
       <ul>
         <li className="each_card">
           <img src={car} alt="Cartoon scetch of a car"></img>
-          <Typography variant="h5">Referanse: {props.id}</Typography>
+          <Typography variant="h6">Referanse: {props.reference}</Typography>
           <Typography variant="h5">
             {props.brand} {props.model}
           </Typography>

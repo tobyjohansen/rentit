@@ -8,6 +8,7 @@ const MyCarList = (props) => {
       {props.cars.map((car) => (
         <MyCar
           key={car.id}
+          reference={car.id}
           price={car.price}
           model={car.model}
           brand={car.brand}
