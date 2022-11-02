@@ -11,6 +11,7 @@ import {
   OutlinedInput,
   ListItemText,
   Checkbox,
+  Button,
 } from "@mui/material";
 
 export default function AddCarForm() {
@@ -40,7 +41,7 @@ export default function AddCarForm() {
   };
 
   const saveHandler = () => {
-    setSave("Ny bil lagret");
+    setSave("Lagret");
   };
   const carBrandChangeHandler = (e) => {
     setEnteredBrand(e.target.value);
@@ -142,14 +143,17 @@ export default function AddCarForm() {
     <Box
       component="form"
       sx={{
-        "& > :not(style)": { m: 2, width: "25ch" },
+        "& > :not(style)": {
+          m: 2,
+          width: "30ch",
+        },
       }}
       noValidate
       autoComplete="off"
       onSubmit={submitHandler}
     >
       <Typography variant="h5" gutterBottom>
-        Legg til bil
+        Registrer ny bil:
       </Typography>
       <TextField
         onChange={carBrandChangeHandler}
@@ -237,13 +241,14 @@ export default function AddCarForm() {
         >
           <MenuItem value={"Regular"}>Personbil</MenuItem>
           <MenuItem value={"Large"}>Stasjonsvogn</MenuItem>
+          <MenuItem value={"Xlarge"}>SUV</MenuItem>
           <MenuItem value={"Van"}>Varebil</MenuItem>
         </Select>
       </FormControl>
       <TextField
         onChange={pricePerKmChangeHandler}
         id="outlined-basic"
-        label="Pris per km over max"
+        label="Pris/km over grense"
         variant="outlined"
         value={enteredPricePerKmOver}
       />
@@ -287,9 +292,14 @@ export default function AddCarForm() {
           ))}
         </Select>
       </FormControl>
-      <button type="submit" className="buttons" onClick={saveHandler}>
+      <Button
+        type="submit"
+        variant="outlined"
+        className="buttons"
+        onClick={saveHandler}
+      >
         {save}
-      </button>
+      </Button>
     </Box>
   );
 }

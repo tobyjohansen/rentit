@@ -1,65 +1,16 @@
 import React, { useState } from "react";
-//import { styled, alpha } from "@mui/material/styles";
 import {
   AppBar,
   Box,
   Toolbar,
   IconButton,
   Typography,
-  //InputBase,
   MenuItem,
   Menu,
 } from "@mui/material";
-//import MenuIcon from "@mui/icons-material/Menu";
-//import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
-
-/*
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
-}));
-*/
+import { Link } from "react-router-dom";
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -102,8 +53,16 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Min profil</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Mine biler</MenuItem>
+      <MenuItem>
+        <Link to="/user" className="links">
+          Min profil
+        </Link>
+      </MenuItem>
+      <MenuItem>
+        <Link to="/rent-out" className="links">
+          Mine biler
+        </Link>
+      </MenuItem>
     </Menu>
   );
 
@@ -141,23 +100,19 @@ export default function PrimarySearchAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar
+        position="static"
+        sx={{
+          bgcolor: "#e0e0e0",
+        }}
+      >
         <Toolbar
           sx={{
             display: "flex",
-            gap: "3 rem",
-            height: "200px",
+            gap: "3rem",
+            height: "150px",
           }}
         >
-          {/*}<IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 5 }}
-          >
-            <MenuIcon />
-          </IconButton>*/}
           <Typography
             variant="h3"
             noWrap
@@ -167,35 +122,13 @@ export default function PrimarySearchAppBar() {
               padding: "2rem",
               letterSpacing: "0.7rem",
               textTransform: "uppercase",
-              mr: "30rem",
-              fontSize: "3em",
+              mr: "12rem",
+              fontSize: "2em",
             }}
           >
-            RentIt
-          </Typography>
-          {/*}
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Søk…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>*/}
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{
-              display: { xs: "none", sm: "block" },
-              padding: "2rem",
-              letterSpacing: "0.7rem",
-              textTransform: "uppercase",
-              mr: "10rem",
-            }}
-          >
-            Velkommen, Stine!
+            <Link to="/main" className="links">
+              RentIt
+            </Link>
           </Typography>
           <Typography
             variant="h6"
@@ -204,15 +137,14 @@ export default function PrimarySearchAppBar() {
             sx={{
               display: { xs: "none", sm: "block" },
               padding: "2rem",
-              letterSpacing: "0.2rem",
-              textTransform: "uppercase",
-              mr: "1rem",
+              letterSpacing: "0.5rem",
+              mr: "4rem",
             }}
           >
-            Utleier | Leietaker
+            Hei, Ola Nordmann!
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ mr: "3rem", display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
               edge="end"
@@ -222,7 +154,7 @@ export default function PrimarySearchAppBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              <AccountCircle sx={{ fontSize: "1.3em" }} />
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
