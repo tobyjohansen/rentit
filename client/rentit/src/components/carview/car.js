@@ -104,5 +104,4 @@ const Car = (props) => {
     </Box>
   );
 };
-
 export default Car;

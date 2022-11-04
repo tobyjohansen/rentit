@@ -77,6 +77,7 @@ exports.createCar = (req, res) => {
 
 exports.updateCar = (req, res) => {
   console.log(req.body);
+  console.log(typeof req.body.gear);
   const newCar = new Car(
     req.params.id,
     null,
@@ -95,6 +96,7 @@ exports.updateCar = (req, res) => {
     req.body.owner
   );
 
+  console.log(newCar.carObject);
   cars.updateCar(req.params.id, newCar);
 
   fs.writeFile(
