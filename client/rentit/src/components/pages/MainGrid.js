@@ -1,6 +1,6 @@
 import CarList from "../carview/CarList";
 import AppBar from "../carview/AppBar";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import "../../App.css";
 
@@ -59,6 +59,21 @@ function Grid() {
           <AppBar />
         </Box>
         <Box sx={{ gridArea: "main" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              mt: "2rem",
+            }}
+          >
+            <Typography variant="h6">Du har søkt:</Typography>
+            <Typography variant="h6">1 uke 1-7 mars 2023</Typography>
+            <Typography variant="h6">Oslo og Viken</Typography>
+            <Typography variant="h7" sx={{ mt: "2rem" }}>
+              Resultat:
+            </Typography>
+          </Box>
           <CarList cars={cars} />
         </Box>
         <Box sx={{ gridArea: "footer" }}></Box>
