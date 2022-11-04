@@ -13,7 +13,8 @@
     "km_limit": 500,
     "extras": ["Barnesete", "Hengerfeste"],
     "price_per_km_after_limit": 4.5,
-    "owner": 1
+    "owner": 1,
+    "reg_number": "DL40033"
   },
   {
     "id": 2,
@@ -29,7 +30,8 @@
     "km_limit": 450,
     "extras": [],
     "price_per_km_after_limit": 3,
-    "owner": 1
+    "owner": 1,
+    "reg_number": "EV42033"
   },
   {
     "id": 3,
@@ -45,7 +47,8 @@
     "km_limit": 600,
     "extras": ["Piggdekk"],
     "price_per_km_after_limit": 5,
-    "owner": 3
+    "owner": 3,
+    "reg_number": "AR44522"
   },
   {
     "id": 4,
@@ -61,7 +64,8 @@
     "km_limit": 300,
     "extras": [],
     "price_per_km_after_limit": 2.5,
-    "owner": 4
+    "owner": 4,
+    "reg_number": "EK20333"
   },
   {
     "id": 5,
@@ -77,7 +81,8 @@
     "km_limit": 400,
     "extras": [],
     "price_per_km_after_limit": 6,
-    "owner": 5
+    "owner": 5,
+    "reg_number": "EK29877"
   },
   {
     "id": 6,
@@ -93,7 +98,8 @@
     "km_limit": 700,
     "extras": ["Jekkestropper"],
     "price_per_km_after_limit": 6,
-    "owner": 6
+    "owner": 6,
+    "reg_number": "EV34888"
   },
   {
     "id": 7,
@@ -109,7 +115,8 @@
     "km_limit": 500,
     "extras": [],
     "price_per_km_after_limit": 2,
-    "owner": 7
+    "owner": 7,
+    "reg_number": "AF44523"
   },
   {
     "id": 8,
@@ -125,7 +132,8 @@
     "km_limit": 600,
     "extras": ["Hengerfeste"],
     "price_per_km_after_limit": 2,
-    "owner": 8
+    "owner": 8,
+    "reg_number": "DL50599"
   },
   {
     "id": 9,
@@ -141,7 +149,8 @@
     "km_limit": 600,
     "extras": [],
     "price_per_km_after_limit": 2,
-    "owner": 9
+    "owner": 9,
+    "reg_number": "TK98222"
   },
   {
     "id": 10,
@@ -157,7 +166,8 @@
     "km_limit": 500,
     "extras": ["Barnesete"],
     "price_per_km_after_limit": 2,
-    "owner": 10
+    "owner": 10,
+    "reg_number": "KL40425"
   },
   {
     "id": 11,
@@ -173,7 +183,8 @@
     "km_limit": 600,
     "extras": [],
     "price_per_km_after_limit": 3.5,
-    "owner": 11
+    "owner": 11,
+    "reg_number": "DK87622"
   },
   {
     "id": "12",
@@ -189,7 +200,8 @@
     "km_limit": "1100",
     "extras": [],
     "price_per_km_after_limit": "4",
-    "owner": 12
+    "owner": 12,
+    "reg_number": "AR76773"
   },
   {
     "id": 13,
@@ -200,10 +212,12 @@
     "location": "Drøbak",
     "availability": [1],
     "type": "regular",
+    "fuel": "Electricity",
     "gear": "Automat",
     "km_limit": "500",
     "extras": ["Hengerfeste"],
-    "owner": 12
+    "owner": 12,
+    "reg_number": "EK28762"
   },
   {
     "id": 14,
@@ -219,7 +233,8 @@
     "km_limit": "500",
     "extras": ["Hengerfeste"],
     "price_per_km_after_limit": "10",
-    "owner": 12
+    "owner": 12,
+    "reg_number": "EV55525"
   },
   {
     "id": 15,
@@ -234,7 +249,8 @@
     "gear": "Automat",
     "km_limit": "800",
     "extras": ["Barnesete"],
-    "price_per_km_after_limit": "10"
+    "price_per_km_after_limit": "10",
+    "reg_number": "BA87522"
   },
   {
     "id": 16,
@@ -249,6 +265,7 @@
     "gear": "Manuell",
     "km_limit": "800",
     "extras": [],
-    "price_per_km_after_limit": "5"
+    "price_per_km_after_limit": "5",
+    "reg_number": "FR76322"
   }
 ]

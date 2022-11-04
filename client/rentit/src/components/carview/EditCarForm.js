@@ -26,7 +26,7 @@ export default function EditCarForm() {
   const [enteredEquipment, setEnteredEquipment] = useState([]);
   const [enteredGear, setEnteredGear] = useState("");
   const [enteredType, setEnteredType] = useState("");
-  const [enteredReference, setEnteredReference] = useState("");
+  const [enteredRegNumber, setEnteredRegNumber] = useState("");
   const [enteredKmLimit, setEnteredKmLimit] = useState("");
   const [enteredFuel, setEnteredFuel] = useState("");
   const [enteredPricePerKmOver, setEnteredPricePerKmOver] = useState("");
@@ -81,8 +81,8 @@ export default function EditCarForm() {
     setEnteredType(e.target.value);
   };
 
-  const referenceHandler = (e) => {
-    setEnteredReference(e.target.value);
+  const regNumberHandler = (e) => {
+    setEnteredRegNumber(e.target.value);
   };
   const kmChangeHandler = (e) => {
     setEnteredKmLimit(e.target.value);
@@ -106,14 +106,14 @@ export default function EditCarForm() {
       extras: enteredEquipment,
       gear: enteredGear,
       type: enteredGear,
-      id: enteredReference,
+      reg_number: enteredRegNumber,
       km_limit: enteredKmLimit,
       fuel: enteredFuel,
       price_per_km_after_limit: enteredPricePerKmOver,
     };
 
     //Added Update fetch method for updateing to api
-    const url = "http://localhost:3300/api/v1/cars/" + enteredReference;
+    const url = "http://localhost:3300/api/v1/cars/" + enteredRegNumber;
     fetch(url, {
       method: "PATCH",
       mode: "cors",
@@ -137,7 +137,7 @@ export default function EditCarForm() {
     setEnteredGear("");
     setEnteredEquipment([]);
     setSave("Lagre");
-    setEnteredReference("");
+    setEnteredRegNumber("");
     setEnteredKmLimit("");
     setEnteredFuel("");
     setEnteredPricePerKmOver("");
@@ -167,11 +167,11 @@ export default function EditCarForm() {
         Endre bil
       </Typography>
       <TextField
-        onChange={referenceHandler}
+        onChange={regNumberHandler}
         id="outlined-basic"
-        label="Referanse"
+        label="Reg-nummer"
         variant="outlined"
-        value={enteredReference}
+        value={enteredRegNumber}
       />
       <TextField
         onChange={carBrandChangeHandler}
