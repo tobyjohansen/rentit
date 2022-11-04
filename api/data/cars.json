@@ -185,5 +185,39 @@
     "price_per_km_after_limit": 3.5,
     "owner": 11,
     "reg_number": "DK87622"
+  },
+  {
+    "id": 12,
+    "price": "3500",
+    "model": "Soul",
+    "brand": "Kia",
+    "year": "2021",
+    "location": "Moss",
+    "availability": [1, 3, 4],
+    "type": "Regular",
+    "fuel": "Electricity",
+    "gear": "Automat",
+    "km_limit": "800",
+    "extras": [],
+    "price_per_km_after_limit": "10",
+    "reg_number": "EV35663",
+    "owner": 12
+  },
+  {
+    "id": 13,
+    "price": "2200",
+    "model": "Leaf",
+    "brand": "Nissan",
+    "year": "2016",
+    "location": "Moss",
+    "availability": [3, 12, 11],
+    "type": "Regular",
+    "fuel": "Electricity",
+    "gear": "Automat",
+    "km_limit": "500",
+    "extras": ["Hengerfeste"],
+    "price_per_km_after_limit": "10",
+    "reg_number": "EK76222",
+    "owner": 12
   }
 ]
