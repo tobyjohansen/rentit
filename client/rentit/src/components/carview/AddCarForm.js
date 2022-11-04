@@ -28,6 +28,7 @@ export default function AddCarForm() {
   const [enteredKmLimit, setEnteredKmLimit] = useState("");
   const [enteredFuel, setEnteredFuel] = useState("");
   const [enteredPricePerKmOver, setEnteredPricePerKmOver] = useState("");
+  const [enteredRegNumber, setEnteredRegNumber] = useState("");
 
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
@@ -87,6 +88,9 @@ export default function AddCarForm() {
   const pricePerKmChangeHandler = (e) => {
     setEnteredPricePerKmOver(e.target.value);
   };
+  const regNumberHandler = (e) => {
+    setEnteredRegNumber(e.target.value);
+  };
   const submitHandler = (e) => {
     e.preventDefault();
     const carData = {
@@ -102,6 +106,7 @@ export default function AddCarForm() {
       km_limit: enteredKmLimit,
       fuel: enteredFuel,
       price_per_km_after_limit: enteredPricePerKmOver,
+      reg_number: enteredRegNumber,
     };
 
     //Fetch Post method for creating a new car
@@ -130,6 +135,7 @@ export default function AddCarForm() {
     setEnteredKmLimit("");
     setEnteredFuel("");
     setEnteredPricePerKmOver("");
+    setEnteredRegNumber("");
   };
 
   const weeks = [
@@ -196,6 +202,13 @@ export default function AddCarForm() {
         label="Km-grense"
         variant="outlined"
         value={enteredKmLimit}
+      />
+      <TextField
+        onChange={regNumberHandler}
+        id="outlined-basic"
+        label="Registreringsnr."
+        variant="outlined"
+        value={enteredRegNumber}
       />
       {/* 
       <GearSelect />
