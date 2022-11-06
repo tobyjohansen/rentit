@@ -15,7 +15,18 @@ class FakeCarRepository {
 
   create(car) {
     this.mock.push(car);
-    return car;
+    return this.mock[Object.keys(this.mock).pop()];
+  }
+
+  update(id, car) {
+    let values = Object.keys(car);
+
+    values.forEach((value) => {
+      if (car[value] != null && car[value].length != 0) {
+        this.mock[id - 1][value] = car[value];
+      }
+    });
+    return this.mock[id - 1];
   }
 }
 

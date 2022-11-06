@@ -11,5 +11,6 @@
   "gear": "Manuell",
   "km_limit": "800",
   "extras": [],
-  "price_per_km_after_limit": "5"
+  "price_per_km_after_limit": "5",
+  "owner": 12
 }

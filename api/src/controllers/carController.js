@@ -12,11 +12,12 @@ const carRep = new CarRepository(jsonData, `${__dirname}/../../data/cars.json`);
 const cars = new CarList(carRep.All);
 
 exports.getAllCars = (req, res) => {
+  const carList = carRep.All;
   res.status(200).json({
     status: "success",
     requestedAt: req.requestTime,
     results: cars.carList.length,
-    cars: cars.carList,
+    cars: carList,
   });
 };
 

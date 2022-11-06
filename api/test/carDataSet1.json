@@ -234,7 +234,8 @@
     "gear": "Automat",
     "km_limit": "800",
     "extras": ["Barnesete"],
-    "price_per_km_after_limit": "10"
+    "price_per_km_after_limit": "10",
+    "owner": 12
   },
   {
     "id": 16,
@@ -249,6 +250,7 @@
     "gear": "Manuell",
     "km_limit": "800",
     "extras": [],
-    "price_per_km_after_limit": "5"
+    "price_per_km_after_limit": "5",
+    "owner": 12
   }
 ]

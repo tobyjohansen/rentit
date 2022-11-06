@@ -23,6 +23,12 @@ describe("Testing car Repository", () => {
     dataSet2 = JSON.parse(fs.readFileSync(`${__dirname}/carDataSet2.json`));
     const result = FakeCarRep.create(dataSet2);
     check = FakeCarRep.All.push(result);
-    console.log(result);
+    assert.deepEqual(result, dataSet2);
+  });
+
+  it("Update_a_car", () => {
+    dataSet2 = JSON.parse(fs.readFileSync(`${__dirname}/carDataSet2.json`));
+    const result = FakeCarRep.update(4, dataSet2);
+    assert.deepEqual(result, dataSet2);
   });
 });
