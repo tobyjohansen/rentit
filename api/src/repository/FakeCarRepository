@@ -1,0 +1,22 @@
+class FakeCarRepository {
+  constructor(mock) {
+    this.mock = mock;
+  }
+
+  get All() {
+    return this.mock;
+  }
+
+  getById(id) {
+    const carId = id * 1;
+    const car = this.mock.find((el) => el.id === carId);
+    return car;
+  }
+
+  create(car) {
+    this.mock.push(car);
+    return car;
+  }
+}
+
+module.exports = FakeCarRepository;
