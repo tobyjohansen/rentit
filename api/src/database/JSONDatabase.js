@@ -1,11 +1,12 @@
 const fs = require("fs");
 
 class JSONDatabase {
+  path = `${__dirname}/../../data/cars.json`;
   save(data) {
-    fs.writeFile(`${__dirname}/../../data/cars.json`, JSON.stringify(data));
+    fs.writeFile(this.path, JSON.stringify(data));
   }
-  read(path) {
-    return JSON.parse(fs.readFileSync(path));
+  read() {
+    return JSON.parse(fs.readFileSync(this.path));
   }
 }
 

@@ -1,21 +1,21 @@
 class FakeCarRepository {
   constructor(mock) {
-    this.mock = mock;
+    this.db = mock;
   }
 
   get All() {
-    return this.mock;
+    return this.db;
   }
 
   getById(id) {
     const carId = id * 1;
-    const car = this.mock.find((el) => el.id === carId);
+    const car = this.All.find((el) => el.id === carId);
     return car;
   }
 
   create(car) {
-    this.mock.push(car);
-    return this.mock[Object.keys(this.mock).pop()];
+    this.db.push(car);
+    return this.db[Object.keys(this.db).pop()];
   }
 
   update(id, car) {
@@ -23,10 +23,10 @@ class FakeCarRepository {
 
     values.forEach((value) => {
       if (car[value] != null && car[value].length != 0) {
-        this.mock[id - 1][value] = car[value];
+        this.db[id - 1][value] = car[value];
       }
     });
-    return this.mock[id - 1];
+    return this.db[id - 1];
   }
 }
 

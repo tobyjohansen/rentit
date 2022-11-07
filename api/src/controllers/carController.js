@@ -7,17 +7,16 @@ const CarRepository = require("../repository/CarRepository");
 
 //Initialising Database and Repository
 const jsonData = new JSONDatabase();
-const carRep = new CarRepository(jsonData, `${__dirname}/../../data/cars.json`);
+const carRep = new CarRepository(jsonData);
 
 const cars = new CarList(carRep.All);
 
 exports.getAllCars = (req, res) => {
-  const carList = carRep.All;
   res.status(200).json({
     status: "success",
     requestedAt: req.requestTime,
     results: cars.carList.length,
-    cars: carList,
+    cars: carRep.All,
   });
 };
 
