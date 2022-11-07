@@ -2,6 +2,7 @@
   {
     "id": 1,
     "price": 6000,
+    "regnumber": "CC88245",
     "model": "i30",
     "brand": "Hyundai",
     "year": 2021,
@@ -18,6 +19,7 @@
   {
     "id": 2,
     "price": 4000,
+    "regnumber": "DD66666",
     "model": "Soul",
     "brand": "Kia",
     "year": 2015,
@@ -34,6 +36,7 @@
   {
     "id": 3,
     "price": 3500,
+    "regnumber": "EE66666",
     "model": "Yaris",
     "brand": "Toyota",
     "year": 2012,
@@ -50,6 +53,7 @@
   {
     "id": 4,
     "price": 2500,
+    "regnumber": "FF66666",
     "model": "Leaf",
     "brand": "Nissan",
     "year": 2016,
@@ -66,6 +70,7 @@
   {
     "id": 5,
     "price": 2800,
+    "regnumber": "GG66666",
     "model": "C-Zero",
     "brand": "Citroen",
     "year": 2018,
@@ -82,6 +87,7 @@
   {
     "id": 6,
     "price": 5000,
+    "regnumber": "HH66666",
     "model": "ENV-200",
     "brand": "Buddy",
     "year": 2019,
@@ -98,6 +104,7 @@
   {
     "id": 7,
     "price": 3000,
+    "regnumber": "II66666",
     "model": "i3",
     "brand": "BMW",
     "year": 2010,
@@ -114,6 +121,7 @@
   {
     "id": 8,
     "price": 3000,
+    "regnumber": "JJ66666",
     "model": "S40",
     "brand": "Volvo",
     "year": 2007,
@@ -130,6 +138,7 @@
   {
     "id": 9,
     "price": 4000,
+    "regnumber": "AB22002",
     "model": "A1",
     "brand": "Audi",
     "year": 20022,
@@ -146,6 +155,7 @@
   {
     "id": 10,
     "price": 3000,
+    "regnumber": "DC11111",
     "model": "Citi-Jet 6",
     "brand": "Buddy",
     "year": 2007,
@@ -162,6 +172,7 @@
   {
     "id": 11,
     "price": 2000,
+    "regnumber": "OJ66666",
     "model": "Aygo",
     "brand": "Toyota",
     "year": 2011,
@@ -178,6 +189,7 @@
   {
     "id": "12",
     "price": "7700",
+    "regnumber": "QR66666",
     "model": "TT",
     "brand": "Audi",
     "year": "2021",
@@ -194,6 +206,7 @@
   {
     "id": 13,
     "price": "3500",
+    "regnumber": "TT99999",
     "model": "Soul",
     "brand": "Kia",
     "year": "2020",
@@ -208,6 +221,7 @@
   {
     "id": 14,
     "price": "3500",
+    "regnumber": "GH66614",
     "model": "Soul",
     "brand": "Kia",
     "year": "2020",
@@ -224,6 +238,7 @@
   {
     "id": 15,
     "price": "6000",
+    "regnumber": "YT66615",
     "model": "500",
     "brand": "Fiat",
     "year": "2022",
@@ -240,6 +255,7 @@
   {
     "id": 16,
     "price": "2000",
+    "regnumber": "RG66634",
     "model": "Yaris",
     "brand": "Toyota",
     "year": "2009",

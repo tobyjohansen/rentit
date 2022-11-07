@@ -4,6 +4,7 @@ const Car = require("../models/Car");
 
 const JSONDatabase = require("../database/JSONDatabase");
 const CarRepository = require("../repository/CarRepository");
+const Listing = require("../rentit-core/listing");
 
 //Initialising Database and Repository
 const jsonData = new JSONDatabase();
@@ -36,6 +37,9 @@ exports.getCar = (req, res) => {
 
 exports.createCar = (req, res) => {
   try {
+    const listing = new Listing();
+    listing.create(req.body);
+
     const newCar = new Car(
       cars.createID(),
       null,
