@@ -1,5 +1,6 @@
 const express = require("express");
 const carRouter = require("./routes/carRoutes");
+const listingRouter = require("./routes/listingRoutes");
 const cors = require("cors");
 
 const app = express();
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 // ROUTES
 
 app.use("/api/v1/cars", carRouter);
+app.use("/api/v1/listings", listingRouter);
 
 // START SERVER
 
