@@ -1,9 +1,9 @@
-import AppBar from "../carview/AppBar";
+import AppBar from "../appBarComponents/AppBar";
 import { Box, Typography } from "@mui/material";
-import AddCarForm from "../carview/AddCarForm";
+import AddCarForm from "./AddCarForm";
 import "../../App.css";
 import { useState, useEffect } from "react";
-import MyCarList from "../carview/MyCarList";
+import MyCarList from "./MyCarList";
 
 function CarProfileGrid() {
   //Fetch all cars from the api

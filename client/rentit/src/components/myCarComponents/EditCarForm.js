@@ -12,7 +12,6 @@ import {
   ListItemText,
   Checkbox,
   Button,
-  //cardActionAreaClasses,
 } from "@mui/material";
 
 export default function EditCarForm() {

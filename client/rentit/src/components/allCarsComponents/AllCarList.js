@@ -1,12 +1,12 @@
 import React from "react";
 import "../../App.css";
-import Car from "./Car";
+import AllCars from "./AllCars";
 
-const CarList = (props) => {
+const AllCarList = (props) => {
   return (
     <ul className="cardlist">
       {props.cars.map((car) => (
-        <Car
+        <AllCars
           key={car.id}
           price={car.price}
           model={car.model}
@@ -28,4 +28,4 @@ const CarList = (props) => {
   );
 };
 
-export default CarList;
+export default AllCarList;

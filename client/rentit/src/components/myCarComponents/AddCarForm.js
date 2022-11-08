@@ -210,12 +210,6 @@ export default function AddCarForm() {
         variant="outlined"
         value={enteredRegNumber}
       />
-      {/* 
-      <GearSelect />
-      <WeekSelect />
-      
-      <EquipmentSelect />
-      <TypeSelect />*/}
       <FormControl fullWidth>
         <InputLabel id="fuel-select">Drivstoff</InputLabel>
         <Select

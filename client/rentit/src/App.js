@@ -1,10 +1,10 @@
 import "./App.css";
-import MainGrid from "./components/pages/MainGrid";
+import MainGrid from "./components/allCarsComponents/MainGrid";
 import React from "react";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { Route } from "react-router-dom";
-import CarProfileGrid from "./components/pages/CarProfileGrid";
-import UserGrid from "./components/pages/UserGrid";
+import CarProfileGrid from "./components/myCarComponents/CarProfileGrid";
+import UserGrid from "./components/userProfileComponents/UserGrid";
 
 const theme = createTheme({
   palette: {

@@ -1,4 +1,4 @@
-import AppBar from "../carview/AppBar";
+import AppBar from "../appBarComponents/AppBar";
 import {
   Box,
   Card,

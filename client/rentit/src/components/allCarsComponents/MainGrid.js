@@ -1,5 +1,5 @@
-import CarList from "../carview/CarList";
-import AppBar from "../carview/AppBar";
+import AllCarList from "./AllCarList";
+import AppBar from "./../appBarComponents/AppBar";
 import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import "../../App.css";
@@ -74,7 +74,7 @@ function Grid() {
               Resultat:
             </Typography>
           </Box>
-          <CarList cars={cars} />
+          <AllCarList cars={cars} />
         </Box>
         <Box sx={{ gridArea: "footer" }}></Box>
       </Box>
