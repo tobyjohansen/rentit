@@ -9,6 +9,7 @@ describe("Testing listing operations", () => {
   describe("Test for creation of a listing", () => {
     beforeEach(() => {
       dataSet2 = JSON.parse(fs.readFileSync(`${__dirname}/carDataSet2.json`));
+      dataSet3 = JSON.parse(fs.readFileSync(`${__dirname}/datasets/carDataSet3.json`));
       dataSet1 = JSON.parse(fs.readFileSync(`${__dirname}/carDataSet1.json`));
       FakeCarRep = new FakeCarRepository(dataSet1);
     });
@@ -20,7 +21,7 @@ describe("Testing listing operations", () => {
       assert.throws(() => {
         FakeCarRep = new FakeCarRepository(dataSet1);
         const listing = new Listing();
-        listing.checkForDoubleListing(dataSet2, FakeCarRep);
+        listing.checkForDoubleListing(dataSet3, FakeCarRep);
       });
     });
     it("Test creation of ID on new listings", () => {

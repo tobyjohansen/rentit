@@ -22,7 +22,7 @@ class Listing {
     this.validateRequiredListing(obj);
     this.checkForDoubleListing(obj, repository);
     this.updateListingObj(obj);
-    //repository.create(obj);
+    repository.create(obj);
   }
 
   update() {}
@@ -71,15 +71,16 @@ class Listing {
   }
 
   checkForDoubleListing(obj, repository) {
-    const rep = repository.getById(17);
-    console.log(rep);
-    /* const errorVal = [];
-    if (obj.regnumber === repObj.regnumber) {
-      errorVal.push("Car with the same regnumber exists");
-    }
+    const errorVal = [];
+    let values = Object.keys(repository.All);
 
-    throw errorVal; */
-  }
+    values.forEach((value) => {
+      if (repository.All[value].regnumber === obj.regnumber) {
+        errorVal.push("regnumber allready used");
+        throw errorVal;
+      }
+    })
+  };
 
   updateListingObj(obj) {
     this.id = obj.id;
