@@ -31,6 +31,88 @@ describe("Testing listing operations", () => {
       assert.deepEqual(newlisting.id, 17);
     });
   });
+  describe("Test parameters are accepted into listing", () => {
+    beforeEach(() => {
+      dataSet1 = JSON.parse(fs.readFileSync(`${__dirname}/carDataSet1.json`));
+      FakeCarRep = new FakeCarRepository(dataSet1);
+      dataSet2 = JSON.parse(fs.readFileSync(`${__dirname}/carDataSet2.json`));
+    })
+    it("Test id is accepted into listing", () => {
+      const listing = new Listing();
+      listing.create(dataSet2, FakeCarRep);
+      assert.deepEqual(listing.id, 17);
+    })
+    it("Test regnumber is accepted into listing", () => {
+      const listing = new Listing();
+      listing.create(dataSet2, FakeCarRep);
+      assert.deepEqual(listing.regnumber, "BB99999");
+    })
+    it("Test price is accepted into listing", () => {
+      const listing = new Listing();
+      listing.create(dataSet2, FakeCarRep);
+      assert.deepEqual(listing.price, 2000);
+    })
+    it("Test model is accepted into listing", () => {
+      const listing = new Listing();
+      listing.create(dataSet2, FakeCarRep);
+      assert.deepEqual(listing.model, "Yaris");
+    })
+    it("Test brand is accepted into listing", () => {
+      const listing = new Listing();
+      listing.create(dataSet2, FakeCarRep);
+      assert.deepEqual(listing.brand, "Toyota");
+    })
+    it("Test year is accepted into listing", () => {
+      const listing = new Listing();
+      listing.create(dataSet2, FakeCarRep);
+      assert.deepEqual(listing.year, 2009);
+    })
+    it("Test location is accepted into listing", () => {
+      const listing = new Listing();
+      listing.create(dataSet2, FakeCarRep);
+      assert.deepEqual(listing.location, "Slemmestad");
+    })
+    it("Test availability is accepted into listing", () => {
+      const listing = new Listing();
+      listing.create(dataSet2, FakeCarRep);
+      assert.deepEqual(listing.availability, [12, 13, 8, 6, 5, 4]);
+    })
+    it("Test type is accepted into listing", () => {
+      const listing = new Listing();
+      listing.create(dataSet2, FakeCarRep);
+      assert.deepEqual(listing.type, "Regular");
+    })
+    it("Test fuel is accepted into listing", () => {
+      const listing = new Listing();
+      listing.create(dataSet2, FakeCarRep);
+      assert.deepEqual(listing.fuel, "Gas");
+    })
+    it("Test gear is accepted into listing", () => {
+      const listing = new Listing();
+      listing.create(dataSet2, FakeCarRep);
+      assert.deepEqual(listing.gear, "Manuell");
+    })
+    it("Test km_limit is accepted into listing", () => {
+      const listing = new Listing();
+      listing.create(dataSet2, FakeCarRep);
+      assert.deepEqual(listing.km_limit, 800);
+    })
+    it("Test extras is accepted into listing", () => {
+      const listing = new Listing();
+      listing.create(dataSet2, FakeCarRep);
+      assert.deepEqual(listing.extras, []);
+    })
+    it("Test price_per_km_after_limit is accepted into listing", () => {
+      const listing = new Listing();
+      listing.create(dataSet2, FakeCarRep);
+      assert.deepEqual(listing.price_per_km_after_limit, 5);
+    })
+    it("Test owner is accepted into listing", () => {
+      const listing = new Listing();
+      listing.create(dataSet2, FakeCarRep);
+      assert.deepEqual(listing.owner, 12);
+    })
+  })
 });
 
 describe("Testing listing validation", () => {
