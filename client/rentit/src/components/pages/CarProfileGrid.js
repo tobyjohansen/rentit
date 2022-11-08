@@ -33,6 +33,7 @@ function CarProfileGrid() {
               extras: carData.extras,
               price_per_km_after_limit: carData.price_per_km_after_limit,
               owner: carData.owner,
+              reg_number: carData.reg_number,
             };
           });
         setCars(transformedCars);
