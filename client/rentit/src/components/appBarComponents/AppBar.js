@@ -54,12 +54,12 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem>
-        <Link to="/user" className="links">
+        <Link to="/user-profile" className="links">
           Min profil
         </Link>
       </MenuItem>
       <MenuItem>
-        <Link to="/rent-out" className="links">
+        <Link to="/my-cars" className="links">
           Mine biler
         </Link>
       </MenuItem>
@@ -126,7 +126,7 @@ export default function PrimarySearchAppBar() {
               fontSize: "2em",
             }}
           >
-            <Link to="/main" className="links">
+            <Link to="/" className="links">
               RentIt
             </Link>
           </Typography>

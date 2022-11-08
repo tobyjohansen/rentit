@@ -40,10 +40,10 @@ function App() {
         <BrowserRouter basename="/">
           <MainGrid />
         </BrowserRouter>
-        <Route path="/rent-out">
+        <Route path="/my-cars">
           <CarProfileGrid />
         </Route>
-        <Route path="/user">
+        <Route path="/user-profile">
           <UserGrid />
         </Route>
       </div>
