@@ -2,7 +2,7 @@ import "./App.css";
 import MainGrid from "./components/allCarsComponents/MainGrid";
 import React from "react";
 import { createTheme, ThemeProvider } from "@mui/material";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import CarProfileGrid from "./components/myCarComponents/CarProfileGrid";
 import UserGrid from "./components/userProfileComponents/UserGrid";
 
@@ -37,9 +37,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <BrowserRouter basename="/">
+        <Route path="/rentit">
           <MainGrid />
-        </BrowserRouter>
+        </Route>
         <Route path="/my-cars">
           <CarProfileGrid />
         </Route>

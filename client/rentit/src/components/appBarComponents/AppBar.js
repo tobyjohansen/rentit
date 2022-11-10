@@ -126,7 +126,7 @@ export default function PrimarySearchAppBar() {
               fontSize: "2em",
             }}
           >
-            <Link to="/" className="links">
+            <Link to="/rentit" className="links">
               RentIt
             </Link>
           </Typography>

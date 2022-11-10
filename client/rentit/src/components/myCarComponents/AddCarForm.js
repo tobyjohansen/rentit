@@ -107,6 +107,7 @@ export default function AddCarForm() {
       fuel: enteredFuel,
       price_per_km_after_limit: enteredPricePerKmOver,
       reg_number: enteredRegNumber,
+      owner: 12, //Temp. set 12 default for user Ola Nordmann
     };
 
     //Fetch Post method for creating a new car
@@ -140,7 +141,7 @@ export default function AddCarForm() {
 
   const weeks = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-    22, 23, 24,
+    22, 23, 24, 25, 26, 27, 28, 29, 30,
   ];
 
   const extras = ["Barnesete", "Hengerfeste", "Piggdekk", "Jekkestropper"];
@@ -287,7 +288,7 @@ export default function AddCarForm() {
           multiple
           value={enteredAvailability}
           onChange={availabilityChangeHandler}
-          input={<OutlinedInput label="Ledige uker" />}
+          input={<OutlinedInput label="Ledige ukenummer" />}
           renderValue={(selected) => selected.join(", ")}
           MenuProps={MenuProps}
         >

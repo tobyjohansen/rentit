@@ -1,7 +1,30 @@
 import React, { useState } from "react";
 import car from "../../assets/car.png";
 import "../../App.css";
-import { Box, Button, Typography, Modal } from "@mui/material";
+import {
+  Box,
+  Button,
+  Typography,
+  Modal,
+  InputLabel,
+  Select,
+  FormControl,
+  OutlinedInput,
+  MenuItem,
+  Checkbox,
+  ListItemText,
+} from "@mui/material";
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
 
 const style = {
   position: "absolute",
@@ -18,16 +41,23 @@ const style = {
 
 const AllCars = (props) => {
   const [open, setOpen] = useState(false);
-  const [rent, setRent] = useState("Lei denne");
   const [carReturn, setCarReturn] = useState("Lever bil");
+  const [weeklyRental, setWeeklyRental] = useState([]);
+  const [save, setSave] = useState("Send forespørsel");
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const rentHandler = () => {
-    setRent("UTLEID");
-  };
   const carReturnHandler = () => {
     setCarReturn("Bilen er levert");
+  };
+  const saveHandler = () => {
+    setSave("Forespørsel sendt");
+  };
+  const weeklyRentHandler = (e) => {
+    const {
+      target: { value },
+    } = e;
+    setWeeklyRental(typeof value === "string" ? value.split(",") : value);
   };
 
   return (
@@ -40,7 +70,14 @@ const AllCars = (props) => {
           </Typography>
           <Typography variant="h6">Pris: {props.price} NOK/uke</Typography>
           <Typography variant="h6">Hentested: {props.location}</Typography>
-          <Button onClick={handleOpen}>Les mer</Button>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+            <Button variant="outlined" onClick={handleOpen}>
+              Les mer
+            </Button>
+            <Button variant="outlined" onClick={carReturnHandler}>
+              {carReturn}
+            </Button>
+          </Box>
           <Modal
             open={open}
             onClose={handleClose}
@@ -95,8 +132,33 @@ const AllCars = (props) => {
                   </li>
                 ))}
               </ul>
-              <Button onClick={rentHandler}>{rent}</Button>
-              <Button onClick={carReturnHandler}>{carReturn}</Button>
+              <Box>
+                <FormControl sx={{ m: 1, width: "20ch" }}>
+                  <InputLabel id="demo-multiple-checkbox-label">
+                    Velg ukenummer
+                  </InputLabel>
+                  <Select
+                    labelId="demo-multiple-checkbox-label"
+                    id="demo-multiple-checkbox"
+                    multiple
+                    value={weeklyRental}
+                    onChange={weeklyRentHandler}
+                    input={<OutlinedInput label="Velg ukenummer" />}
+                    renderValue={(selected) => selected.join(", ")}
+                    MenuProps={MenuProps}
+                  >
+                    {props.availability.map((week) => (
+                      <MenuItem key={week.toString()} value={week}>
+                        <Checkbox checked={weeklyRental.indexOf(week) > -1} />
+                        <ListItemText primary={week} />
+                      </MenuItem>
+                    ))}
+                  </Select>
+                  <Button className="buttons" onClick={saveHandler}>
+                    {save}
+                  </Button>
+                </FormControl>
+              </Box>
             </Box>
           </Modal>
         </li>
