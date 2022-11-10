@@ -247,10 +247,10 @@ export default function AddCarForm() {
           label="Biltype"
           onChange={typeChangeHandler}
         >
-          <MenuItem value={"Regular"}>Personbil</MenuItem>
-          <MenuItem value={"Large"}>Stasjonsvogn</MenuItem>
-          <MenuItem value={"Xlarge"}>SUV</MenuItem>
-          <MenuItem value={"Van"}>Varebil</MenuItem>
+          <MenuItem value={"Personbil"}>Personbil</MenuItem>
+          <MenuItem value={"Stasjonsvogn"}>Stasjonsvogn</MenuItem>
+          <MenuItem value={"SUV"}>SUV</MenuItem>
+          <MenuItem value={"Varebil"}>Varebil</MenuItem>
         </Select>
       </FormControl>
       <TextField

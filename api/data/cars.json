@@ -200,8 +200,7 @@
     "km_limit": "800",
     "extras": [],
     "price_per_km_after_limit": "10",
-    "reg_number": "EV35663",
-    "owner": 12
+    "reg_number": "EV35663"
   },
   {
     "id": 13,
@@ -217,7 +216,23 @@
     "km_limit": "500",
     "extras": ["Hengerfeste"],
     "price_per_km_after_limit": "10",
-    "reg_number": "EK76222",
-    "owner": 12
+    "reg_number": "EK76222"
+  },
+  {
+    "id": 14,
+    "price": "3500",
+    "model": "e-208",
+    "brand": "Peugeot",
+    "year": "2019",
+    "location": "Lillestrøm",
+    "availability": [2, 8, 9, 14, 15, 18, 20],
+    "type": "Regular",
+    "fuel": "Electricity",
+    "gear": "Automat",
+    "km_limit": "800",
+    "extras": ["Barnesete"],
+    "price_per_km_after_limit": "20",
+    "owner": 12,
+    "reg_number": "EV22472"
   }
 ]

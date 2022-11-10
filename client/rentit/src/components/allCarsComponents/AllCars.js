@@ -71,12 +71,8 @@ const AllCars = (props) => {
           <Typography variant="h6">Pris: {props.price} NOK/uke</Typography>
           <Typography variant="h6">Hentested: {props.location}</Typography>
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-            <Button variant="outlined" onClick={handleOpen}>
-              Les mer
-            </Button>
-            <Button variant="outlined" onClick={carReturnHandler}>
-              {carReturn}
-            </Button>
+            <Button onClick={handleOpen}>Les mer</Button>
+            <Button onClick={carReturnHandler}>{carReturn}</Button>
           </Box>
           <Modal
             open={open}
