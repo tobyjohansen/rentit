@@ -14,6 +14,7 @@ class Car {
   price_per_km_after_limit = null;
   owner = null;
   reg_number = null;
+  booked_weeks = null;
 
   constructor(
     id,
@@ -31,7 +32,8 @@ class Car {
     extras,
     price_per_km_after_limit,
     owner,
-    reg_number
+    reg_number,
+    booked_weeks
   ) {
     this.id = id;
     this.price = price;
@@ -48,6 +50,7 @@ class Car {
     this.price_per_km_after_limit = price_per_km_after_limit;
     this.owner = owner;
     this.reg_number = reg_number;
+    this.booked_weeks = booked_weeks;
 
     if (carList !== null && carList !== undefined) {
       if (carList.findCarByID(id) !== "could not find car") {
@@ -65,6 +68,7 @@ class Car {
         car.price_per_km_after_limit = price_per_km_after_limit;
         car.owner = owner;
         car.reg_number = reg_number;
+        car.booked_weeks = booked_weeks;
       }
     }
 
@@ -88,6 +92,7 @@ class Car {
       price_per_km_after_limit: this.price_per_km_after_limit,
       owner: this.owner,
       reg_number: this.reg_number,
+      booked_weeks: this.booked_weeks,
     };
     return car;
   }

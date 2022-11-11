@@ -34,22 +34,24 @@ const AllCars = (props) => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <ModalContent
-              key={props.id}
-              price={props.price}
-              model={props.model}
-              brand={props.brand}
-              year={props.year}
-              location={props.location}
-              availability={props.availability}
-              type={props.type}
-              fuel={props.fuel}
-              gear={props.gear}
-              km_limit={props.km_limit}
-              extras={props.extras}
-              price_per_km_after_limit={props.price_per_km_after_limit}
-              reg_number={props.reg_number}
-            />
+            <div>
+              <ModalContent
+                key={props.id}
+                price={props.price}
+                model={props.model}
+                brand={props.brand}
+                year={props.year}
+                location={props.location}
+                availability={props.availability}
+                type={props.type}
+                fuel={props.fuel}
+                gear={props.gear}
+                km_limit={props.km_limit}
+                extras={props.extras}
+                price_per_km_after_limit={props.price_per_km_after_limit}
+                reg_number={props.reg_number}
+              />
+            </div>
           </Modal>
         </li>
       </ul>

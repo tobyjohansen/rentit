@@ -47,7 +47,8 @@ exports.createCar = (req, res) => {
       req.body.extras,
       req.body.price_per_km_after_limit,
       req.body.owner,
-      req.body.reg_number
+      req.body.reg_number,
+      req.body.booked_weeks
     );
 
     //change this logic
@@ -95,7 +96,8 @@ exports.updateCar = (req, res) => {
     req.body.extras,
     req.body.price_per_km_after_limit,
     req.body.owner,
-    req.body.reg_number
+    req.body.reg_number,
+    req.body.booked_weeks
   );
 
   console.log(newCar.carObject);
