@@ -1,8 +1,9 @@
 import AllCarList from "./AllCarList";
 import AppBar from "./../appBarComponents/AppBar";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import "../../App.css";
+import DefaultSearch from "./DefaultSearch";
 
 function Grid() {
   //Fetch all cars from the api
@@ -59,22 +60,7 @@ function Grid() {
           <AppBar />
         </Box>
         <Box sx={{ gridArea: "main" }}>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              mt: "2rem",
-            }}
-          >
-            <Typography variant="h6">Du har søkt:</Typography>
-            <Typography variant="h6">1 uke 1-7 mars 2023</Typography>
-            <Typography variant="h6">Alle hentesteder</Typography>
-            <Typography variant="h6">Sortert etter pris lav-høy</Typography>
-            <Typography variant="h7" sx={{ mt: "2rem" }}>
-              Resultat:
-            </Typography>
-          </Box>
+          <DefaultSearch />
           <AllCarList cars={cars} />
         </Box>
         <Box sx={{ gridArea: "footer" }}></Box>
