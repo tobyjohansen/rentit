@@ -41,14 +41,28 @@ export default function ModalContent(props) {
   const [weeklyRental, setWeeklyRental] = useState([]);
   const [save, setSave] = useState("Send forespørsel");
 
-  const saveHandler = () => {
-    setSave("Forespørsel sendt");
-  };
   const weeklyRentHandler = (e) => {
     const {
       target: { value },
     } = e;
     setWeeklyRental(typeof value === "string" ? value.split(",") : value);
+  };
+
+  const saveHandler = (e) => {
+    e.preventDefault();
+    const carStatus = {
+      booked_weeks: weeklyRental,
+    };
+    fetch("http://localhost:3300/api/v1/cars/", {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify(carStatus),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(carStatus);
+    setSave("Suksess!");
   };
 
   return (
@@ -81,7 +95,7 @@ export default function ModalContent(props) {
         Pris over km-grense: {props.price_per_km_after_limit} NOK/km
       </Typography>
       <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
-        Ledige uker:
+        Ledige ukenummer:
       </Typography>
       <ul className="availability_list">
         {props.availability.map((week) => (

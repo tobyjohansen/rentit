@@ -11,11 +11,13 @@ export default function DefaultSearch() {
         mt: "2rem",
       }}
     >
-      <Typography variant="h6">Du har søkt:</Typography>
-      <Typography variant="h6">1 uke 1-7 mars 2023</Typography>
-      <Typography variant="h6">Alle hentesteder</Typography>
-      <Typography variant="h6">Sortert etter pris lav-høy</Typography>
-      <Typography variant="h7" sx={{ mt: "2rem" }}>
+      <Typography variant="h7" sx={{ mb: "1rem" }}>
+        Du har søkt:
+      </Typography>
+      <Typography variant="h7">1 uke 1-7 mars 2023</Typography>
+      <Typography variant="h7">Alle hentesteder</Typography>
+      <Typography variant="h7">Sortert etter pris lav-høy</Typography>
+      <Typography variant="h7" sx={{ mt: "1rem" }}>
         Resultat:
       </Typography>
     </Box>

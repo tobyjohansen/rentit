@@ -167,6 +167,7 @@ export default function AddCarForm() {
         id="outlined-basic"
         label="Bilmerke"
         variant="outlined"
+        required="true"
         value={enteredBrand}
       />
       <TextField
@@ -174,6 +175,7 @@ export default function AddCarForm() {
         id="outlined-basic"
         label="Bilmodell"
         variant="outlined"
+        required="true"
         value={enteredModel}
       />
       <TextField
@@ -181,6 +183,7 @@ export default function AddCarForm() {
         id="outlined-basic"
         label="Årsmodell"
         variant="outlined"
+        required="true"
         value={enteredYear}
       />
       <TextField
@@ -188,6 +191,7 @@ export default function AddCarForm() {
         id="outlined-basic"
         label="Hentested"
         variant="outlined"
+        required="true"
         value={enteredLocation}
       />
       <TextField
@@ -195,6 +199,7 @@ export default function AddCarForm() {
         id="outlined-basic"
         label="Pris/uke"
         variant="outlined"
+        required="true"
         value={enteredPrice}
       />
       <TextField
@@ -209,6 +214,7 @@ export default function AddCarForm() {
         id="outlined-basic"
         label="Registreringsnr."
         variant="outlined"
+        required="true"
         value={enteredRegNumber}
       />
       <FormControl fullWidth>
@@ -218,6 +224,7 @@ export default function AddCarForm() {
           id="fuel-select"
           value={enteredFuel}
           label="Drivstoff"
+          required="true"
           onChange={fuelChangeHandler}
         >
           <MenuItem value={"Gas"}>Bensin</MenuItem>
@@ -232,6 +239,7 @@ export default function AddCarForm() {
           id="gear-select"
           value={enteredGear}
           label="Girkasse"
+          required="true"
           onChange={gearChangeHandler}
         >
           <MenuItem value={"Manuell"}>Manuell</MenuItem>
@@ -280,7 +288,7 @@ export default function AddCarForm() {
           ))}
         </Select>
       </FormControl>
-      <FormControl sx={{ m: 1, width: 300 }}>
+      <FormControl sx={{ m: 1, width: 300 }} required="true">
         <InputLabel id="demo-multiple-checkbox-label">Ledige uker</InputLabel>
         <Select
           labelId="demo-multiple-checkbox-label"
