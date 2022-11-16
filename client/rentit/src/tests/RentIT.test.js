@@ -1,4 +1,4 @@
-import { getByLabelText, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import AllCars from "../components/allCarsComponents/AllCars";
@@ -129,10 +129,19 @@ describe("User should be able to register a new car to rent out", () => {
     });
     user.type(carPriceAfterLimit, "10");
   });
-  /*test("All added items to add car form should be submitted to backend when you click 'Lagre' button", () => {
-    render(<MockAddCarForm />);
+  test("All added items to add car form should be submitted to backend when you click 'Lagre' button", () => {
+    const onSubmit = jest.fn();
+    render(<MockAddCarForm onSubmit={onSubmit} />);
 
-  });*/
+    const carBrand = screen.getByLabelText(/Bilmerke/i);
+    const carModel = screen.getByLabelText(/Bilmodell/i);
+    const save = screen.getByRole("button", { name: "Lagre ny bil" });
+
+    userEvent.type(carBrand, "Bercedes");
+    userEvent.type(carModel, "Menz");
+    userEvent.click(save);
+    expect(onSubmit).toHaveBeenCalledTimes(1);
+  });
 });
 
 describe("User should be able to end car hire in the app by returning car", () => {
