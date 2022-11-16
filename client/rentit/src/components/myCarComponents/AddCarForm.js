@@ -122,6 +122,19 @@ export default function AddCarForm() {
     //End of fetch
 
     console.log(carData);
+    console.log(carData.brand);
+    console.log(carData.gear);
+    console.log(carData.location);
+    console.log(carData.model);
+    console.log(carData.price);
+    console.log(carData.year);
+    console.log(carData.availability);
+    console.log(carData.type);
+    console.log(carData.extras);
+    console.log(carData.km_limit);
+    console.log(carData.fuel);
+    console.log(carData.price_per_km_after_limit);
+    console.log(carData.reg_number);
     setEnteredBrand("");
     setEnteredGear("");
     setEnteredLocation("");
@@ -130,7 +143,6 @@ export default function AddCarForm() {
     setEnteredYear("");
     setEnteredAvailability([]);
     setEnteredType("");
-    setEnteredGear("");
     setEnteredEquipment([]);
     setSave("Lagre");
     setEnteredKmLimit("");
