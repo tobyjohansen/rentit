@@ -1,8 +1,6 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import userEvent from "@testing-library/user-event";
-import AllCars from "../components/allCarsComponents/AllCars";
-import AddCarForm from "../components/myCarComponents/AddCarForm";
+import AddCarForm from "./AddCarForm";
 import user from "@testing-library/user-event";
 
 const MockAddCarForm = () => {
@@ -105,93 +103,32 @@ describe("User should be able to register a new car to rent out", () => {
   test("User should be able to add and submit car registration number to AddCarForm", () => {
     render(<MockAddCarForm />);
     const carRegNo = screen.getByRole("textbox", { name: /Registreringsnr./i });
+    const submit = screen.getByRole("button", { name: /Lagre ny bil/i });
     user.type(carRegNo, "TestRegNr");
-  });
-  test("User should be able to add and submit a car fuel type to AddCarForm", () => {
-    render(<MockAddCarForm />);
-    const carFuel = screen.getByRole("button", { name: /Drivstoff/i });
-    user.click(carFuel);
-  });
-  test("User should be able to add a car gear type to AddCarForm", () => {
-    render(<MockAddCarForm />);
-    const carGear = screen.getByRole("button", { name: /Girkasse/i });
-    user.click(carGear);
-  });
-  test("User should be able to add a car type to AddCarForm", () => {
-    render(<MockAddCarForm />);
-    const carType = screen.getByRole("button", { name: /Biltype/i });
-    user.click(carType);
+    user.click(submit);
   });
   test("User should be able to add and submit a price per km if you exceed set driving limit to AddCarForm", () => {
     render(<MockAddCarForm />);
     const carPriceAfterLimit = screen.getByRole("textbox", {
       name: /pris\/km over grense/i,
     });
+    const submit = screen.getByRole("button", { name: /Lagre ny bil/i });
     user.type(carPriceAfterLimit, "10");
+    user.click(submit);
   });
-  test("All added items to add car form should be submitted to backend when you click 'Lagre' button", () => {
+  /*
+  test("All added items to add car form should be submitted to backend when you click 'Lagre' button", async () => {
+    const car = "Bercedes";
+
     const onSubmit = jest.fn();
-    render(<MockAddCarForm onSubmit={onSubmit} />);
+    render(<AddCarForm onSubmit={onSubmit} />);
 
     const carBrand = screen.getByLabelText(/Bilmerke/i);
-    const carModel = screen.getByLabelText(/Bilmodell/i);
     const save = screen.getByRole("button", { name: "Lagre ny bil" });
 
-    userEvent.type(carBrand, "Bercedes");
-    userEvent.type(carModel, "Menz");
-    userEvent.click(save);
+    await waitFor(() => user.type(carBrand, car));
+    await waitFor(() => user.click(save));
+
     expect(onSubmit).toHaveBeenCalledTimes(1);
-  });
-});
-
-describe("User should be able to end car hire in the app by returning car", () => {
-  test("AllCars component renders 'Lever bil' when 'Lever bil' button is not clicked", () => {
-    render(
-      <BrowserRouter>
-        <AllCars />
-      </BrowserRouter>
-    );
-    const returnElement = screen.getByText("Lever bil", { exact: false });
-    expect(returnElement).toBeInTheDocument();
-  });
-  test("AllCars component renders 'Bilen er levert' when 'Lever bil' button is clicked", () => {
-    render(
-      <BrowserRouter>
-        <AllCars />
-      </BrowserRouter>
-    );
-    const returnButton = screen.getByText("Lever bil", { exact: false });
-    userEvent.click(returnButton);
-
-    const returnText = screen.getByText("Bilen er levert", {
-      exact: false,
-    });
-    expect(returnText).toBeInTheDocument();
-  });
-  test("AllCars component does NOT render 'Lever bil' when 'Lever bil' button is clicked", () => {
-    render(
-      <BrowserRouter>
-        <AllCars />
-      </BrowserRouter>
-    );
-    const returnButton = screen.getByText("Lever bil", { exact: false });
-    userEvent.click(returnButton);
-
-    const returnText = screen.getByText("Bilen er levert", {
-      exact: false,
-    });
-    expect(returnText).not.toBeInTheDocument;
-  });
-});
-
-describe("Other tests: Component AllCars", () => {
-  test("renders 'les mer' on each car component button if NOT clicked", () => {
-    render(
-      <BrowserRouter>
-        <AllCars />
-      </BrowserRouter>
-    );
-    const readMoreElement = screen.getByText("les mer", { exact: false });
-    expect(readMoreElement).toBeInTheDocument();
-  });
+  });*/
 });
