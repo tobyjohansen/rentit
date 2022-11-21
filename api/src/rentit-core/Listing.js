@@ -1,6 +1,5 @@
 class Listing {
   id = null;
-  regnumber = null;
   price = null;
   model = null;
   brand = null;
@@ -14,6 +13,7 @@ class Listing {
   extras = null;
   price_per_km_after_limit = null;
   owner = null;
+  regn_umber = null;
 
   constructor() {}
 
@@ -22,7 +22,7 @@ class Listing {
     this.validateRequiredListing(obj);
     this.checkForDoubleListing(obj, repository);
     this.updateListingObj(obj);
-    repository.create(obj);
+    repository.create(this.listingObj);
   }
 
   update() {}
@@ -31,7 +31,7 @@ class Listing {
     const errorVal = [];
     if (
       obj.id == null ||
-      obj.regnumber == null ||
+      obj.reg_number == null ||
       obj.price == null ||
       obj.model == null ||
       obj.location == null ||
@@ -42,7 +42,7 @@ class Listing {
         errorVal.push("id");
       }
 
-      if (obj.regnumber == null) {
+      if (obj.reg_number == null) {
         errorVal.push("regnumber");
       }
 
@@ -62,7 +62,7 @@ class Listing {
         errorVal.push("availability");
       }
 
-      if (owner == null) {
+      if (obj.owner == null) {
         errorVal.push("owner");
       }
 
@@ -75,16 +75,16 @@ class Listing {
     let values = Object.keys(repository.All);
 
     values.forEach((value) => {
-      if (repository.All[value].regnumber === obj.regnumber) {
+      if (repository.All[value].reg_number === obj.reg_number) {
         errorVal.push("regnumber allready used");
         throw errorVal;
       }
-    })
-  };
+    });
+  }
 
   updateListingObj(obj) {
     this.id = obj.id;
-    this.regnumber = obj.regnumber;
+    this.reg_number = obj.reg_number;
     this.price = obj.price;
     this.model = obj.model;
     this.brand = obj.brand;
@@ -103,7 +103,6 @@ class Listing {
   get listingObj() {
     const listing = {
       id: this.id,
-      regnumber: this.regnumber,
       price: this.price,
       model: this.model,
       brand: this.brand,
@@ -117,6 +116,7 @@ class Listing {
       extras: this.extras,
       price_per_km_after_limit: this.price_per_km_after_limit,
       owner: this.owner,
+      reg_number: this.reg_number,
     };
     return listing;
   }

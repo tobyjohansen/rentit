@@ -111,7 +111,7 @@ export default function AddCarForm() {
     };
 
     //Fetch Post method for creating a new car
-    fetch("http://localhost:3300/api/v1/cars/", {
+    fetch("http://localhost:3300/api/v1/listings/", {
       method: "POST",
       mode: "cors",
       body: JSON.stringify(carData),

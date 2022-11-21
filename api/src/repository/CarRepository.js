@@ -13,7 +13,9 @@ class CarRepository {
   }
 
   create(car) {
-    this.db.save(car);
+    this.carList = this.All;
+    this.carList.push(car);
+    this.db.save(this.carList);
   }
 
   update(id, car) {

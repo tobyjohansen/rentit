@@ -38,42 +38,15 @@ exports.getCar = (req, res) => {
 exports.createCar = (req, res) => {
   try {
     const listing = new Listing();
-    listing.create(req.body);
+    console.log(req.body);
+    listing.create(req.body, carRep);
 
-    const newCar = new Car(
-      cars.createID(),
-      null,
-      req.body.price,
-      req.body.model,
-      req.body.brand,
-      req.body.year,
-      req.body.location,
-      req.body.availability,
-      req.body.type,
-      req.body.fuel,
-      req.body.gear,
-      req.body.km_limit,
-      req.body.extras,
-      req.body.price_per_km_after_limit,
-      req.body.owner
-    );
-
-    //change this logic
-    //cars.carList.push(newCar.carObject);
-    cars.createCar(newCar.carObject);
-
-    fs.writeFile(
-      `${__dirname}/../../data/cars.json`,
-      JSON.stringify(cars.carList),
-      (err) => {
-        res.status(201).json({
-          status: "success",
-          data: {
-            cars: newCar.jsonStringify(),
-          },
-        });
-      }
-    );
+    res.status(201).json({
+      status: "success",
+      data: {
+        cars: "Test",
+      },
+    });
   } catch (err) {
     console.log(err);
     res.status(400).json({
