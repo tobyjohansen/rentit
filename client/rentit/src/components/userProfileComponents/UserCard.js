@@ -37,9 +37,6 @@ export default function UserCard() {
         <Typography variant="body2" color="text.secondary">
           Førerkort klasse B
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          <Button size="medium">Endre profil</Button>
-        </Typography>
       </CardContent>
     </Card>
   );

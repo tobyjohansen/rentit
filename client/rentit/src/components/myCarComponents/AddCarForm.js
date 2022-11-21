@@ -220,9 +220,9 @@ export default function AddCarForm() {
           label="Drivstoff"
           onChange={fuelChangeHandler}
         >
-          <MenuItem value={"Gas"}>Bensin</MenuItem>
+          <MenuItem value={"Bensin"}>Bensin</MenuItem>
           <MenuItem value={"Diesel"}>Diesel</MenuItem>
-          <MenuItem value={"Electricity"}>Elektrisitet</MenuItem>
+          <MenuItem value={"Elektrisitet"}>Elektrisitet</MenuItem>
         </Select>
       </FormControl>
       <FormControl fullWidth>

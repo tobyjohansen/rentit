@@ -3,7 +3,6 @@ import AppBar from "./../appBarComponents/AppBar";
 import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import "../../App.css";
-import DefaultSearch from "./DefaultSearch";
 
 function Grid() {
   //Fetch all cars from the api
@@ -60,7 +59,6 @@ function Grid() {
           <AppBar />
         </Box>
         <Box sx={{ gridArea: "main" }}>
-          <DefaultSearch />
           <AllCarList cars={cars} />
         </Box>
         <Box sx={{ gridArea: "footer" }}></Box>

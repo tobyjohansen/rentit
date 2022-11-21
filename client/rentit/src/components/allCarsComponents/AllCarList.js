@@ -6,8 +6,8 @@ const AllCarList = (props) => {
   return (
     <ul className="cardlist">
       {props.cars
-        .sort((a, b) => (a.price > b.price ? 1 : -1))
-        .map((car) => (
+        ?.sort((a, b) => (a.price > b.price ? 1 : -1))
+        ?.map((car) => (
           <AllCars
             key={car.id}
             price={car.price}

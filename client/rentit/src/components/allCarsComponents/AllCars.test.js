@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import AllCars from "./AllCars";
-import user from "@testing-library/user-event";
 
 const MockAllCars = () => {
   return (
@@ -40,10 +39,20 @@ describe("User should be able to end car hire in the app by returning car", () =
   });
 });
 
-describe("User should be able to see available cars", () => {
+describe("User should be able to see the car data of available cars", () => {
   test("AllCars renders 'les mer' on each car component button if NOT clicked", () => {
     render(<MockAllCars />);
     const readMoreElement = screen.getByText("les mer", { exact: false });
+    expect(readMoreElement).toBeInTheDocument();
+  });
+  test("AllCars renders car price", () => {
+    render(<MockAllCars />);
+    const readMoreElement = screen.getByText("pris", { exact: false });
+    expect(readMoreElement).toBeInTheDocument();
+  });
+  test("AllCars renders pickup location", () => {
+    render(<MockAllCars />);
+    const readMoreElement = screen.getByText("hentested", { exact: false });
     expect(readMoreElement).toBeInTheDocument();
   });
 });
