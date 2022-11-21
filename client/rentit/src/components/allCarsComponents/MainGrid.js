@@ -1,8 +1,9 @@
-import CarList from "../carview/CarList";
-import AppBar from "../carview/AppBar";
+import AllCarList from "./AllCarList";
+import AppBar from "./../appBarComponents/AppBar";
 import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import "../../App.css";
+import DefaultSearch from "./DefaultSearch";
 
 function Grid() {
   //Fetch all cars from the api
@@ -59,7 +60,8 @@ function Grid() {
           <AppBar />
         </Box>
         <Box sx={{ gridArea: "main" }}>
-          <CarList cars={cars} />
+          <DefaultSearch />
+          <AllCarList cars={cars} />
         </Box>
         <Box sx={{ gridArea: "footer" }}></Box>
       </Box>

@@ -54,12 +54,12 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem>
-        <Link to="/user" className="links">
+        <Link to="/user-profile" className="links">
           Min profil
         </Link>
       </MenuItem>
       <MenuItem>
-        <Link to="/rent-out" className="links">
+        <Link to="/my-cars" className="links">
           Mine biler
         </Link>
       </MenuItem>
@@ -111,6 +111,8 @@ export default function PrimarySearchAppBar() {
             display: "flex",
             gap: "3rem",
             height: "150px",
+            justifyContent: "space-around",
+            flexWrap: "wrap",
           }}
         >
           <Typography
@@ -122,12 +124,11 @@ export default function PrimarySearchAppBar() {
               padding: "2rem",
               letterSpacing: "0.7rem",
               textTransform: "uppercase",
-              mr: "12rem",
               fontSize: "2em",
             }}
           >
-            <Link to="/main" className="links">
-              RentIt
+            <Link to="/rentit" className="links">
+              Rent-It
             </Link>
           </Typography>
           <Typography
@@ -137,14 +138,12 @@ export default function PrimarySearchAppBar() {
             sx={{
               display: { xs: "none", sm: "block" },
               padding: "2rem",
-              letterSpacing: "0.5rem",
-              mr: "4rem",
+              letterSpacing: "0.3rem",
             }}
           >
             Hei, Ola Nordmann!
           </Typography>
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ mr: "3rem", display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
               edge="end"

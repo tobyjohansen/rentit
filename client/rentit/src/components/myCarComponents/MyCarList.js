@@ -22,6 +22,7 @@ const MyCarList = (props) => {
           extras={car.extras}
           price_per_km_after_limit={car.price_per_km_after_limit}
           owner={car.owner}
+          reg_number={car.reg_number}
         />
       ))}
     </ul>

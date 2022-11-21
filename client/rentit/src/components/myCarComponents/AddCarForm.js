@@ -12,11 +12,10 @@ import {
   ListItemText,
   Checkbox,
   Button,
-  //cardActionAreaClasses,
 } from "@mui/material";
 
-export default function EditCarForm() {
-  const [save, setSave] = useState("Oppdater bildata");
+export default function AddCarForm() {
+  const [save, setSave] = useState("Lagre ny bil");
   const [enteredBrand, setEnteredBrand] = useState("");
   const [enteredModel, setEnteredModel] = useState("");
   const [enteredYear, setEnteredYear] = useState("");
@@ -26,10 +25,10 @@ export default function EditCarForm() {
   const [enteredEquipment, setEnteredEquipment] = useState([]);
   const [enteredGear, setEnteredGear] = useState("");
   const [enteredType, setEnteredType] = useState("");
-  const [enteredReference, setEnteredReference] = useState("");
   const [enteredKmLimit, setEnteredKmLimit] = useState("");
   const [enteredFuel, setEnteredFuel] = useState("");
   const [enteredPricePerKmOver, setEnteredPricePerKmOver] = useState("");
+  const [enteredRegNumber, setEnteredRegNumber] = useState("");
 
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
@@ -37,13 +36,13 @@ export default function EditCarForm() {
     PaperProps: {
       style: {
         maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-        width: 200,
+        width: 250,
       },
     },
   };
 
   const saveHandler = () => {
-    setSave("Bildata oppdatert");
+    setSave("Lagret");
   };
   const carBrandChangeHandler = (e) => {
     setEnteredBrand(e.target.value);
@@ -80,10 +79,6 @@ export default function EditCarForm() {
   const typeChangeHandler = (e) => {
     setEnteredType(e.target.value);
   };
-
-  const referenceHandler = (e) => {
-    setEnteredReference(e.target.value);
-  };
   const kmChangeHandler = (e) => {
     setEnteredKmLimit(e.target.value);
   };
@@ -93,9 +88,11 @@ export default function EditCarForm() {
   const pricePerKmChangeHandler = (e) => {
     setEnteredPricePerKmOver(e.target.value);
   };
+  const regNumberHandler = (e) => {
+    setEnteredRegNumber(e.target.value);
+  };
   const submitHandler = (e) => {
     e.preventDefault();
-
     const carData = {
       brand: enteredBrand,
       model: enteredModel,
@@ -105,27 +102,27 @@ export default function EditCarForm() {
       availability: enteredAvailability,
       extras: enteredEquipment,
       gear: enteredGear,
-      type: enteredGear,
-      id: enteredReference,
+      type: enteredType,
       km_limit: enteredKmLimit,
       fuel: enteredFuel,
       price_per_km_after_limit: enteredPricePerKmOver,
+      reg_number: enteredRegNumber,
+      owner: 12, //Temp. set 12 default for user Ola Nordmann
     };
 
-    //Added Update fetch method for updateing to api
-    const url = "http://localhost:3300/api/v1/cars/" + enteredReference;
-    fetch(url, {
-      method: "PATCH",
+    //Fetch Post method for creating a new car
+    fetch("http://localhost:3300/api/v1/cars/", {
+      method: "POST",
       mode: "cors",
       body: JSON.stringify(carData),
       headers: {
         "Content-Type": "application/json",
       },
     });
-
     //End of fetch
 
     console.log(carData);
+    console.log(carData.brand);
     setEnteredBrand("");
     setEnteredGear("");
     setEnteredLocation("");
@@ -134,18 +131,17 @@ export default function EditCarForm() {
     setEnteredYear("");
     setEnteredAvailability([]);
     setEnteredType("");
-    setEnteredGear("");
     setEnteredEquipment([]);
     setSave("Lagre");
-    setEnteredReference("");
     setEnteredKmLimit("");
     setEnteredFuel("");
     setEnteredPricePerKmOver("");
+    setEnteredRegNumber("");
   };
 
   const weeks = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-    22, 23, 24,
+    22, 23, 24, 25, 26, 27, 28, 29, 30,
   ];
 
   const extras = ["Barnesete", "Hengerfeste", "Piggdekk", "Jekkestropper"];
@@ -156,7 +152,7 @@ export default function EditCarForm() {
       sx={{
         "& > :not(style)": {
           m: 2,
-          width: "20ch",
+          width: "30ch",
         },
       }}
       noValidate
@@ -164,15 +160,8 @@ export default function EditCarForm() {
       onSubmit={submitHandler}
     >
       <Typography variant="h5" gutterBottom>
-        Endre bil
+        Registrer ny bil:
       </Typography>
-      <TextField
-        onChange={referenceHandler}
-        id="outlined-basic"
-        label="Referanse"
-        variant="outlined"
-        value={enteredReference}
-      />
       <TextField
         onChange={carBrandChangeHandler}
         id="outlined-basic"
@@ -216,11 +205,11 @@ export default function EditCarForm() {
         value={enteredKmLimit}
       />
       <TextField
-        onChange={pricePerKmChangeHandler}
+        onChange={regNumberHandler}
         id="outlined-basic"
-        label="Pris/km over grense"
+        label="Registreringsnr."
         variant="outlined"
-        value={enteredPricePerKmOver}
+        value={enteredRegNumber}
       />
       <FormControl fullWidth>
         <InputLabel id="fuel-select">Drivstoff</InputLabel>
@@ -245,8 +234,8 @@ export default function EditCarForm() {
           label="Girkasse"
           onChange={gearChangeHandler}
         >
-          <MenuItem value={"Manual"}>Manuell</MenuItem>
-          <MenuItem value={"Automatic"}>Automat</MenuItem>
+          <MenuItem value={"Manuell"}>Manuell</MenuItem>
+          <MenuItem value={"Automat"}>Automat</MenuItem>
         </Select>
       </FormControl>
       <FormControl fullWidth>
@@ -258,13 +247,20 @@ export default function EditCarForm() {
           label="Biltype"
           onChange={typeChangeHandler}
         >
-          <MenuItem value={"Regular"}>Personbil</MenuItem>
-          <MenuItem value={"Large"}>Stasjonsvogn</MenuItem>
-          <MenuItem value={"Xlarge"}>SUV</MenuItem>
-          <MenuItem value={"Van"}>Varebil</MenuItem>
+          <MenuItem value={"Personbil"}>Personbil</MenuItem>
+          <MenuItem value={"Stasjonsvogn"}>Stasjonsvogn</MenuItem>
+          <MenuItem value={"SUV"}>SUV</MenuItem>
+          <MenuItem value={"Varebil"}>Varebil</MenuItem>
         </Select>
       </FormControl>
-      <FormControl sx={{ m: 1, width: "20ch" }}>
+      <TextField
+        onChange={pricePerKmChangeHandler}
+        id="outlined-basic"
+        label="Pris/km over grense"
+        variant="outlined"
+        value={enteredPricePerKmOver}
+      />
+      <FormControl sx={{ m: 1, width: 300 }}>
         <InputLabel id="demo-multiple-checkbox-label">Ekstrautstyr</InputLabel>
         <Select
           labelId="demo-multiple-checkbox-label"
@@ -284,7 +280,7 @@ export default function EditCarForm() {
           ))}
         </Select>
       </FormControl>
-      <FormControl sx={{ m: 1, width: "20ch" }}>
+      <FormControl sx={{ m: 1, width: 300 }}>
         <InputLabel id="demo-multiple-checkbox-label">Ledige uker</InputLabel>
         <Select
           labelId="demo-multiple-checkbox-label"
@@ -292,7 +288,7 @@ export default function EditCarForm() {
           multiple
           value={enteredAvailability}
           onChange={availabilityChangeHandler}
-          input={<OutlinedInput label="Ledige uker" />}
+          input={<OutlinedInput label="Ledige ukenummer" />}
           renderValue={(selected) => selected.join(", ")}
           MenuProps={MenuProps}
         >
@@ -304,16 +300,14 @@ export default function EditCarForm() {
           ))}
         </Select>
       </FormControl>
-      <Box>
-        <Button
-          type="submit"
-          className="buttons"
-          variant="outlined"
-          onClick={saveHandler}
-        >
-          {save}
-        </Button>
-      </Box>
+      <Button
+        type="submit"
+        variant="outlined"
+        className="buttons"
+        onClick={saveHandler}
+      >
+        {save}
+      </Button>
     </Box>
   );
 }

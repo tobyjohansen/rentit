@@ -14,8 +14,8 @@ import {
   Button,
 } from "@mui/material";
 
-export default function AddCarForm() {
-  const [save, setSave] = useState("Lagre ny bil");
+export default function EditCarForm() {
+  const [save, setSave] = useState("Oppdater bildata");
   const [enteredBrand, setEnteredBrand] = useState("");
   const [enteredModel, setEnteredModel] = useState("");
   const [enteredYear, setEnteredYear] = useState("");
@@ -25,6 +25,7 @@ export default function AddCarForm() {
   const [enteredEquipment, setEnteredEquipment] = useState([]);
   const [enteredGear, setEnteredGear] = useState("");
   const [enteredType, setEnteredType] = useState("");
+  const [enteredRegNumber, setEnteredRegNumber] = useState("");
   const [enteredKmLimit, setEnteredKmLimit] = useState("");
   const [enteredFuel, setEnteredFuel] = useState("");
   const [enteredPricePerKmOver, setEnteredPricePerKmOver] = useState("");
@@ -35,13 +36,13 @@ export default function AddCarForm() {
     PaperProps: {
       style: {
         maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-        width: 250,
+        width: 200,
       },
     },
   };
 
   const saveHandler = () => {
-    setSave("Lagret");
+    setSave("Bildata oppdatert");
   };
   const carBrandChangeHandler = (e) => {
     setEnteredBrand(e.target.value);
@@ -78,6 +79,10 @@ export default function AddCarForm() {
   const typeChangeHandler = (e) => {
     setEnteredType(e.target.value);
   };
+
+  const regNumberHandler = (e) => {
+    setEnteredRegNumber(e.target.value);
+  };
   const kmChangeHandler = (e) => {
     setEnteredKmLimit(e.target.value);
   };
@@ -89,6 +94,7 @@ export default function AddCarForm() {
   };
   const submitHandler = (e) => {
     e.preventDefault();
+
     const carData = {
       brand: enteredBrand,
       model: enteredModel,
@@ -98,21 +104,24 @@ export default function AddCarForm() {
       availability: enteredAvailability,
       extras: enteredEquipment,
       gear: enteredGear,
-      type: enteredType,
+      type: enteredGear,
+      reg_number: enteredRegNumber,
       km_limit: enteredKmLimit,
       fuel: enteredFuel,
       price_per_km_after_limit: enteredPricePerKmOver,
     };
 
-    //Fetch Post method for creating a new car
-    fetch("http://localhost:3300/api/v1/cars/", {
-      method: "POST",
+    //Added Update fetch method for updateing to api
+    const url = "http://localhost:3300/api/v1/cars/" + enteredRegNumber;
+    fetch(url, {
+      method: "PATCH",
       mode: "cors",
       body: JSON.stringify(carData),
       headers: {
         "Content-Type": "application/json",
       },
     });
+
     //End of fetch
 
     console.log(carData);
@@ -127,6 +136,7 @@ export default function AddCarForm() {
     setEnteredGear("");
     setEnteredEquipment([]);
     setSave("Lagre");
+    setEnteredRegNumber("");
     setEnteredKmLimit("");
     setEnteredFuel("");
     setEnteredPricePerKmOver("");
@@ -145,7 +155,7 @@ export default function AddCarForm() {
       sx={{
         "& > :not(style)": {
           m: 2,
-          width: "30ch",
+          width: "20ch",
         },
       }}
       noValidate
@@ -153,8 +163,16 @@ export default function AddCarForm() {
       onSubmit={submitHandler}
     >
       <Typography variant="h5" gutterBottom>
-        Registrer ny bil:
+        Endre bil
       </Typography>
+      <TextField
+        onChange={regNumberHandler}
+        id="outlined-basic"
+        label="Registreringsnr."
+        variant="outlined"
+        value={enteredRegNumber}
+        required="true"
+      />
       <TextField
         onChange={carBrandChangeHandler}
         id="outlined-basic"
@@ -197,12 +215,13 @@ export default function AddCarForm() {
         variant="outlined"
         value={enteredKmLimit}
       />
-      {/* 
-      <GearSelect />
-      <WeekSelect />
-      
-      <EquipmentSelect />
-      <TypeSelect />*/}
+      <TextField
+        onChange={pricePerKmChangeHandler}
+        id="outlined-basic"
+        label="Pris/km over grense"
+        variant="outlined"
+        value={enteredPricePerKmOver}
+      />
       <FormControl fullWidth>
         <InputLabel id="fuel-select">Drivstoff</InputLabel>
         <Select
@@ -226,8 +245,8 @@ export default function AddCarForm() {
           label="Girkasse"
           onChange={gearChangeHandler}
         >
-          <MenuItem value={"Manuell"}>Manuell</MenuItem>
-          <MenuItem value={"Automat"}>Automat</MenuItem>
+          <MenuItem value={"Manual"}>Manuell</MenuItem>
+          <MenuItem value={"Automatic"}>Automat</MenuItem>
         </Select>
       </FormControl>
       <FormControl fullWidth>
@@ -245,14 +264,7 @@ export default function AddCarForm() {
           <MenuItem value={"Van"}>Varebil</MenuItem>
         </Select>
       </FormControl>
-      <TextField
-        onChange={pricePerKmChangeHandler}
-        id="outlined-basic"
-        label="Pris/km over grense"
-        variant="outlined"
-        value={enteredPricePerKmOver}
-      />
-      <FormControl sx={{ m: 1, width: 300 }}>
+      <FormControl sx={{ m: 1, width: "20ch" }}>
         <InputLabel id="demo-multiple-checkbox-label">Ekstrautstyr</InputLabel>
         <Select
           labelId="demo-multiple-checkbox-label"
@@ -272,7 +284,7 @@ export default function AddCarForm() {
           ))}
         </Select>
       </FormControl>
-      <FormControl sx={{ m: 1, width: 300 }}>
+      <FormControl sx={{ m: 1, width: "20ch" }}>
         <InputLabel id="demo-multiple-checkbox-label">Ledige uker</InputLabel>
         <Select
           labelId="demo-multiple-checkbox-label"
@@ -292,14 +304,16 @@ export default function AddCarForm() {
           ))}
         </Select>
       </FormControl>
-      <Button
-        type="submit"
-        variant="outlined"
-        className="buttons"
-        onClick={saveHandler}
-      >
-        {save}
-      </Button>
+      <Box>
+        <Button
+          type="submit"
+          className="buttons"
+          variant="outlined"
+          onClick={saveHandler}
+        >
+          {save}
+        </Button>
+      </Box>
     </Box>
   );
 }
