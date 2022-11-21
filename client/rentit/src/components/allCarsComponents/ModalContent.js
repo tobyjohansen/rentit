@@ -81,7 +81,7 @@ export default function ModalContent(props) {
         Pris over km-grense: {props.price_per_km_after_limit} NOK/km
       </Typography>
       <Typography variant="h6" sx={{ ml: "1rem", mb: "0.4rem" }}>
-        Ledige uker:
+        Ledige ukenummer:
       </Typography>
       <ul className="availability_list">
         {props.availability.map((week) => (
