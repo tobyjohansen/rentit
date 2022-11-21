@@ -123,6 +123,7 @@ exports.updateCar = (req, res) => {
 };
 
 exports.deleteCar = (req, res) => {
+  console.log(req.params.id);
   cars.removeCar(req.params.id);
 
   fs.writeFile(
