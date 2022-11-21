@@ -111,7 +111,7 @@ export default function EditCarForm() {
       price_per_km_after_limit: enteredPricePerKmOver,
     };
 
-    //Added Update fetch method for updateing to api
+    //Added Update fetch method for updating to api
     const url = "http://localhost:3300/api/v1/cars/" + enteredRegNumber;
     fetch(url, {
       method: "PATCH",
