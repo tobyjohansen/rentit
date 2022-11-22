@@ -172,21 +172,21 @@ export default function AddCarForm() {
       <TextField
         onChange={carModelChangeHandler}
         id="outlined-basic"
-        label="Bilmodell"
+        label="Bilmodell*"
         variant="outlined"
         value={enteredModel}
       />
       <TextField
         onChange={yearChangeHandler}
         id="outlined-basic"
-        label="Årsmodell"
+        label="Årsmodell*"
         variant="outlined"
         value={enteredYear}
       />
       <TextField
         onChange={locationChangeHandler}
         id="outlined-basic"
-        label="Hentested"
+        label="Hentested*"
         variant="outlined"
         value={enteredLocation}
       />
@@ -261,10 +261,10 @@ export default function AddCarForm() {
         value={enteredPricePerKmOver}
       />
       <FormControl sx={{ m: 1, width: 300 }}>
-        <InputLabel id="demo-multiple-checkbox-label">Ekstrautstyr</InputLabel>
+        <InputLabel id="equipment">Ekstrautstyr</InputLabel>
         <Select
-          labelId="demo-multiple-checkbox-label"
-          id="demo-multiple-checkbox"
+          labelId="equipment"
+          id="equipment-checkbox"
           multiple
           value={enteredEquipment}
           onChange={equipmentChangeHandler}
@@ -281,10 +281,10 @@ export default function AddCarForm() {
         </Select>
       </FormControl>
       <FormControl sx={{ m: 1, width: 300 }}>
-        <InputLabel id="demo-multiple-checkbox-label">Ledige uker</InputLabel>
+        <InputLabel id="weeks">Ledige uker*</InputLabel>
         <Select
-          labelId="demo-multiple-checkbox-label"
-          id="demo-multiple-checkbox"
+          labelId="weeks"
+          id="weeks-checkbox"
           multiple
           value={enteredAvailability}
           onChange={availabilityChangeHandler}
