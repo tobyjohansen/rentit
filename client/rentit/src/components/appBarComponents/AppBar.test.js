@@ -10,7 +10,7 @@ const MockAppBar = () => {
   );
 };
 
-describe("User should be able to see main menu", () => {
+describe("\nUser should be able to see main menu", () => {
   test("AppBar renders Rent-IT logo", () => {
     render(<MockAppBar />);
     const readMoreElement = screen.getByText("Rent-IT", { exact: false });

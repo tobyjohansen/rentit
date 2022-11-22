@@ -10,7 +10,7 @@ const MockMyCarList = () => {
   );
 };
 
-describe("User should be able to see a list of added own cars", () => {
+describe("\nUser should be able to see a list of added own cars", () => {
   test("Test should pass if car list length is not 0", async () => {
     render(<MockMyCarList />);
 

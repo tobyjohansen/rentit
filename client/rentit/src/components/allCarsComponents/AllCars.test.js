@@ -11,7 +11,7 @@ const MockAllCars = () => {
   );
 };
 
-describe("User should be able to end car hire in the app by returning car", () => {
+describe("\nUser should be able to end car hire in the app by returning car", () => {
   test("AllCars component renders 'Lever bil' when 'Lever bil' button is not clicked", () => {
     render(<MockAllCars />);
     const returnElement = screen.getByText("Lever bil", { exact: false });
