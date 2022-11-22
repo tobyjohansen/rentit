@@ -11,7 +11,7 @@ const MockAllCarList = () => {
 };
 
 describe("\nUser should be able to see a list of available cars to rent", () => {
-  test("Test should pass if car list length is not 0", async () => {
+  test("Test passes if car list length is not 0", async () => {
     render(<MockAllCarList />);
 
     const carElements = await screen.findAllByRole("list");
