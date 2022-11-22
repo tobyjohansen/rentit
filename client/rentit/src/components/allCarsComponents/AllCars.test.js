@@ -56,3 +56,41 @@ describe("User should be able to see the car data of available cars", () => {
     expect(readMoreElement).toBeInTheDocument();
   });
 });
+
+describe("User should be able to send a rental request for chosen car", () => {
+  test("Test will pass if ModalContent renders available week numbers to choose from", () => {
+    render(<MockAllCars />);
+    const openModal = screen.getByText("Les mer", { exact: false });
+    userEvent.click(openModal);
+    const sendRequest = screen.getByText("Ledige ukenummer", { exact: false });
+    expect(sendRequest).toBeInTheDocument();
+  });
+  test("Test will pass if ModalContent renders 'Send forespørsel' if button is NOT clicked", () => {
+    render(<MockAllCars />);
+    const openModal = screen.getByText("Les mer", { exact: false });
+    userEvent.click(openModal);
+    const sendRequest = screen.getByText("Send forespørsel", { exact: false });
+    expect(sendRequest).toBeInTheDocument();
+  });
+  test("Test will pass if ModalContent renders “Forespørsel sendt” when button is clicked", () => {
+    render(<MockAllCars />);
+    const openModal = screen.getByText("Les mer", { exact: false });
+    userEvent.click(openModal);
+    const sendRequest = screen.getByText("Send forespørsel", { exact: false });
+    userEvent.click(sendRequest);
+    const requestMessage = screen.getByText("Forespørsel sendt", {
+      exact: false,
+    });
+    expect(requestMessage).toBeInTheDocument();
+  });
+});
+
+describe("\nUser should be able to see available weeks in modal", () => {
+  test("Test should pass if car list length is not 0", async () => {
+    render(<MockAllCars />);
+    const openModal = screen.getByText("Les mer", { exact: false });
+    userEvent.click(openModal);
+    const weeksAvailable = await screen.findAllByRole("list");
+    expect(weeksAvailable).not.toHaveLength(0);
+  });
+});

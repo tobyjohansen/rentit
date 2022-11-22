@@ -84,7 +84,7 @@ export default function ModalContent(props) {
         Ledige ukenummer:
       </Typography>
       <ul className="availability_list">
-        {props.availability.map((week) => (
+        {props.availability?.map((week) => (
           <li className="list_element_styling" key={week.toString()}>
             {week}
           </li>
@@ -94,7 +94,7 @@ export default function ModalContent(props) {
         Eventuelt ekstrautstyr inkl:
       </Typography>
       <ul className="equiptment_list">
-        {props.extras.map((extra) => (
+        {props.extras?.map((extra) => (
           <li className="list_element_styling" key={extra.toString()}>
             {extra}
           </li>
@@ -115,7 +115,7 @@ export default function ModalContent(props) {
             renderValue={(selected) => selected.join(", ")}
             MenuProps={MenuProps}
           >
-            {props.availability.map((week) => (
+            {props.availability?.map((week) => (
               <MenuItem key={week.toString()} value={week}>
                 <Checkbox checked={weeklyRental.indexOf(week) > -1} />
                 <ListItemText primary={week} />
