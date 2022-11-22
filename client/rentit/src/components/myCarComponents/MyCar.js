@@ -23,10 +23,11 @@ const MyCar = (props) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  /*
-  const [remove, setRemove] = useState("Slett bil");
+  //const [remove, setRemove] = useState("Slett bil");
   const removeHandler = (props) => {
-    const url = "http://localhost:3300/api/v1/cars/" + props.id;
+    console.log(props.key);
+    console.log(props.brand);
+    const url = "http://localhost:3300/api/v1/listings/" + parseInt(props.key);
     fetch(url, {
       method: "DELETE",
       mode: "cors",
@@ -36,9 +37,8 @@ const MyCar = (props) => {
     });
     //End of fetch
 
-    setRemove("Bilen er slettet");
+    //setRemove("Bilen er slettet");
   };
-  */
 
   return (
     <Box>
@@ -54,7 +54,7 @@ const MyCar = (props) => {
           <Typography variant="h6">Pris: {props.price} NOK/uke</Typography>
           <Box>
             <Button onClick={handleOpen}>Endre</Button>
-            <Button>Slett</Button>
+            <Button onClick={(props) => removeHandler(props)}>Slett</Button>
           </Box>
         </li>
       </ul>

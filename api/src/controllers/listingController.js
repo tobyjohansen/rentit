@@ -4,6 +4,7 @@ const Car = require("../models/Car");
 
 const JSONDatabase = require("../database/JSONDatabase");
 const CarRepository = require("../repository/CarRepository");
+const Listing = require("../rentit-core/listing");
 
 //Initialising Database and Repository
 const jsonData = new JSONDatabase();
@@ -36,6 +37,9 @@ exports.getCar = (req, res) => {
 
 exports.createCar = (req, res) => {
   try {
+    const listing = new Listing();
+    listing.create(req.body);
+
     const newCar = new Car(
       cars.createID(),
       null,
@@ -51,9 +55,7 @@ exports.createCar = (req, res) => {
       req.body.km_limit,
       req.body.extras,
       req.body.price_per_km_after_limit,
-      req.body.owner,
-      req.body.reg_number,
-      req.body.booked_weeks
+      req.body.owner
     );
 
     //change this logic
@@ -100,9 +102,7 @@ exports.updateCar = (req, res) => {
     req.body.km_limit,
     req.body.extras,
     req.body.price_per_km_after_limit,
-    req.body.owner,
-    req.body.reg_number,
-    req.body.booked_weeks
+    req.body.owner
   );
 
   console.log(newCar.carObject);
@@ -123,6 +123,7 @@ exports.updateCar = (req, res) => {
 };
 
 exports.deleteCar = (req, res) => {
+  console.log(req.params.id);
   cars.removeCar(req.params.id);
 
   fs.writeFile(
