@@ -1,4 +1,4 @@
-import AppBar from "./AppBar";
+import AppBar from "../AppBar";
 import { render, screen, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 

@@ -1,18 +1,18 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import AllCarList from "./AllCarList";
+import MyCarList from "../MyCarList";
 
-const MockAllCarList = () => {
+const MockMyCarList = () => {
   return (
     <BrowserRouter>
-      <AllCarList />
+      <MyCarList />
     </BrowserRouter>
   );
 };
 
-describe("\nUser should be able to see a list of available cars to rent", () => {
+describe("\nUser should be able to see a list of added own cars", () => {
   test("Test should pass if car list length is not 0", async () => {
-    render(<MockAllCarList />);
+    render(<MockMyCarList />);
 
     const carElements = await screen.findAllByRole("list");
     expect(carElements).not.toHaveLength(0);

@@ -1,9 +1,8 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import { Router } from "react-router-dom";
-import MainGrid from "./MainGrid";
+import MainGrid from "../MainGrid";
 import user from "@testing-library/user-event";
-import ModalContent from "./ModalContent";
 
 describe("User should be able to navigate to 'Mine biler' and 'Min profil' from main page", () => {
   it("Button 'Mine biler' navigates user to /my-cars path when clicked", async () => {

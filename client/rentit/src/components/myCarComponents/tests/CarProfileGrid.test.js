@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import CarProfileGrid from "./CarProfileGrid";
+import CarProfileGrid from "../CarProfileGrid";
 
 const MockMyCarProfile = () => {
   return (
