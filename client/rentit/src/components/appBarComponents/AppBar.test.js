@@ -10,7 +10,7 @@ const MockAppBar = () => {
   );
 };
 
-describe("\nUser should be able to see main menu", () => {
+describe("\nUser should be able to see main menu and navigate home and to its profile", () => {
   test("AppBar renders Rent-IT logo", () => {
     render(<MockAppBar />);
     const readMoreElement = screen.getByText("Rent-IT", { exact: false });
@@ -24,6 +24,11 @@ describe("\nUser should be able to see main menu", () => {
   test("AppBar renders dropdown menu with 'Min profil'", () => {
     render(<MockAppBar />);
     const readMoreElement = screen.getByText("Min profil", { exact: false });
+    expect(readMoreElement).toBeInTheDocument();
+  });
+  test("AppBar renders dropdown menu with 'Mine biler'", () => {
+    render(<MockAppBar />);
+    const readMoreElement = screen.getByText("Mine biler", { exact: false });
     expect(readMoreElement).toBeInTheDocument();
   });
   test("AppBar renders dropdown menu with 'Mine biler'", () => {
