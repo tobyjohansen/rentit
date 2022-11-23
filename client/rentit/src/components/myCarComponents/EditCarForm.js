@@ -171,7 +171,6 @@ export default function EditCarForm() {
         label="Registreringsnr."
         variant="outlined"
         value={enteredRegNumber}
-        required="true"
       />
       <TextField
         onChange={carBrandChangeHandler}
