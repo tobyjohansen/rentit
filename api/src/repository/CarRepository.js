@@ -13,18 +13,40 @@ class CarRepository {
   }
 
   create(car) {
-    this.db.save(car);
+    this.carList = this.All;
+    this.carList.push(car);
+    this.db.save(this.carList);
   }
 
   update(id, car) {
     let values = Object.keys(car);
+    this.carList = this.All;
 
     values.forEach((value) => {
       if (car[value] != null && car[value].length != 0) {
-        this.db[id - 1][value] = car[value];
+        this.carList[id - 1][value] = car[value];
       }
     });
-    return this.db[id - 1];
+    this.db.save(this.carList);
+  }
+
+  delete(id) {
+    this.carList = this.All;
+    console.log(this.carList);
+    delete this.carList[id - 1];
+    console.log(this.carList);
+
+    const newCarList = this.carList.filter((element) => {
+      if (Object.keys(element).length !== 0) {
+        return true;
+      }
+
+      return false;
+    });
+
+    this.carList = newCarList;
+
+    this.db.save(this.carList);
   }
 }
 

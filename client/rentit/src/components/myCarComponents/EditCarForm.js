@@ -112,7 +112,7 @@ export default function EditCarForm() {
     };
 
     //Added Update fetch method for updating to api
-    const url = "http://localhost:3300/api/v1/cars/" + enteredRegNumber;
+    const url = "http://localhost:3300/api/v1/listings/" + enteredRegNumber;
     fetch(url, {
       method: "PATCH",
       mode: "cors",

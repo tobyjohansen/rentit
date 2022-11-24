@@ -23,11 +23,11 @@ const MyCar = (props) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const reference = props.reference;
+
   //const [remove, setRemove] = useState("Slett bil");
   const removeHandler = (props) => {
-    console.log(props.key);
-    console.log(props.brand);
-    const url = "http://localhost:3300/api/v1/listings/" + parseInt(props.key);
+    const url = "http://localhost:3300/api/v1/listings/" + reference;
     fetch(url, {
       method: "DELETE",
       mode: "cors",
