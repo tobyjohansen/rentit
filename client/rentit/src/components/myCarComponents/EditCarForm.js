@@ -135,7 +135,6 @@ export default function EditCarForm() {
     setEnteredType("");
     setEnteredGear("");
     setEnteredEquipment([]);
-    setSave("Lagre");
     setEnteredRegNumber("");
     setEnteredKmLimit("");
     setEnteredFuel("");
