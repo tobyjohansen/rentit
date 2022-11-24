@@ -9,7 +9,7 @@ function Grid() {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3300/api/v1/cars")
+    fetch("http://localhost:3300/api/v1/listings")
       .then((response) => {
         return response.json();
       })

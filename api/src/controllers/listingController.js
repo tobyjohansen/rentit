@@ -38,7 +38,6 @@ exports.getCar = (req, res) => {
 exports.createCar = (req, res) => {
   try {
     const listing = new Listing();
-    console.log(req.body);
     listing.create(req.body, carRep);
 
     res.status(201).json({
