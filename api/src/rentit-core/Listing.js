@@ -13,7 +13,7 @@ class Listing {
   extras = null;
   price_per_km_after_limit = null;
   owner = null;
-  regn_umber = null;
+  reg_number = null;
 
   constructor() {}
 
@@ -25,7 +25,10 @@ class Listing {
     repository.create(this.listingObj);
   }
 
-  update() {}
+  update(obj, repository) {
+    this.updateListingObj(obj);
+    repository.update(16, this);
+  }
 
   validateRequiredListing(obj) {
     const errorVal = [];
@@ -127,7 +130,9 @@ class Listing {
     return obj;
   }
 
-  get() {}
+  jsonStringify() {
+    return JSON.stringify(this.carObject);
+  }
 }
 
 module.exports = Listing;

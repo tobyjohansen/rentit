@@ -20,13 +20,15 @@ class CarRepository {
 
   update(id, car) {
     let values = Object.keys(car);
+    this.carList = this.All;
 
     values.forEach((value) => {
       if (car[value] != null && car[value].length != 0) {
-        this.db[id - 1][value] = car[value];
+        this.carList[id - 1][value] = car[value];
       }
     });
-    return this.db[id - 1];
+    //return this.All[id - 1];
+    this.db.save(this.carList);
   }
 }
 
