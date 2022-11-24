@@ -22,6 +22,7 @@ installer dependencies ved å bruke: npm i
 <br>
 kjør derreter frontenden ved å bruke: npm start
 <br>
+Nettleser vill åpne seg med localhost:3000. Gå til lcalhost:3000/rentit for å se nettsiden
 
 # Kjør tester:
 <br>
