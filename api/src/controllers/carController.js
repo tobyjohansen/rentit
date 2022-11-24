@@ -2,24 +2,29 @@ const fs = require("fs");
 const CarList = require("../models/CarList");
 const Car = require("../models/Car");
 
-const cars = new CarList(
-  JSON.parse(fs.readFileSync(`${__dirname}/../../data/cars.json`))
-);
+const JSONDatabase = require("../database/JSONDatabase");
+const CarRepository = require("../repository/CarRepository");
+
+//Initialising Database and Repository
+const jsonData = new JSONDatabase();
+const carRep = new CarRepository(jsonData);
+
+const cars = new CarList(carRep.All);
 
 exports.getAllCars = (req, res) => {
   res.status(200).json({
     status: "success",
     requestedAt: req.requestTime,
     results: cars.carList.length,
-    cars: cars.carList,
+    cars: carRep.All,
   });
 };
 
 exports.getCar = (req, res) => {
-  if (cars.findCarByID(req.params.id) != "Could not find car") {
+  if (carRep.getById(req.params.id) != "Could not find car") {
     res.status(200).json({
       status: "success",
-      data: cars.findCarByID(req.params.id),
+      data: carRep.getById(req.params.id),
     });
   } else {
     res.status(400).json({
