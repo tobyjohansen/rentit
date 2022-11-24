@@ -21,12 +21,11 @@ installer dependencies ved å bruke: npm i
 kjør derreter frontenden ved å bruke: npm start
 <br>
 
-Kjør testene:
+#Kjør testene:
 <br>
 
 Åpne ny terminal i rentit prosjektmappen
 <br>
-
 Deretter gå til api mappen i temrinalen ved å bruke: cd .\api
 <br>
 kjør testene ved å bruke: npm test
