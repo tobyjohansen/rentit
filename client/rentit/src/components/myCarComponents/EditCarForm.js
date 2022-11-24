@@ -303,16 +303,14 @@ export default function EditCarForm() {
           ))}
         </Select>
       </FormControl>
-      <Box>
-        <Button
-          type="submit"
-          className="buttons"
-          variant="outlined"
-          onClick={saveHandler}
-        >
-          {save}
-        </Button>
-      </Box>
+      <Button
+        type="submit"
+        className="buttons"
+        variant="outlined"
+        onClick={saveHandler}
+      >
+        {save}
+      </Button>
     </Box>
   );
 }
