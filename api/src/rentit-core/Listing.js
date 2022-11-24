@@ -27,7 +27,7 @@ class Listing {
 
   update(obj, repository) {
     this.updateListingObj(obj);
-    repository.update(16, this);
+    repository.update(obj.reg_number, this);
   }
 
   validateRequiredListing(obj) {

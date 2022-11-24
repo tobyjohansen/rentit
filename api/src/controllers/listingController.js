@@ -69,18 +69,13 @@ exports.updateCar = (req, res) => {
 
 exports.deleteCar = (req, res) => {
   console.log(req.params.id);
-  cars.removeCar(req.params.id);
+  //cars.removeCar(req.params.id);
+  carRep.delete(req.params.id);
 
-  fs.writeFile(
-    `${__dirname}/../../data/cars.json`,
-    JSON.stringify(cars.carList),
-    (err) => {
-      res.status(201).json({
-        status: "success",
-        data: {
-          cars: cars.carList,
-        },
-      });
-    }
-  );
+  res.status(201).json({
+    status: "success",
+    data: {
+      cars: cars.carList,
+    },
+  });
 };

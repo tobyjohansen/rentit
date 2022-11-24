@@ -27,7 +27,25 @@ class CarRepository {
         this.carList[id - 1][value] = car[value];
       }
     });
-    //return this.All[id - 1];
+    this.db.save(this.carList);
+  }
+
+  delete(id) {
+    this.carList = this.All;
+    console.log(this.carList);
+    delete this.carList[id - 1];
+    console.log(this.carList);
+
+    const newCarList = this.carList.filter((element) => {
+      if (Object.keys(element).length !== 0) {
+        return true;
+      }
+
+      return false;
+    });
+
+    this.carList = newCarList;
+
     this.db.save(this.carList);
   }
 }
