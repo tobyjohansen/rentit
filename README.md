@@ -9,6 +9,8 @@ gå til api mappen i terminalen ved å bruke: cd .\api
 <br>
 installer dependencies ved å bruke: npm i
 <br>
+deretter gå inn i src mappen ved å bruke: cd .\src
+<br>
 deretter kjør apiet ved å bruke: node app.js
 <br>
 
