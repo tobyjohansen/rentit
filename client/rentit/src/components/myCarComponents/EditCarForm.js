@@ -167,7 +167,7 @@ export default function EditCarForm() {
       <TextField
         onChange={regNumberHandler}
         id="outlined-basic"
-        label="Registreringsnr."
+        label="Registreringsnr.*"
         variant="outlined"
         value={enteredRegNumber}
       />

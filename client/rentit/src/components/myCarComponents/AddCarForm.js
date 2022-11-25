@@ -165,7 +165,7 @@ export default function AddCarForm() {
       <TextField
         onChange={carBrandChangeHandler}
         id="outlined-basic"
-        label="Bilmerke"
+        label="Bilmerke*"
         variant="outlined"
         value={enteredBrand}
       />
