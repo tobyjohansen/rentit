@@ -1,59 +1,59 @@
-Kilder prosjekt:
+Kilder prototype:
 
-
-React Material UI Tutorial - 46 - Customizing Theme:
-https://www.youtube.com/watch?v=ZyQlpX7lCRE
-
-Material UI:
-https://mui.com/material-ui/getting-started/overview/
-
-
-Miro
-
-Creately (19 October 2022). How to Make a User Flow Diagram. 
-https://creately.com/blog/diagrams/user-flow-diagram/ 
-Christopher Kalodikis (22.September 2016). Planning a Data Flow Diagram.
-https://www.youtube.com/watch?v=VeLkVD0Q_6M 
-
-Maximilian Schwarzmüller (November 2022). 
-React - The Complete Guide (incl Hooks, React Router, Redux).
-https://www.udemy.com/course/react-the-complete-guide-incl-redux/ 
-
-Testing Playground (u.å). Testing Playground.
-https://testing-playground.com/
-
-Bruno Antunes(    4. October, 2021). Testing React Forms - React Testing Library - React.js Testing Tutorial #8
+Bruno Antunes. (2021, 4. oktober). Testing React Forms - React Testing Library - React.js Testing Tutorial #8
 https://www.youtube.com/watch?v=MhFSuOjU624 
 
-Code with tkssharma(8.September, 2021). React Testing Library Testing React Form #23.
+Chai Assertion Library. (u.å). Getting Started. 
+https://www.chaijs.com/
+
+Christopher Kalodikis. (2016, 22. september). Planning a Data Flow Diagram.
+https://www.youtube.com/watch?v=VeLkVD0Q_6M 
+
+Codevolution. (2022, 7. april). React Material UI Tutorial - 46 - Customizing Theme:
+https://www.youtube.com/watch?v=ZyQlpX7lCRE
+
+Code with tkssharma. (2021, 8. september). React Testing Library Testing React Form #23.
 https://www.youtube.com/watch?v=WTL0Cojk-so
 
-Grusingh for Dev.to(18 july, 2021). Testing navigation in react.
+Creately. (2022, 19. oktober). How to Make a User Flow Diagram. 
+https://creately.com/blog/diagrams/user-flow-diagram/ 
+
+Grusingh for Dev. (2021, 18. juli). Testing navigation in react.
 https://dev.to/grusingh/testing-navigation-in-react-310m
 
-w3schoolse Javascript
-https://www.w3schools.com/js/ (u.å)
+Hamedani, M. (u.å). CodeWithMosh. The Complete Node.js Course.
+https://codewithmosh.com/p/the-complete-node-js-course
 
-Javascript Docs Mozilla
-https://developer.mozilla.org/en-US/docs/Web/JavaScript (u.å)
+Hamedani, M. (u.å). CodeWithMosh. Mastering React.
+https://codewithmosh.com/p/mastering-react
 
-The Complet Node JS Course
-https://codewithmosh.com/p/the-complete-node-js-course (u.å)
+Istanbul JS. (u.å). JavaScript test coverage made simple.
+https://istanbul.js.org/
 
-Mastering React
-https://codewithmosh.com/p/mastering-react (u.å)
+Material UI. (u.å). Components.
+https://mui.com/material-ui/getting-started/overview/
 
-w3Schools NodeJS
-https://www.w3schools.com/nodejs/nodejs_intro.asp (u.å)
+MDN Web Docs. (2022, 8. november). JavaScript.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
-Tutorialspoint NodeJS
-https://www.tutorialspoint.com/nodejs/index.htm (u.å)
+Maximilian Schwarzmüller. (2022, november). React - The Complete Guide (incl Hooks, React Router, Redux).
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/ 
 
-ChaiJS
-https://www.chaijs.com/ (u.å)
+Miro. (u.å).
+https://miro.com/index/
 
-Samuele Zaza(21. september. 2020) Test a Node restful api with mocha and chai
+Testing Playground. (u.å). Testing Playground.
+https://testing-playground.com/
+
+Tutorialspoint. (u.å). Node.js Tutorial
+https://www.tutorialspoint.com/nodejs/index.htm
+
+W3Schools (u.å). Javascript Tutorial.
+https://www.w3schools.com/js/
+
+W3Schools. (u.å). Node.js Introduction.
+https://www.w3schools.com/nodejs/nodejs_intro.asp
+
+Zaza, S. (2020, 21. september) Test a Node RESTful API with Mocha and Chai.
 https://www.digitalocean.com/community/tutorials/test-a-node-restful-api-with-mocha-and-chai 
 
-Istanbul JS
-https://istanbul.js.org/
