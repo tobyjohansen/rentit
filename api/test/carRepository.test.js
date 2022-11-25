@@ -31,4 +31,10 @@ describe("Testing car Repository", () => {
     const result = FakeCarRep.update(4, dataSet2);
     assert.deepEqual(result, dataSet2);
   });
+
+  it("Delete_a_car", () => {
+    dataSet2 = JSON.parse(fs.readFileSync(`${__dirname}/carDataSet2.json`));
+    FakeCarRep.delete(16);
+    assert.deepEqual(FakeCarRep.All.length, 15);
+  });
 });

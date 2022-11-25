@@ -54,7 +54,7 @@ class FakeCarRepository {
 
     this.carList = newCarList;
 
-    this.db.save(this.carList);
+    this.db = this.carList;
   }
 }
 
