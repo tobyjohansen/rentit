@@ -11,6 +11,16 @@ class CarRepository {
     const car = this.All.find((el) => el.id === carId);
     return car;
   }
+  getIdByRegnumber(reg_number) {
+    this.carList = this.All;
+    let id = null;
+    this.carList.forEach((car) => {
+      if (reg_number == car.reg_number) {
+        id = car.id;
+      }
+    });
+    return id;
+  }
 
   create(car) {
     this.carList = this.All;

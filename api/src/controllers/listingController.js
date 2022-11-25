@@ -53,6 +53,7 @@ exports.createCar = (req, res) => {
 exports.updateCar = (req, res) => {
   const listing = new Listing();
   listing.update(req.body, carRep);
+  //console.log(carRep.getIdByRegnumber(ABC));
   res.status(201).json({
     status: "success",
     data: {
