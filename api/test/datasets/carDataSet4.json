@@ -1,0 +1,17 @@
+{
+  "id": 16,
+  "price": "222222",
+  "reg_number": "RG66634",
+  "model": "Masda",
+  "brand": "Toyota",
+  "year": "2009",
+  "location": "Slemmestad",
+  "availability": [12, 13, 8, 6, 5, 4],
+  "type": "Regular",
+  "fuel": "Gas",
+  "gear": "Manuell",
+  "km_limit": "800",
+  "extras": [],
+  "price_per_km_after_limit": "5",
+  "owner": 12
+}

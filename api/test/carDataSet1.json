@@ -2,6 +2,7 @@
   {
     "id": 1,
     "price": 6000,
+    "reg_number": "CC88245",
     "model": "i30",
     "brand": "Hyundai",
     "year": 2021,
@@ -13,12 +14,12 @@
     "km_limit": 500,
     "extras": ["Barnesete", "Hengerfeste"],
     "price_per_km_after_limit": 4.5,
-    "owner": 1,
-    "reg_number": "DL40033"
+    "owner": 1
   },
   {
     "id": 2,
     "price": 4000,
+    "reg_number": "DD66666",
     "model": "Soul",
     "brand": "Kia",
     "year": 2015,
@@ -30,12 +31,12 @@
     "km_limit": 450,
     "extras": [],
     "price_per_km_after_limit": 3,
-    "owner": 1,
-    "reg_number": "EV42033"
+    "owner": 1
   },
   {
     "id": 3,
     "price": 3500,
+    "reg_number": "EE66666",
     "model": "Yaris",
     "brand": "Toyota",
     "year": 2012,
@@ -47,12 +48,12 @@
     "km_limit": 600,
     "extras": ["Piggdekk"],
     "price_per_km_after_limit": 5,
-    "owner": 3,
-    "reg_number": "AR44522"
+    "owner": 3
   },
   {
     "id": 4,
     "price": 2500,
+    "reg_number": "FF66666",
     "model": "Leaf",
     "brand": "Nissan",
     "year": 2016,
@@ -64,12 +65,12 @@
     "km_limit": 300,
     "extras": [],
     "price_per_km_after_limit": 2.5,
-    "owner": 4,
-    "reg_number": "EK20333"
+    "owner": 4
   },
   {
     "id": 5,
     "price": 2800,
+    "reg_number": "GG66666",
     "model": "C-Zero",
     "brand": "Citroen",
     "year": 2018,
@@ -81,12 +82,12 @@
     "km_limit": 400,
     "extras": [],
     "price_per_km_after_limit": 6,
-    "owner": 5,
-    "reg_number": "EK29877"
+    "owner": 5
   },
   {
     "id": 6,
     "price": 5000,
+    "reg_number": "HH66666",
     "model": "ENV-200",
     "brand": "Buddy",
     "year": 2019,
@@ -98,12 +99,12 @@
     "km_limit": 700,
     "extras": ["Jekkestropper"],
     "price_per_km_after_limit": 6,
-    "owner": 6,
-    "reg_number": "EV34888"
+    "owner": 6
   },
   {
     "id": 7,
     "price": 3000,
+    "reg_number": "II66666",
     "model": "i3",
     "brand": "BMW",
     "year": 2010,
@@ -115,12 +116,12 @@
     "km_limit": 500,
     "extras": [],
     "price_per_km_after_limit": 2,
-    "owner": 7,
-    "reg_number": "AF44523"
+    "owner": 7
   },
   {
     "id": 8,
     "price": 3000,
+    "reg_number": "JJ66666",
     "model": "S40",
     "brand": "Volvo",
     "year": 2007,
@@ -132,12 +133,12 @@
     "km_limit": 600,
     "extras": ["Hengerfeste"],
     "price_per_km_after_limit": 2,
-    "owner": 8,
-    "reg_number": "DL50599"
+    "owner": 8
   },
   {
     "id": 9,
     "price": 4000,
+    "reg_number": "AB22002",
     "model": "A1",
     "brand": "Audi",
     "year": 20022,
@@ -149,12 +150,12 @@
     "km_limit": 600,
     "extras": [],
     "price_per_km_after_limit": 2,
-    "owner": 9,
-    "reg_number": "TK98222"
+    "owner": 9
   },
   {
     "id": 10,
     "price": 3000,
+    "reg_number": "DC11111",
     "model": "Citi-Jet 6",
     "brand": "Buddy",
     "year": 2007,
@@ -166,12 +167,12 @@
     "km_limit": 500,
     "extras": ["Barnesete"],
     "price_per_km_after_limit": 2,
-    "owner": 10,
-    "reg_number": "KL40425"
+    "owner": 10
   },
   {
     "id": 11,
     "price": 2000,
+    "reg_number": "OJ66666",
     "model": "Aygo",
     "brand": "Toyota",
     "year": 2011,
@@ -183,73 +184,89 @@
     "km_limit": 600,
     "extras": [],
     "price_per_km_after_limit": 3.5,
-    "owner": 11,
-    "reg_number": "DK87622"
+    "owner": 11
   },
   {
-    "id": 12,
-    "price": "3500",
-    "model": "Soul",
-    "brand": "Kia",
+    "id": "12",
+    "price": "7700",
+    "reg_number": "QR66666",
+    "model": "TT",
+    "brand": "Audi",
     "year": "2021",
-    "location": "Moss",
-    "availability": [1, 3, 4],
-    "type": "Personbil",
-    "fuel": "Elektrisitet",
-    "gear": "Automat",
-    "km_limit": "800",
+    "location": "Lindeberg",
+    "availability": [],
+    "type": "Automatic",
+    "fuel": "Gas",
+    "gear": "Automatic",
+    "km_limit": "1100",
     "extras": [],
-    "price_per_km_after_limit": "10",
-    "reg_number": "EV35663"
+    "price_per_km_after_limit": "4",
+    "owner": 12
   },
   {
     "id": 13,
-    "price": "2200",
-    "model": "Leaf",
-    "brand": "Nissan",
-    "year": "2016",
-    "location": "Moss",
-    "availability": [3, 12, 11],
-    "type": "Personbil",
-    "fuel": "Elektrisitet",
+    "price": "3500",
+    "reg_number": "TT99999",
+    "model": "Soul",
+    "brand": "Kia",
+    "year": "2020",
+    "location": "Drøbak",
+    "availability": [1],
+    "type": "regular",
     "gear": "Automat",
     "km_limit": "500",
     "extras": ["Hengerfeste"],
-    "price_per_km_after_limit": "10",
-    "reg_number": "EK76222"
+    "owner": 12
   },
   {
     "id": 14,
     "price": "3500",
-    "model": "e-208",
-    "brand": "Peugeot",
-    "year": "2019",
-    "location": "Lillestrøm",
-    "availability": [2, 8, 9, 14, 15, 18, 20],
-    "type": "Personbil",
-    "fuel": "Elektrisitet",
+    "reg_number": "GH66614",
+    "model": "Soul",
+    "brand": "Kia",
+    "year": "2020",
+    "location": "Drøbak",
+    "availability": [1],
+    "type": "regular",
+    "fuel": "Electricity",
     "gear": "Automat",
-    "km_limit": "800",
-    "extras": ["Barnesete"],
-    "price_per_km_after_limit": "20",
-    "owner": 12,
-    "reg_number": "EV22472"
+    "km_limit": "500",
+    "extras": ["Hengerfeste"],
+    "price_per_km_after_limit": "10",
+    "owner": 12
   },
   {
     "id": 15,
-    "price": "4000",
-    "model": "Transit",
-    "brand": "Ford",
-    "year": "2007",
-    "location": "Lillestrøm",
-    "availability": [1, 3, 4, 5, 12, 11, 16, 22, 24, 25, 29],
-    "type": "Varebil",
-    "fuel": "Bensin",
+    "price": "6000",
+    "reg_number": "YT66615",
+    "model": "500",
+    "brand": "Fiat",
+    "year": "2022",
+    "location": "Sarpsborg",
+    "availability": [17, 10, 9],
+    "type": "Regular",
+    "fuel": "Gas",
+    "gear": "Automat",
+    "km_limit": "800",
+    "extras": ["Barnesete"],
+    "price_per_km_after_limit": "10",
+    "owner": 12
+  },
+  {
+    "id": 16,
+    "price": "2000",
+    "reg_number": "RG66634",
+    "model": "Yaris",
+    "brand": "Toyota",
+    "year": "2009",
+    "location": "Slemmestad",
+    "availability": [12, 13, 8, 6, 5, 4],
+    "type": "Regular",
+    "fuel": "Gas",
     "gear": "Manuell",
     "km_limit": "800",
-    "extras": ["Hengerfeste", "Jekkestropper"],
-    "price_per_km_after_limit": "10",
-    "owner": 12,
-    "reg_number": "HK76311"
+    "extras": [],
+    "price_per_km_after_limit": "5",
+    "owner": 12
   }
 ]

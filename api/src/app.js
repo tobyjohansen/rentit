@@ -1,20 +1,16 @@
 const express = require("express");
-const carRouter = require("./routes/carRoutes");
+const listingRouter = require("./routes/listingRoutes");
 const cors = require("cors");
 
 const app = express();
 app.use(cors());
-
-//STINE PRØVER SEG PÅ ENDEPUNKTER
-app.get("/hello", (req, res) => res.send("Hello World!"));
-app.get("/learning", (req, res) => res.send("Learning how backend works!"));
 
 //MIDDLEWARES
 
 app.use(express.json());
 
 app.use((req, res, next) => {
-  console.log("Hello from the middleware");
+  console.log("Client has requested a ressource");
   next();
 });
 
@@ -25,7 +21,7 @@ app.use((req, res, next) => {
 
 // ROUTES
 
-app.use("/api/v1/cars", carRouter);
+app.use("/api/v1/listings", listingRouter);
 
 // START SERVER
 
