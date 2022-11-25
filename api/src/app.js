@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use((req, res, next) => {
-  console.log("Hello from the middleware");
+  console.log("Client has requested a ressource");
   next();
 });
 

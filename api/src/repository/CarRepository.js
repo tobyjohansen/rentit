@@ -42,9 +42,7 @@ class CarRepository {
 
   delete(id) {
     this.carList = this.All;
-    console.log(this.carList);
     delete this.carList[id - 1];
-    console.log(this.carList);
 
     const newCarList = this.carList.filter((element) => {
       if (Object.keys(element).length !== 0) {

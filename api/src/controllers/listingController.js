@@ -7,6 +7,7 @@ const jsonData = new JSONDatabase();
 const carRep = new CarRepository(jsonData);
 
 exports.getAllCars = (req, res) => {
+  console.log("Get All listing request Done");
   res.status(200).json({
     status: "success",
     requestedAt: req.requestTime,
@@ -17,6 +18,7 @@ exports.getAllCars = (req, res) => {
 
 exports.getCar = (req, res) => {
   if (carRep.getById(req.params.id) != "Could not find car") {
+    console.log("Get a listing request Done");
     res.status(200).json({
       status: "success",
       data: carRep.getById(req.params.id),
@@ -34,6 +36,7 @@ exports.createCar = (req, res) => {
     const listing = new Listing();
     listing.create(req.body, carRep);
 
+    console.log("Create a listing request Done");
     res.status(201).json({
       status: "success",
       data: {
@@ -53,7 +56,8 @@ exports.createCar = (req, res) => {
 exports.updateCar = (req, res) => {
   const listing = new Listing();
   listing.update(req.body, carRep);
-  //console.log(carRep.getIdByRegnumber(ABC));
+
+  console.log("Update a listing request Done");
   res.status(201).json({
     status: "success",
     data: {
@@ -63,9 +67,9 @@ exports.updateCar = (req, res) => {
 };
 
 exports.deleteCar = (req, res) => {
-  console.log(req.params.id);
   carRep.delete(req.params.id);
 
+  console.log("Delete a listing request Done");
   res.status(201).json({
     status: "success",
     data: {
