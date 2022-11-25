@@ -69,7 +69,6 @@ exports.updateCar = (req, res) => {
 
 exports.deleteCar = (req, res) => {
   console.log(req.params.id);
-  //cars.removeCar(req.params.id);
   carRep.delete(req.params.id);
 
   res.status(201).json({

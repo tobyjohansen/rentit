@@ -22,7 +22,6 @@ app.use((req, res, next) => {
 
 // ROUTES
 
-app.use("/api/v1/cars", carRouter);
 app.use("/api/v1/listings", listingRouter);
 
 // START SERVER
