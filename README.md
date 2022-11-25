@@ -1,41 +1,43 @@
 # rentit
 Software Engineering and Testing Project
 
-Installer nodeJs fra nettsiden https://nodejs.org/en/
+Installer NodeJS fra nettsiden https://nodejs.org/en/
 <br>
-Åpne terminalen i rentit prosjektmappen
+Åpne terminalen fra rentit prosjektmappen
 <br>
-gå til api mappen i terminalen ved å bruke: cd .\api
+Gå til api-mappen i terminalen ved å bruke: cd .\api
 <br>
-installer dependencies ved å bruke: npm i
+Installer dependencies ved å bruke: npm i
 <br>
-deretter gå inn i src mappen ved å bruke: cd .\src
+Deretter gå inn i src-mappen ved å bruke: cd .\src
 <br>
-deretter kjør apiet ved å bruke: node app.js
+Deretter kjør api'et ved å bruke: node app.js
 <br>
 
-Åpne en ny terminal i rentit prosjektappen
+Åpne en ny terminal fra rentit prosjektappen
 <br>
-deretter gå til client mappen i terminalen ved å bruke: cd .\client\rentit\
+Deretter gå til client-mappen i terminalen ved å bruke: cd .\client\rentit\
 <br>
-installer dependencies ved å bruke: npm i
+Installer dependencies ved å bruke: npm i
 <br>
-kjør derreter frontenden ved å bruke: npm start
+Kjør deretter frontenden ved å bruke: npm start
 <br>
-Nettleser vill åpne seg med localhost:3000. Gå til lcalhost:3000/rentit for å se nettsiden
+Nettleser vil åpne seg med localhost:3000. Gå til localhost:3000/rentit for å se nettsiden
 
 # Kjør tester:
 <br>
 
-Åpne ny terminal i rentit prosjektmappen
+Åpne ny terminal fra rentit prosjektmappen
 <br>
-Deretter gå til api mappen i temrinalen ved å bruke: cd .\api
+Deretter gå til api-mappen i temrinalen ved å bruke: cd .\api
 <br>
 kjør testene ved å bruke: npm test
 <br>
 
-Åpne ny terminal i rentit prosjektmappen
+Åpne ny terminal fra rentit prosjektmappen
 <br>
-deretter gå til client mappen i terminalev ved å bruke: cd .\client\rentit\
+Deretter gå til client-mappen i terminalen ved å bruke: cd .\client\rentit\
 <br>
-kjør testene ved å bruke: npm test
+Kjør testene ved å bruke: npm test
+<br>
+Deretter bruk: a (for å kjøre alle tester)
