@@ -1,5 +1,4 @@
 const express = require("express");
-const carRouter = require("./routes/carRoutes");
 const listingRouter = require("./routes/listingRoutes");
 const cors = require("cors");
 

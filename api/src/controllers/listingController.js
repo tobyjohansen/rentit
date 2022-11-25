@@ -1,7 +1,3 @@
-const fs = require("fs");
-const CarList = require("../models/CarList");
-const Car = require("../models/Car");
-
 const JSONDatabase = require("../database/JSONDatabase");
 const CarRepository = require("../repository/CarRepository");
 const Listing = require("../rentit-core/listing");
@@ -10,13 +6,11 @@ const Listing = require("../rentit-core/listing");
 const jsonData = new JSONDatabase();
 const carRep = new CarRepository(jsonData);
 
-const cars = new CarList(carRep.All);
-
 exports.getAllCars = (req, res) => {
   res.status(200).json({
     status: "success",
     requestedAt: req.requestTime,
-    results: cars.carList.length,
+    results: carRep.All.length,
     cars: carRep.All,
   });
 };
@@ -74,7 +68,7 @@ exports.deleteCar = (req, res) => {
   res.status(201).json({
     status: "success",
     data: {
-      cars: cars.carList,
+      cars: "Test",
     },
   });
 };
