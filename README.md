@@ -1,4 +1,4 @@
-# rentit
+# Rent-IT
 Software Engineering and Testing Project
 
 Installer NodeJS fra nettsiden https://nodejs.org/en/
