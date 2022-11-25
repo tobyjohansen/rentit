@@ -11,11 +11,18 @@ const MockAddCarForm = () => {
 };
 
 describe("\nUser should be able to add a car in its profile to rent out\n", () => {
-  describe("User should be able to fill out a car brand to the add car form", () => {
+  describe("User must fill out a car brand to the add car form", () => {
     test("Test passes if textbox labeled 'Bilmerke' is visible in add car form", () => {
       render(<MockAddCarForm />);
       const carBrand = screen.getByLabelText(/bilmerke/i);
       expect(carBrand).toBeInTheDocument();
+    });
+    test("Test passes if textbox 'Bilmerke' renders with a *, as it is a required field", () => {
+      render(<MockAddCarForm />);
+      const requiredField = screen.getByLabelText("Bilmerke*", {
+        exact: true,
+      });
+      expect(requiredField).toBeInTheDocument();
     });
   });
   describe("User must fill out a car model to the add car form", () => {

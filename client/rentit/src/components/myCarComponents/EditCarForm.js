@@ -135,7 +135,6 @@ export default function EditCarForm() {
     setEnteredType("");
     setEnteredGear("");
     setEnteredEquipment([]);
-    setSave("Lagre");
     setEnteredRegNumber("");
     setEnteredKmLimit("");
     setEnteredFuel("");
@@ -168,7 +167,7 @@ export default function EditCarForm() {
       <TextField
         onChange={regNumberHandler}
         id="outlined-basic"
-        label="Registreringsnr."
+        label="Registreringsnr.*"
         variant="outlined"
         value={enteredRegNumber}
       />
