@@ -67,7 +67,8 @@ exports.updateCar = (req, res) => {
 };
 
 exports.deleteCar = (req, res) => {
-  carRep.delete(req.params.id);
+  const listing = new Listing();
+  listing.delete(req.params.id, carRep);
 
   console.log("Delete a listing request Done");
   res.status(201).json({

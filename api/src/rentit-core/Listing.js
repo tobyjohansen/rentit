@@ -30,6 +30,10 @@ class Listing {
     repository.update(repository.getIdByRegnumber(obj.reg_number), this);
   }
 
+  delete(id, repository) {
+    repository.delete(id);
+  }
+
   validateRequiredListing(obj) {
     const errorVal = [];
     if (
