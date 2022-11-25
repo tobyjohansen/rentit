@@ -1,5 +1,4 @@
 const express = require("express");
-const carRouter = require("./routes/carRoutes");
 const listingRouter = require("./routes/listingRoutes");
 const cors = require("cors");
 
@@ -11,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use((req, res, next) => {
-  console.log("Hello from the middleware");
+  console.log("Client has requested a ressource");
   next();
 });
 
@@ -22,7 +21,6 @@ app.use((req, res, next) => {
 
 // ROUTES
 
-app.use("/api/v1/cars", carRouter);
 app.use("/api/v1/listings", listingRouter);
 
 // START SERVER
